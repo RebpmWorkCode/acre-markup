@@ -1,0 +1,15 @@
+{{ html.script('/libraries/lazyload/lazyload.min.js') }}
+{#<script>#}
+{#    const RECAPTCHA_KEY = '{{ recaptcha.publicKey() }}';#}
+{#</script>#}
+{#<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha.publicKey() }}"></script>#}
+{#<script src="/uploads/assets/js/recaptcha.js"></script>#}
+<script src="/uploads/assets/js/app.min.js?_v=20220623111940"></script>
+{#<script src="/libraries/jquery3/jquery.min.js"></script>#}
+{#<script src="/libraries/select2/js/select2.min.js"></script>#}
+{#<script src="/libraries/select2/js/i18n/ru.js"></script>#}
+{#<script src="/agency/js/jquery.mask.min.js"></script>#}
+{#<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>#}
+{{ _view.fetch('scriptCustom') }}
+</body>
+</html>

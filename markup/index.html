@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главная</title>
+	<link rel="stylesheet" href="/uploads/assets/css/style.css?_v=20220623111940">
+</head>
+
+<body>
+	<header class="header homepage">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <img src="img/header/header-logo.svg" alt="Логотип" class="header-logo">
+            </div>
+            <div class="col">
+                <div class="header-info">
+                    <div class="header-top">
+                        <a href="tel:84957777777" class="header-top__phone">8 (495) 777-77-77</a>
+                        <span class="header-top__line">/</span>
+                        <a href="mailto:info@acre.rent" class="header-top__email">info@acre.rent</a>
+                        <div class="header-top__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.6666 18.3337V3.33366C16.6666 2.41449 15.9191 1.66699 14.9999 1.66699H4.99992C4.08075 1.66699 3.33325 2.41449 3.33325 3.33366V18.3337L9.99992 14.5237L16.6666 18.3337ZM4.99992 8.33366V3.33366H14.9999V15.4612L9.99992 12.6045L4.99992 15.4612V8.33366Z" fill="#333333"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header-bottom">
+                        <menu class="header-bottom-navigation">
+                            <a href="#" class="header-bottom-navigation__link">Главная</a>
+                            <a href="#" class="header-bottom-navigation__link">Недвижимость</a>
+                            <a href="#" class="header-bottom-navigation__link">Консалтинг</a>
+                            <a href="#" class="header-bottom-navigation__link">Аналитика</a>
+                            <a href="#" class="header-bottom-navigation__link">Контакты</a>
+                        </menu>
+                    </div>
+                </div>
+                <div class="header-div">
+                    <div class="header-burger">
+                        <span class="header-burger__line"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	<main>
+		<!-- Модальное окно с картой -->
+		<div class="modal-card">
+			<div class="modal-card-block">
+				<div class="tabs-card" id="tabs-card">
+					<div class="tabs-card__nav">
+						<button class="tabs-card__btn tabs-card__btn_active">Метро</button>
+						<button class="tabs-card__btn">Округа и районы</button>
+						<button class="tabs-card__btn">По карте</button>
+					</div>
+					<!-- Схема метро -->
+					<div class="tabs-card__pane tabs-card__pane_show">
+						<div class="modal-card-block-content">
+							<div class="modal-card-block-content-top">
+								<div class="modal-card-block-content-item">
+									<select data-placeholder="Выбрать линию целиком" class="select" name="language">
+										<option></option>
+										<option value="a">A</option>
+										<option value="b">Б</option>
+										<option value="c">В</option>
+									</select>
+								</div>
+								<div class="modal-card-block-content-item">
+									<select data-placeholder="Станции списком" class="select" name="language">
+										<option></option>
+										<option value="a">A</option>
+										<option value="b">Б</option>
+										<option value="c">В</option>
+									</select>
+								</div>
+							</div>
+							<div class="modal-card-block-content-center">
+								<img src="img/modal-card/map.png" alt="Схема метро"
+									class="modal-card-block-content-center__map">
+							</div>
+							<div class="modal-card-block-content-bottom">
+								<button class="modal-card-block-content-bottom-btn btn-3">Сбросить</button>
+								<div class="modal-card-block-content-bottom-active">
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+								</div>
+								<button class="modal-card-block-content-bottom-btn btn-2">Найти</button>
+							</div>
+						</div>
+					</div>
+					<div class="tabs-card__pane">
+						<div class="modal-card-block-content-two">
+							<div class="modal-card-block-content-two-county">
+								<span class="modal-card-block-content-two-county__title">Административные округа</span>
+								<div class="modal-card-block-content-two-county-block">
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="1" name="1" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="1" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ЦАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="2" name="2" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="2" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ЗАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="3" name="3" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="3" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">СЗАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="4" name="4" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="4" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">САО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="5" name="5" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="5" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">СВАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="6" name="6" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="6" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ВАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="7" name="7" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="7" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ЮВАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="8" name="8" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="8" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ЮАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="9" name="9" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="9" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ЮЗАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="10" name="10" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="10" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">НАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="11" name="11" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="11" class="modal-card-block-content-two-county-block-item-label">
+											<span
+												class="modal-card-block-content-two-county-block-item__text">ТАО</span>
+										</label>
+									</div>
+									<div class="modal-card-block-content-two-county-block-item">
+										<input type="checkbox" id="12" name="12" value="yes"
+											class="modal-card-block-content-two-county-block-item__checkbox">
+										<label for="12" class="modal-card-block-content-two-county-block-item-label">
+											<span class="modal-card-block-content-two-county-block-item__text">г.
+												Зеленоград</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="modal-card-block-content-two-district">
+								<span class="modal-card-block-content-two-district__title">Районы</span>
+								<div class="modal-card-block-content-two-district-block">
+									<div class="modal-card-block-content-two-district-block-column">
+										<span
+											class="modal-card-block-content-two-district-block-column__title">ЦАО</span>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-1" name="CAO-1" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-1"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Арбат</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-2" name="CAO-2" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-2"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Басманный</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-3" name="CAO-3" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-3"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Замоскворечье</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-4" name="CAO-4" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-4"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Красносельский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-5" name="CAO-5" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-5"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Мещанский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-6" name="CAO-6" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-6"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Пресненский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-7" name="CAO-7" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-7"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Таганский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-8" name="CAO-8" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-8"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Тверской</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-9" name="CAO-9" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-9"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Хамовники</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="CAO-10" name="CAO-10" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-10"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Якиманка</span>
+											</label>
+										</div>
+									</div>
+									<div class="modal-card-block-content-two-district-block-column">
+										<span
+											class="modal-card-block-content-two-district-block-column__title">CАО</span>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-1" name="AO-1" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-1"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Арбат</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-2" name="AO-2" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-2"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Басманный</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-3" name="AO-3" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-3"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Замоскворечье</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-4" name="AO-4" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-4"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Красносельский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-5" name="AO-5" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="CAO-5"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Мещанский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-6" name="AO-6" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-6"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Пресненский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-7" name="AO-7" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-7"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Таганский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-8" name="AO-8" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-8"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Тверской</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-9" name="AO-9" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-9"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Хамовники</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="AO-10" name="AO-10" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="AO-10"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Якиманка</span>
+											</label>
+										</div>
+									</div>
+									<div class="modal-card-block-content-two-district-block-column">
+										<span
+											class="modal-card-block-content-two-district-block-column__title">ЗАО</span>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-1" name="O-1" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-1"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Арбат</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-2" name="O-2" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-2"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Басманный</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-3" name="O-3" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-3"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Замоскворечье</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-4" name="O-4" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-4"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Красносельский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-5" name="O-5" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-5"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Мещанский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-6" name="O-6" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-6"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Пресненский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-7" name="O-7" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-7"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Таганский</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-8" name="O-8" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-8"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Тверской</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-9" name="O-9" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-9"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Хамовники</span>
+											</label>
+										</div>
+										<div class="modal-card-block-content-two-county-block-item">
+											<input type="checkbox" id="O-10" name="O-10" value="yes"
+												class="modal-card-block-content-two-county-block-item__checkbox">
+											<label for="O-10"
+												class="modal-card-block-content-two-county-block-item-label">
+												<span
+													class="modal-card-block-content-two-county-block-item__text">Якиманка</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-card-block-content-bottom">
+								<button class="modal-card-block-content-bottom-btn btn-3">Сбросить</button>
+								<div class="modal-card-block-content-bottom-active">
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+									<div class="modal-card-block-content-bottom-active-item">
+										<button class="modal-card-block-content-bottom-active-item__close">
+											<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+													stroke="#777777" />
+												<line y1="-0.5" x2="10.0942" y2="-0.5"
+													transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+													stroke="#777777" />
+											</svg>
+										</button>
+										<span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+									</div>
+								</div>
+								<button class="modal-card-block-content-bottom-btn btn-2">Найти</button>
+							</div>
+						</div>
+					</div>
+					<div class="tabs-card__pane">
+						<div class="modal-card-block-content-three">
+							<div class="modal-card-block-content-three-top">
+								<span class="modal-card-block-content-three-top__text">Выберите точку на карте и введите
+									радиус поиска</span>
+								<input type="text" placeholder="Например: 7"
+									class="modal-card-block-content-three-top-input">
+								<span class="modal-card-block-content-three-top-unit">км</span>
+							</div>
+							<div class="modal-card-block-content-three-center">
+								<script type="text/javascript" charset="utf-8" async
+									src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A697de6f0d16ad53be0f9c0c329f2d7aeccb7ce71095769f52d864730f5bbc825&amp;width=100%25&amp;height=435&amp;lang=ru_RU&amp;scroll=true&_v=20220623111940"></script>
+							</div>
+							<div class="modal-card-block-content-bottom">
+								<button class="modal-card-block-content-bottom-btn btn-3">Сбросить</button>
+								<div class="modal-card-block-content-bottom-active">
+
+								</div>
+								<button class="modal-card-block-content-bottom-btn btn-2">Найти</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="main-screen-home"
+			style="background: url(img/main-screen-home/background.png); background-size: cover; background-position: center center;">
+			<div class="container">
+				<div class="main-screen-home-block">
+					<h1 class="main-screen-home__title title">Коммерческая недвижимость в Москве</h1>
+					<span class="main-screen-home__subtitle">Поиск по 7000+ объектам Москвы и Московской области</span>
+					<div class="tabs" id="tabs-card-a">
+						<div class="tabs-open">
+							<div class="tabs__nav tabs__nav-computer">
+								<button class="tabs__btn tabs__btn_active">Офисы</button>
+								<button class="tabs__btn">Склады</button>
+								<button class="tabs__btn">ПСН</button>
+								<button class="tabs__btn">Торговая</button>
+								<button class="tabs__btn">ГАБ</button>
+							</div>
+						</div>
+						<div class="tabs__content">
+							<div class="tabs__pane tabs__pane_show">
+								<div class="main-screen-home-filter">
+									<div class="main-screen-home-filter-top">
+										<div class="main-screen-home-filter-top-item order-one">
+											<div class="main-screen-home-filter-top-select-one">
+												<select data-placeholder="Арендовать" class="select" name="language"
+													multiple="multiple">
+													<option></option>
+													<option value="rent">Арендовать</option>
+													<option value="buy">Купить</option>
+													<option value="sell">Продать</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-two">
+											<div class="main-screen-home-filter-top-square">
+												<span class="main-screen-home-filter-top-square__name">Площадь</span>
+												<label for=""
+													class="main-screen-home-filter-top-square__label">от</label>
+												<input type="text" class="main-screen-home-filter-top-square__min">
+												<label for=""
+													class="main-screen-home-filter-top-square__label">до</label>
+												<input type="text" class="main-screen-home-filter-top-square__max">
+												<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+												</span>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-three">
+											<div class="main-screen-home-filter-top-price">
+												<span class="main-screen-home-filter-top-price__name">Цена</span>
+												<label for=""
+													class="main-screen-home-filter-top-price__label">от</label>
+												<input type="text" placeholder="10000"
+													class="main-screen-home-filter-top-price__min">
+												<label for=""
+													class="main-screen-home-filter-top-price__label">до</label>
+												<input type="text" placeholder="2500000"
+													class="main-screen-home-filter-top-price__max">
+												<span class="main-screen-home-filter-top-price__line"></span>
+												<div class="main-screen-home-filter-top-price-two">
+													<select class="select" name="language">
+														<option value="a">₽</option>
+														<option value="b">2</option>
+														<option value="c">3</option>
+													</select>
+												</div>
+												<div class="main-screen-home-filter-top-price-three">
+													<select class="select" name="language">
+														<option value="a">за м<sub>2</sub></option>
+														<option value="b">за м<sub>2</sub></option>
+														<option value="c">за м<sub>2</sub></option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-four">
+											<div class="main-screen-home-filter-top-select-type">
+												<select multiple="multiple" data-placeholder="Тип здания" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Новостройка</option>
+													<option value="b">Офисное</option>
+													<option value="c">Вторичка</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-five">
+											<input type="text" placeholder="Местоположение"
+												class="main-screen-home-filter-top-location">
+										</div>
+									</div>
+									<div class="main-screen-home-filter-bottom">
+										<input type="text" placeholder="Название, ID объекта или адрес"
+											class="main-screen-home-filter-bottom__address">
+										<button class="main-screen-home-filter-bottom-more more-open-one">
+											<span class="main-screen-home-filter-bottom-more__icon">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M10.7196 22.2812H8.625V11.4024L1.07812 2.41805V0.71875H21.5625V2.40835L14.375 11.3927V18.6258L10.7196 22.2812ZM10.0625 20.8438H10.1242L12.9375 18.0304V10.8885L19.9233 2.15625H2.73574L10.0625 10.8788V20.8438Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-more__text">Еще фильтры</span>
+										</button>
+										<button class="main-screen-home-filter-bottom-map">
+											<span class="main-screen-home-filter-bottom-map__icon">
+												<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12.5098 6.25C11.7372 6.25 10.9819 6.4791 10.3396 6.90832C9.69719 7.33755 9.19651 7.94762 8.90086 8.66139C8.6052 9.37517 8.52785 10.1606 8.67857 10.9183C8.82929 11.6761 9.20133 12.3721 9.74763 12.9184C10.2939 13.4647 10.99 13.8367 11.7477 13.9874C12.5054 14.1382 13.2908 14.0608 14.0046 13.7652C14.7184 13.4695 15.3285 12.9688 15.7577 12.3264C16.1869 11.6841 16.416 10.9288 16.416 10.1562C16.4134 9.12104 16.0011 8.12897 15.269 7.39696C14.537 6.66496 13.545 6.25258 12.5098 6.25ZM12.5098 12.5C12.0462 12.5 11.5931 12.3625 11.2076 12.105C10.8222 11.8475 10.5218 11.4814 10.3444 11.0532C10.167 10.6249 10.1206 10.1536 10.211 9.69901C10.3015 9.24436 10.5247 8.82675 10.8525 8.49897C11.1803 8.17119 11.5979 7.94797 12.0525 7.85753C12.5072 7.7671 12.9784 7.81351 13.4067 7.99091C13.8349 8.1683 14.201 8.4687 14.4585 8.85413C14.7161 9.23956 14.8535 9.6927 14.8535 10.1562C14.8509 10.7771 14.6032 11.3717 14.1642 11.8107C13.7252 12.2497 13.1306 12.4974 12.5098 12.5ZM12.5098 1.5625C10.2314 1.56508 8.047 2.47133 6.43592 4.08241C4.82484 5.69349 3.9186 7.87784 3.91602 10.1562C3.91602 13.2227 5.33203 16.4746 8.01758 19.5508C9.22476 20.9442 10.5804 22.2016 12.0605 23.3008C12.1936 23.3894 12.3499 23.4366 12.5098 23.4366C12.6696 23.4366 12.8259 23.3894 12.959 23.3008C14.4434 22.2033 15.8025 20.9457 17.0117 19.5508C19.6875 16.4746 21.1035 13.2227 21.1035 10.1562C21.1009 7.87784 20.1947 5.69349 18.5836 4.08241C16.9725 2.47133 14.7882 1.56508 12.5098 1.5625ZM12.5098 21.6797C10.8984 20.4102 5.47851 15.7422 5.47851 10.1562C5.47851 8.29145 6.2193 6.50302 7.53792 5.18441C8.85653 3.86579 10.645 3.125 12.5098 3.125C14.3746 3.125 16.163 3.86579 17.4816 5.18441C18.8002 6.50302 19.541 8.29145 19.541 10.1562C19.541 15.7422 14.1211 20.4102 12.5098 21.6797Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-map__text">Смотреть на
+												карте</span>
+										</button>
+										<button class="main-screen-home-filter-bottom__show">Показать 2546</button>
+									</div>
+									<!-- Дополнительные настройки на фильтр -->
+									<div class="main-screen-home-filter-additional additional-open-one">
+										<div class="main-screen-home-filter-additional__top">
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-class">
+													<select multiple="multiple" data-placeholder="Класс" class="select"
+														name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span class="main-screen-home-filter-top-square__name">Этаж</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span
+														class="main-screen-home-filter-top-square__name">Этажность</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-condition">
+													<select multiple="multiple" data-placeholder="Состояние"
+														class="select" name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-furnishing">
+													<select multiple="multiple" data-placeholder="Мебелировка"
+														class="select" name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-ifts">
+													<select multiple="multiple" data-placeholder="ИФНС" class="select"
+														name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-additional__bottom">
+											<div class="main-screen-home-filter-additional__left">
+												<div class="main-screen-home-filter-additional__item">
+													<div class="main-screen-home-filter-top-square">
+														<span class="main-screen-home-filter-top-square__name">Год
+															постройки</span>
+														<label for=""
+															class="main-screen-home-filter-top-square__label">от</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__min">
+														<label for=""
+															class="main-screen-home-filter-top-square__label">до</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__max">
+													</div>
+												</div>
+												<div class="main-screen-home-filter-additional__item">
+													<div class="main-screen-home-filter-additional-condition">
+														<select multiple="multiple" data-placeholder="До метро"
+															class="select" name="language">
+															<option></option>
+															<option value="a">A</option>
+															<option value="b">Б</option>
+															<option value="c">В</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__right">
+												<button class="main-screen-home-filter-additional-clear">
+													<span class="main-screen-home-filter-additional-clear__icon">
+														<svg width="21" height="24" viewBox="0 0 21 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<g clip-path="url(#clip0_1365_2613)">
+																<path
+																	d="M7.5 21L10.499 18V19.5C11.9834 19.5002 13.4344 19.06 14.6685 18.2351C15.9025 17.4102 16.8641 16.2377 17.4314 14.866C17.9988 13.4944 18.1464 11.9852 17.8557 10.5296C17.5649 9.07403 16.8488 7.73742 15.798 6.689L17.912 4.565C18.8923 5.53929 19.6699 6.69812 20.2 7.97459C20.73 9.25106 21.0019 10.6199 21 12.002C21 17.8 16.3 22.5 10.502 22.5H10.5V24L7.5 21ZM6.30389e-07 12C0.00700063 6.204 4.704 1.507 10.499 1.5H10.5V0L13.5 3L10.5 6V4.5H10.498C9.01365 4.50008 7.56267 4.94051 6.32872 5.76553C5.09476 6.59056 4.13329 7.76309 3.56597 9.13476C2.99865 10.5064 2.851 12.0156 3.14169 13.4712C3.43238 14.9268 4.14836 16.2634 5.199 17.312L3.087 19.436C2.10722 18.4675 1.32969 17.314 0.799567 16.0424C0.269449 14.7709 -0.00267708 13.4066 -0.00099937 12.029V11.999V12.001L6.30389e-07 12Z"
+																	fill="white" />
+															</g>
+															<defs>
+																<clipPath id="clip0_1365_2613">
+																	<rect width="21" height="24" fill="white" />
+																</clipPath>
+															</defs>
+														</svg>
+													</span>
+													<span
+														class="main-screen-home-filter-additional-clear__text">Очистить</span>
+												</button>
+												<button
+													class="main-screen-home-filter-additional-hide additional-hide-one">
+													<span class="main-screen-home-filter-additional-hide__text">Скрыть
+														доп.
+														фильтры</span>
+													<span class="main-screen-home-filter-additional-hide__icon">
+														<svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path d="M24.6548 20.5458L16.4365 12.3275L8.21817 20.5458"
+																stroke="white" stroke-width="3" stroke-linecap="round"
+																stroke-linejoin="round" />
+														</svg>
+													</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__pane">
+								<div class="main-screen-home-filter">
+									<div class="main-screen-home-filter-top">
+										<div class="main-screen-home-filter-top-item order-one">
+											<div class="main-screen-home-filter-top-select-one">
+												<select multiple="multiple" data-placeholder="Арендовать" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Арендовать</option>
+													<option value="b">Купить</option>
+													<option value="c">Продать</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-two">
+											<div class="main-screen-home-filter-top-square">
+												<span class="main-screen-home-filter-top-square__name">Площадь</span>
+												<label for=""
+													class="main-screen-home-filter-top-square__label">от</label>
+												<input type="text" class="main-screen-home-filter-top-square__min">
+												<label for=""
+													class="main-screen-home-filter-top-square__label">до</label>
+												<input type="text" class="main-screen-home-filter-top-square__max">
+												<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+												</span>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-three">
+											<div class="main-screen-home-filter-top-price">
+												<span class="main-screen-home-filter-top-price__name">Цена</span>
+												<label for=""
+													class="main-screen-home-filter-top-price__label">от</label>
+												<input type="text" placeholder="10000"
+													class="main-screen-home-filter-top-price__min">
+												<label for=""
+													class="main-screen-home-filter-top-price__label">до</label>
+												<input type="text" placeholder="2500000"
+													class="main-screen-home-filter-top-price__max">
+												<span class="main-screen-home-filter-top-price__line"></span>
+												<div class="main-screen-home-filter-top-price-two">
+													<select class="select" name="language">
+
+														<option value="a">₽</option>
+														<option value="b">2</option>
+														<option value="c">3</option>
+													</select>
+												</div>
+												<div class="main-screen-home-filter-top-price-three">
+													<select class="select" name="language">
+
+														<option value="a">за м<sub>2</sub></option>
+														<option value="b">за м<sub>2</sub></option>
+														<option value="c">за м<sub>2</sub></option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-four">
+											<div class="main-screen-home-filter-top-select-type">
+												<select multiple="multiple" data-placeholder="Тип здания" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Новостройка</option>
+													<option value="b">Офисное</option>
+													<option value="c">Вторичка</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-five">
+											<input type="text" placeholder="Местоположение"
+												class="main-screen-home-filter-top-location">
+										</div>
+									</div>
+									<div class="main-screen-home-filter-bottom">
+										<input type="text" placeholder="Название, ID объекта или адрес"
+											class="main-screen-home-filter-bottom__address">
+										<button class="main-screen-home-filter-bottom-more more-open-two">
+											<span class="main-screen-home-filter-bottom-more__icon">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M10.7196 22.2812H8.625V11.4024L1.07812 2.41805V0.71875H21.5625V2.40835L14.375 11.3927V18.6258L10.7196 22.2812ZM10.0625 20.8438H10.1242L12.9375 18.0304V10.8885L19.9233 2.15625H2.73574L10.0625 10.8788V20.8438Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-more__text">Еще фильтры</span>
+										</button>
+										<button class="main-screen-home-filter-bottom-map">
+											<span class="main-screen-home-filter-bottom-map__icon">
+												<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12.5098 6.25C11.7372 6.25 10.9819 6.4791 10.3396 6.90832C9.69719 7.33755 9.19651 7.94762 8.90086 8.66139C8.6052 9.37517 8.52785 10.1606 8.67857 10.9183C8.82929 11.6761 9.20133 12.3721 9.74763 12.9184C10.2939 13.4647 10.99 13.8367 11.7477 13.9874C12.5054 14.1382 13.2908 14.0608 14.0046 13.7652C14.7184 13.4695 15.3285 12.9688 15.7577 12.3264C16.1869 11.6841 16.416 10.9288 16.416 10.1562C16.4134 9.12104 16.0011 8.12897 15.269 7.39696C14.537 6.66496 13.545 6.25258 12.5098 6.25ZM12.5098 12.5C12.0462 12.5 11.5931 12.3625 11.2076 12.105C10.8222 11.8475 10.5218 11.4814 10.3444 11.0532C10.167 10.6249 10.1206 10.1536 10.211 9.69901C10.3015 9.24436 10.5247 8.82675 10.8525 8.49897C11.1803 8.17119 11.5979 7.94797 12.0525 7.85753C12.5072 7.7671 12.9784 7.81351 13.4067 7.99091C13.8349 8.1683 14.201 8.4687 14.4585 8.85413C14.7161 9.23956 14.8535 9.6927 14.8535 10.1562C14.8509 10.7771 14.6032 11.3717 14.1642 11.8107C13.7252 12.2497 13.1306 12.4974 12.5098 12.5ZM12.5098 1.5625C10.2314 1.56508 8.047 2.47133 6.43592 4.08241C4.82484 5.69349 3.9186 7.87784 3.91602 10.1562C3.91602 13.2227 5.33203 16.4746 8.01758 19.5508C9.22476 20.9442 10.5804 22.2016 12.0605 23.3008C12.1936 23.3894 12.3499 23.4366 12.5098 23.4366C12.6696 23.4366 12.8259 23.3894 12.959 23.3008C14.4434 22.2033 15.8025 20.9457 17.0117 19.5508C19.6875 16.4746 21.1035 13.2227 21.1035 10.1562C21.1009 7.87784 20.1947 5.69349 18.5836 4.08241C16.9725 2.47133 14.7882 1.56508 12.5098 1.5625ZM12.5098 21.6797C10.8984 20.4102 5.47851 15.7422 5.47851 10.1562C5.47851 8.29145 6.2193 6.50302 7.53792 5.18441C8.85653 3.86579 10.645 3.125 12.5098 3.125C14.3746 3.125 16.163 3.86579 17.4816 5.18441C18.8002 6.50302 19.541 8.29145 19.541 10.1562C19.541 15.7422 14.1211 20.4102 12.5098 21.6797Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-map__text">Смотреть на
+												карте</span>
+										</button>
+										<button class="main-screen-home-filter-bottom__show">Показать 2546</button>
+									</div>
+									<!-- Дополнительные настройки на фильтр -->
+									<div class="main-screen-home-filter-additional additional-open-two">
+										<div class="main-screen-home-filter-additional__top">
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-class">
+													<select multiple="multiple" data-placeholder="Класс" class="select"
+														name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span class="main-screen-home-filter-top-square__name">Площадь
+														мезонина</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+													<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+													</span>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span class="main-screen-home-filter-top-square__name">Площадь
+														офиса</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+													<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+													</span>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span class="main-screen-home-filter-top-square__name">Высота
+														потолков</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+													<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-additional__bottom">
+											<div class="main-screen-home-filter-additional__left">
+												<div class="main-screen-home-filter-additional__item">
+													<div class="main-screen-home-filter-top-square">
+														<span class="main-screen-home-filter-top-square__name">Нагрузка
+															на пол</span>
+														<label for=""
+															class="main-screen-home-filter-top-square__label">от</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__min">
+														<label for=""
+															class="main-screen-home-filter-top-square__label">до</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__max">
+														<span class="main-screen-home-filter-top-square__name">т/м<sap>2
+															</sap></span>
+													</div>
+												</div>
+												<div class="main-screen-home-filter-additional__item">
+													<button class="main-screen-home-filter-additional__button">В черте
+														города</button>
+												</div>
+												<div class="main-screen-home-filter-additional__item">
+													<button class="main-screen-home-filter-additional__button">Ж/Д
+														ветка</button>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__right">
+												<button class="main-screen-home-filter-additional-clear">
+													<span class="main-screen-home-filter-additional-clear__icon">
+														<svg width="21" height="24" viewBox="0 0 21 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<g clip-path="url(#clip0_1365_2613)">
+																<path
+																	d="M7.5 21L10.499 18V19.5C11.9834 19.5002 13.4344 19.06 14.6685 18.2351C15.9025 17.4102 16.8641 16.2377 17.4314 14.866C17.9988 13.4944 18.1464 11.9852 17.8557 10.5296C17.5649 9.07403 16.8488 7.73742 15.798 6.689L17.912 4.565C18.8923 5.53929 19.6699 6.69812 20.2 7.97459C20.73 9.25106 21.0019 10.6199 21 12.002C21 17.8 16.3 22.5 10.502 22.5H10.5V24L7.5 21ZM6.30389e-07 12C0.00700063 6.204 4.704 1.507 10.499 1.5H10.5V0L13.5 3L10.5 6V4.5H10.498C9.01365 4.50008 7.56267 4.94051 6.32872 5.76553C5.09476 6.59056 4.13329 7.76309 3.56597 9.13476C2.99865 10.5064 2.851 12.0156 3.14169 13.4712C3.43238 14.9268 4.14836 16.2634 5.199 17.312L3.087 19.436C2.10722 18.4675 1.32969 17.314 0.799567 16.0424C0.269449 14.7709 -0.00267708 13.4066 -0.00099937 12.029V11.999V12.001L6.30389e-07 12Z"
+																	fill="white" />
+															</g>
+															<defs>
+																<clipPath id="clip0_1365_2613">
+																	<rect width="21" height="24" fill="white" />
+																</clipPath>
+															</defs>
+														</svg>
+													</span>
+													<span
+														class="main-screen-home-filter-additional-clear__text">Очистить</span>
+												</button>
+												<button
+													class="main-screen-home-filter-additional-hide additional-hide-two">
+													<span class="main-screen-home-filter-additional-hide__text">Скрыть
+														доп.
+														фильтры</span>
+													<span class="main-screen-home-filter-additional-hide__icon">
+														<svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path d="M24.6548 20.5458L16.4365 12.3275L8.21817 20.5458"
+																stroke="white" stroke-width="3" stroke-linecap="round"
+																stroke-linejoin="round" />
+														</svg>
+													</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__pane">
+								<div class="main-screen-home-filter">
+									<div class="main-screen-home-filter-top">
+										<div class="main-screen-home-filter-top-item order-one">
+											<div class="main-screen-home-filter-top-select-one">
+												<select multiple="multiple" data-placeholder="Арендовать" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Арендовать</option>
+													<option value="b">Купить</option>
+													<option value="c">Продать</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-two">
+											<div class="main-screen-home-filter-top-square">
+												<span class="main-screen-home-filter-top-square__name">Площадь</span>
+												<label for=""
+													class="main-screen-home-filter-top-square__label">от</label>
+												<input type="text" class="main-screen-home-filter-top-square__min">
+												<label for=""
+													class="main-screen-home-filter-top-square__label">до</label>
+												<input type="text" class="main-screen-home-filter-top-square__max">
+												<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+												</span>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-three">
+											<div class="main-screen-home-filter-top-price">
+												<span class="main-screen-home-filter-top-price__name">Цена</span>
+												<label for=""
+													class="main-screen-home-filter-top-price__label">от</label>
+												<input type="text" placeholder="10000"
+													class="main-screen-home-filter-top-price__min">
+												<label for=""
+													class="main-screen-home-filter-top-price__label">до</label>
+												<input type="text" placeholder="2500000"
+													class="main-screen-home-filter-top-price__max">
+												<span class="main-screen-home-filter-top-price__line"></span>
+												<div class="main-screen-home-filter-top-price-two">
+													<select class="select" name="language">
+
+														<option value="a">₽</option>
+														<option value="b">2</option>
+														<option value="c">3</option>
+													</select>
+												</div>
+												<div class="main-screen-home-filter-top-price-three">
+													<select class="select" name="language">
+
+														<option value="a">за м<sub>2</sub></option>
+														<option value="b">за м<sub>2</sub></option>
+														<option value="c">за м<sub>2</sub></option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-four">
+											<div class="main-screen-home-filter-top-select-type">
+												<select multiple="multiple" data-placeholder="Тип здания" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Новостройка</option>
+													<option value="b">Офисное</option>
+													<option value="c">Вторичка</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-five">
+											<input type="text" placeholder="Местоположение"
+												class="main-screen-home-filter-top-location">
+										</div>
+									</div>
+									<div class="main-screen-home-filter-bottom">
+										<input type="text" placeholder="Название, ID объекта или адрес"
+											class="main-screen-home-filter-bottom__address">
+										<button class="main-screen-home-filter-bottom-more more-open-three">
+											<span class="main-screen-home-filter-bottom-more__icon">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M10.7196 22.2812H8.625V11.4024L1.07812 2.41805V0.71875H21.5625V2.40835L14.375 11.3927V18.6258L10.7196 22.2812ZM10.0625 20.8438H10.1242L12.9375 18.0304V10.8885L19.9233 2.15625H2.73574L10.0625 10.8788V20.8438Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-more__text">Еще фильтры</span>
+										</button>
+										<button class="main-screen-home-filter-bottom-map">
+											<span class="main-screen-home-filter-bottom-map__icon">
+												<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12.5098 6.25C11.7372 6.25 10.9819 6.4791 10.3396 6.90832C9.69719 7.33755 9.19651 7.94762 8.90086 8.66139C8.6052 9.37517 8.52785 10.1606 8.67857 10.9183C8.82929 11.6761 9.20133 12.3721 9.74763 12.9184C10.2939 13.4647 10.99 13.8367 11.7477 13.9874C12.5054 14.1382 13.2908 14.0608 14.0046 13.7652C14.7184 13.4695 15.3285 12.9688 15.7577 12.3264C16.1869 11.6841 16.416 10.9288 16.416 10.1562C16.4134 9.12104 16.0011 8.12897 15.269 7.39696C14.537 6.66496 13.545 6.25258 12.5098 6.25ZM12.5098 12.5C12.0462 12.5 11.5931 12.3625 11.2076 12.105C10.8222 11.8475 10.5218 11.4814 10.3444 11.0532C10.167 10.6249 10.1206 10.1536 10.211 9.69901C10.3015 9.24436 10.5247 8.82675 10.8525 8.49897C11.1803 8.17119 11.5979 7.94797 12.0525 7.85753C12.5072 7.7671 12.9784 7.81351 13.4067 7.99091C13.8349 8.1683 14.201 8.4687 14.4585 8.85413C14.7161 9.23956 14.8535 9.6927 14.8535 10.1562C14.8509 10.7771 14.6032 11.3717 14.1642 11.8107C13.7252 12.2497 13.1306 12.4974 12.5098 12.5ZM12.5098 1.5625C10.2314 1.56508 8.047 2.47133 6.43592 4.08241C4.82484 5.69349 3.9186 7.87784 3.91602 10.1562C3.91602 13.2227 5.33203 16.4746 8.01758 19.5508C9.22476 20.9442 10.5804 22.2016 12.0605 23.3008C12.1936 23.3894 12.3499 23.4366 12.5098 23.4366C12.6696 23.4366 12.8259 23.3894 12.959 23.3008C14.4434 22.2033 15.8025 20.9457 17.0117 19.5508C19.6875 16.4746 21.1035 13.2227 21.1035 10.1562C21.1009 7.87784 20.1947 5.69349 18.5836 4.08241C16.9725 2.47133 14.7882 1.56508 12.5098 1.5625ZM12.5098 21.6797C10.8984 20.4102 5.47851 15.7422 5.47851 10.1562C5.47851 8.29145 6.2193 6.50302 7.53792 5.18441C8.85653 3.86579 10.645 3.125 12.5098 3.125C14.3746 3.125 16.163 3.86579 17.4816 5.18441C18.8002 6.50302 19.541 8.29145 19.541 10.1562C19.541 15.7422 14.1211 20.4102 12.5098 21.6797Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-map__text">Смотреть на
+												карте</span>
+										</button>
+										<button class="main-screen-home-filter-bottom__show">Показать 2546</button>
+									</div>
+									<!-- Дополнительные настройки на фильтр -->
+									<div class="main-screen-home-filter-additional additional-open-three">
+										<div class="main-screen-home-filter-additional__top">
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-class">
+													<select multiple="multiple" data-placeholder="Класс" class="select"
+														name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span class="main-screen-home-filter-top-square__name">Этаж</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span
+														class="main-screen-home-filter-top-square__name">Этажность</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-condition">
+													<select multiple="multiple" data-placeholder="Состояние"
+														class="select" name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-furnishing">
+													<select multiple="multiple" data-placeholder="Мебелировка"
+														class="select" name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-ifts">
+													<select multiple="multiple" data-placeholder="ИФНС" class="select"
+														name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-additional__bottom">
+											<div class="main-screen-home-filter-additional__left">
+												<div class="main-screen-home-filter-additional__item">
+													<div class="main-screen-home-filter-top-square">
+														<span class="main-screen-home-filter-top-square__name">Год
+															постройки</span>
+														<label for=""
+															class="main-screen-home-filter-top-square__label">от</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__min">
+														<label for=""
+															class="main-screen-home-filter-top-square__label">до</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__max">
+													</div>
+												</div>
+												<div class="main-screen-home-filter-additional__item">
+													<div class="main-screen-home-filter-additional-condition">
+														<select multiple="multiple" data-placeholder="До метро"
+															class="select" name="language">
+															<option></option>
+															<option value="a">A</option>
+															<option value="b">Б</option>
+															<option value="c">В</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__right">
+												<button class="main-screen-home-filter-additional-clear">
+													<span class="main-screen-home-filter-additional-clear__icon">
+														<svg width="21" height="24" viewBox="0 0 21 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<g clip-path="url(#clip0_1365_2613)">
+																<path
+																	d="M7.5 21L10.499 18V19.5C11.9834 19.5002 13.4344 19.06 14.6685 18.2351C15.9025 17.4102 16.8641 16.2377 17.4314 14.866C17.9988 13.4944 18.1464 11.9852 17.8557 10.5296C17.5649 9.07403 16.8488 7.73742 15.798 6.689L17.912 4.565C18.8923 5.53929 19.6699 6.69812 20.2 7.97459C20.73 9.25106 21.0019 10.6199 21 12.002C21 17.8 16.3 22.5 10.502 22.5H10.5V24L7.5 21ZM6.30389e-07 12C0.00700063 6.204 4.704 1.507 10.499 1.5H10.5V0L13.5 3L10.5 6V4.5H10.498C9.01365 4.50008 7.56267 4.94051 6.32872 5.76553C5.09476 6.59056 4.13329 7.76309 3.56597 9.13476C2.99865 10.5064 2.851 12.0156 3.14169 13.4712C3.43238 14.9268 4.14836 16.2634 5.199 17.312L3.087 19.436C2.10722 18.4675 1.32969 17.314 0.799567 16.0424C0.269449 14.7709 -0.00267708 13.4066 -0.00099937 12.029V11.999V12.001L6.30389e-07 12Z"
+																	fill="white" />
+															</g>
+															<defs>
+																<clipPath id="clip0_1365_2613">
+																	<rect width="21" height="24" fill="white" />
+																</clipPath>
+															</defs>
+														</svg>
+													</span>
+													<span
+														class="main-screen-home-filter-additional-clear__text">Очистить</span>
+												</button>
+												<button
+													class="main-screen-home-filter-additional-hide additional-hide-three">
+													<span class="main-screen-home-filter-additional-hide__text ">Скрыть
+														доп.
+														фильтры</span>
+													<span class="main-screen-home-filter-additional-hide__icon">
+														<svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path d="M24.6548 20.5458L16.4365 12.3275L8.21817 20.5458"
+																stroke="white" stroke-width="3" stroke-linecap="round"
+																stroke-linejoin="round" />
+														</svg>
+													</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__pane">
+								<div class="main-screen-home-filter">
+									<div class="main-screen-home-filter-top">
+										<div class="main-screen-home-filter-top-item order-one">
+											<div class="main-screen-home-filter-top-select-one">
+												<select multiple="multiple" data-placeholder="Арендовать" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Арендовать</option>
+													<option value="b">Купить</option>
+													<option value="c">Продать</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-two">
+											<div class="main-screen-home-filter-top-square">
+												<span class="main-screen-home-filter-top-square__name">Площадь</span>
+												<label for=""
+													class="main-screen-home-filter-top-square__label">от</label>
+												<input type="text" class="main-screen-home-filter-top-square__min">
+												<label for=""
+													class="main-screen-home-filter-top-square__label">до</label>
+												<input type="text" class="main-screen-home-filter-top-square__max">
+												<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+												</span>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-three">
+											<div class="main-screen-home-filter-top-price">
+												<span class="main-screen-home-filter-top-price__name">Цена</span>
+												<label for=""
+													class="main-screen-home-filter-top-price__label">от</label>
+												<input type="text" placeholder="10000"
+													class="main-screen-home-filter-top-price__min">
+												<label for=""
+													class="main-screen-home-filter-top-price__label">до</label>
+												<input type="text" placeholder="2500000"
+													class="main-screen-home-filter-top-price__max">
+												<span class="main-screen-home-filter-top-price__line"></span>
+												<div class="main-screen-home-filter-top-price-two">
+													<select class="select" name="language">
+
+														<option value="a">₽</option>
+														<option value="b">2</option>
+														<option value="c">3</option>
+													</select>
+												</div>
+												<div class="main-screen-home-filter-top-price-three">
+													<select class="select" name="language">
+
+														<option value="a">за м<sub>2</sub></option>
+														<option value="b">за м<sub>2</sub></option>
+														<option value="c">за м<sub>2</sub></option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-four">
+											<div class="main-screen-home-filter-top-select-type">
+												<select multiple="multiple" data-placeholder="Тип здания" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Новостройка</option>
+													<option value="b">Офисное</option>
+													<option value="c">Вторичка</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-five">
+											<input type="text" placeholder="Местоположение"
+												class="main-screen-home-filter-top-location">
+										</div>
+									</div>
+									<div class="main-screen-home-filter-bottom">
+										<input type="text" placeholder="Название, ID объекта или адрес"
+											class="main-screen-home-filter-bottom__address">
+										<button class="main-screen-home-filter-bottom-more more-open-four">
+											<span class="main-screen-home-filter-bottom-more__icon">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M10.7196 22.2812H8.625V11.4024L1.07812 2.41805V0.71875H21.5625V2.40835L14.375 11.3927V18.6258L10.7196 22.2812ZM10.0625 20.8438H10.1242L12.9375 18.0304V10.8885L19.9233 2.15625H2.73574L10.0625 10.8788V20.8438Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-more__text">Еще фильтры</span>
+										</button>
+										<button class="main-screen-home-filter-bottom-map">
+											<span class="main-screen-home-filter-bottom-map__icon">
+												<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12.5098 6.25C11.7372 6.25 10.9819 6.4791 10.3396 6.90832C9.69719 7.33755 9.19651 7.94762 8.90086 8.66139C8.6052 9.37517 8.52785 10.1606 8.67857 10.9183C8.82929 11.6761 9.20133 12.3721 9.74763 12.9184C10.2939 13.4647 10.99 13.8367 11.7477 13.9874C12.5054 14.1382 13.2908 14.0608 14.0046 13.7652C14.7184 13.4695 15.3285 12.9688 15.7577 12.3264C16.1869 11.6841 16.416 10.9288 16.416 10.1562C16.4134 9.12104 16.0011 8.12897 15.269 7.39696C14.537 6.66496 13.545 6.25258 12.5098 6.25ZM12.5098 12.5C12.0462 12.5 11.5931 12.3625 11.2076 12.105C10.8222 11.8475 10.5218 11.4814 10.3444 11.0532C10.167 10.6249 10.1206 10.1536 10.211 9.69901C10.3015 9.24436 10.5247 8.82675 10.8525 8.49897C11.1803 8.17119 11.5979 7.94797 12.0525 7.85753C12.5072 7.7671 12.9784 7.81351 13.4067 7.99091C13.8349 8.1683 14.201 8.4687 14.4585 8.85413C14.7161 9.23956 14.8535 9.6927 14.8535 10.1562C14.8509 10.7771 14.6032 11.3717 14.1642 11.8107C13.7252 12.2497 13.1306 12.4974 12.5098 12.5ZM12.5098 1.5625C10.2314 1.56508 8.047 2.47133 6.43592 4.08241C4.82484 5.69349 3.9186 7.87784 3.91602 10.1562C3.91602 13.2227 5.33203 16.4746 8.01758 19.5508C9.22476 20.9442 10.5804 22.2016 12.0605 23.3008C12.1936 23.3894 12.3499 23.4366 12.5098 23.4366C12.6696 23.4366 12.8259 23.3894 12.959 23.3008C14.4434 22.2033 15.8025 20.9457 17.0117 19.5508C19.6875 16.4746 21.1035 13.2227 21.1035 10.1562C21.1009 7.87784 20.1947 5.69349 18.5836 4.08241C16.9725 2.47133 14.7882 1.56508 12.5098 1.5625ZM12.5098 21.6797C10.8984 20.4102 5.47851 15.7422 5.47851 10.1562C5.47851 8.29145 6.2193 6.50302 7.53792 5.18441C8.85653 3.86579 10.645 3.125 12.5098 3.125C14.3746 3.125 16.163 3.86579 17.4816 5.18441C18.8002 6.50302 19.541 8.29145 19.541 10.1562C19.541 15.7422 14.1211 20.4102 12.5098 21.6797Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-map__text">Смотреть на
+												карте</span>
+										</button>
+										<button class="main-screen-home-filter-bottom__show">Показать 2546</button>
+									</div>
+									<!-- Дополнительные настройки на фильтр -->
+									<div class="main-screen-home-filter-additional additional-open-four">
+										<div class="main-screen-home-filter-additional__top">
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-class">
+													<select multiple="multiple" data-placeholder="Класс" class="select"
+														name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span class="main-screen-home-filter-top-square__name">Этаж</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span
+														class="main-screen-home-filter-top-square__name">Этажность</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-additional-condition">
+													<select multiple="multiple" data-placeholder="Состояние"
+														class="select" name="language">
+														<option></option>
+														<option value="a">A</option>
+														<option value="b">Б</option>
+														<option value="c">В</option>
+													</select>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__top-item">
+												<div class="main-screen-home-filter-top-square">
+													<span
+														class="main-screen-home-filter-top-square__name">Электричество</span>
+													<label for=""
+														class="main-screen-home-filter-top-square__label">от</label>
+													<input type="text" class="main-screen-home-filter-top-square__min">
+													<label for=""
+														class="main-screen-home-filter-top-square__label">до</label>
+													<input type="text" class="main-screen-home-filter-top-square__max">
+													<span class="main-screen-home-filter-top-square__name">кВт</span>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-additional__bottom">
+											<div class="main-screen-home-filter-additional__left">
+												<div class="main-screen-home-filter-additional__item">
+													<div class="main-screen-home-filter-top-square">
+														<span class="main-screen-home-filter-top-square__name">Высота
+															потолков</span>
+														<label for=""
+															class="main-screen-home-filter-top-square__label">от</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__min">
+														<label for=""
+															class="main-screen-home-filter-top-square__label">до</label>
+														<input type="text"
+															class="main-screen-home-filter-top-square__max">
+														<span class="main-screen-home-filter-top-square__name">м</span>
+													</div>
+												</div>
+											</div>
+											<div class="main-screen-home-filter-additional__right">
+												<button class="main-screen-home-filter-additional-clear">
+													<span class="main-screen-home-filter-additional-clear__icon">
+														<svg width="21" height="24" viewBox="0 0 21 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<g clip-path="url(#clip0_1365_2613)">
+																<path
+																	d="M7.5 21L10.499 18V19.5C11.9834 19.5002 13.4344 19.06 14.6685 18.2351C15.9025 17.4102 16.8641 16.2377 17.4314 14.866C17.9988 13.4944 18.1464 11.9852 17.8557 10.5296C17.5649 9.07403 16.8488 7.73742 15.798 6.689L17.912 4.565C18.8923 5.53929 19.6699 6.69812 20.2 7.97459C20.73 9.25106 21.0019 10.6199 21 12.002C21 17.8 16.3 22.5 10.502 22.5H10.5V24L7.5 21ZM6.30389e-07 12C0.00700063 6.204 4.704 1.507 10.499 1.5H10.5V0L13.5 3L10.5 6V4.5H10.498C9.01365 4.50008 7.56267 4.94051 6.32872 5.76553C5.09476 6.59056 4.13329 7.76309 3.56597 9.13476C2.99865 10.5064 2.851 12.0156 3.14169 13.4712C3.43238 14.9268 4.14836 16.2634 5.199 17.312L3.087 19.436C2.10722 18.4675 1.32969 17.314 0.799567 16.0424C0.269449 14.7709 -0.00267708 13.4066 -0.00099937 12.029V11.999V12.001L6.30389e-07 12Z"
+																	fill="white" />
+															</g>
+															<defs>
+																<clipPath id="clip0_1365_2613">
+																	<rect width="21" height="24" fill="white" />
+																</clipPath>
+															</defs>
+														</svg>
+													</span>
+													<span
+														class="main-screen-home-filter-additional-clear__text">Очистить</span>
+												</button>
+												<button
+													class="main-screen-home-filter-additional-hide additional-hide-four">
+													<span class="main-screen-home-filter-additional-hide__text">Скрыть
+														доп.
+														фильтры</span>
+													<span class="main-screen-home-filter-additional-hide__icon">
+														<svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path d="M24.6548 20.5458L16.4365 12.3275L8.21817 20.5458"
+																stroke="white" stroke-width="3" stroke-linecap="round"
+																stroke-linejoin="round" />
+														</svg>
+													</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__pane">
+								<div class="main-screen-home-filter">
+									<div class="main-screen-home-filter-top">
+										<div class="main-screen-home-filter-top-item order-one">
+											<div class="main-screen-home-filter-top-select-one">
+												<select multiple="multiple" data-placeholder="Арендовать" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Арендовать</option>
+													<option value="b">Купить</option>
+													<option value="c">Продать</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-two">
+											<div class="main-screen-home-filter-top-square">
+												<span class="main-screen-home-filter-top-square__name">Площадь</span>
+												<label for=""
+													class="main-screen-home-filter-top-square__label">от</label>
+												<input type="text" class="main-screen-home-filter-top-square__min">
+												<label for=""
+													class="main-screen-home-filter-top-square__label">до</label>
+												<input type="text" class="main-screen-home-filter-top-square__max">
+												<span class="main-screen-home-filter-top-square__name">м<sap>2</sap>
+												</span>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-three">
+											<div class="main-screen-home-filter-top-price">
+												<span class="main-screen-home-filter-top-price__name">Цена</span>
+												<label for=""
+													class="main-screen-home-filter-top-price__label">от</label>
+												<input type="text" placeholder="10000"
+													class="main-screen-home-filter-top-price__min">
+												<label for=""
+													class="main-screen-home-filter-top-price__label">до</label>
+												<input type="text" placeholder="2500000"
+													class="main-screen-home-filter-top-price__max">
+												<span class="main-screen-home-filter-top-price__line"></span>
+												<div class="main-screen-home-filter-top-price-two">
+													<select class="select" name="language">
+
+														<option value="a">₽</option>
+														<option value="b">2</option>
+														<option value="c">3</option>
+													</select>
+												</div>
+												<div class="main-screen-home-filter-top-price-three">
+													<select class="select" name="language">
+
+														<option value="a">за м<sub>2</sub></option>
+														<option value="b">за м<sub>2</sub></option>
+														<option value="c">за м<sub>2</sub></option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-four">
+											<div class="main-screen-home-filter-top-select-type">
+												<select multiple="multiple" data-placeholder="Тип здания" class="select"
+													name="language">
+													<option></option>
+													<option value="a">Новостройка</option>
+													<option value="b">Офисное</option>
+													<option value="c">Вторичка</option>
+												</select>
+											</div>
+										</div>
+										<div class="main-screen-home-filter-top-item order-five">
+											<input type="text" placeholder="Местоположение"
+												class="main-screen-home-filter-top-location">
+										</div>
+									</div>
+									<div class="main-screen-home-filter-bottom">
+										<input type="text" placeholder="Название, ID объекта или адрес"
+											class="main-screen-home-filter-bottom__address">
+										<button class="main-screen-home-filter-bottom-more">
+											<span class="main-screen-home-filter-bottom-more__icon">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M10.7196 22.2812H8.625V11.4024L1.07812 2.41805V0.71875H21.5625V2.40835L14.375 11.3927V18.6258L10.7196 22.2812ZM10.0625 20.8438H10.1242L12.9375 18.0304V10.8885L19.9233 2.15625H2.73574L10.0625 10.8788V20.8438Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-more__text more-open-five">Еще
+												фильтры</span>
+										</button>
+										<button class="main-screen-home-filter-bottom-map">
+											<span class="main-screen-home-filter-bottom-map__icon">
+												<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12.5098 6.25C11.7372 6.25 10.9819 6.4791 10.3396 6.90832C9.69719 7.33755 9.19651 7.94762 8.90086 8.66139C8.6052 9.37517 8.52785 10.1606 8.67857 10.9183C8.82929 11.6761 9.20133 12.3721 9.74763 12.9184C10.2939 13.4647 10.99 13.8367 11.7477 13.9874C12.5054 14.1382 13.2908 14.0608 14.0046 13.7652C14.7184 13.4695 15.3285 12.9688 15.7577 12.3264C16.1869 11.6841 16.416 10.9288 16.416 10.1562C16.4134 9.12104 16.0011 8.12897 15.269 7.39696C14.537 6.66496 13.545 6.25258 12.5098 6.25ZM12.5098 12.5C12.0462 12.5 11.5931 12.3625 11.2076 12.105C10.8222 11.8475 10.5218 11.4814 10.3444 11.0532C10.167 10.6249 10.1206 10.1536 10.211 9.69901C10.3015 9.24436 10.5247 8.82675 10.8525 8.49897C11.1803 8.17119 11.5979 7.94797 12.0525 7.85753C12.5072 7.7671 12.9784 7.81351 13.4067 7.99091C13.8349 8.1683 14.201 8.4687 14.4585 8.85413C14.7161 9.23956 14.8535 9.6927 14.8535 10.1562C14.8509 10.7771 14.6032 11.3717 14.1642 11.8107C13.7252 12.2497 13.1306 12.4974 12.5098 12.5ZM12.5098 1.5625C10.2314 1.56508 8.047 2.47133 6.43592 4.08241C4.82484 5.69349 3.9186 7.87784 3.91602 10.1562C3.91602 13.2227 5.33203 16.4746 8.01758 19.5508C9.22476 20.9442 10.5804 22.2016 12.0605 23.3008C12.1936 23.3894 12.3499 23.4366 12.5098 23.4366C12.6696 23.4366 12.8259 23.3894 12.959 23.3008C14.4434 22.2033 15.8025 20.9457 17.0117 19.5508C19.6875 16.4746 21.1035 13.2227 21.1035 10.1562C21.1009 7.87784 20.1947 5.69349 18.5836 4.08241C16.9725 2.47133 14.7882 1.56508 12.5098 1.5625ZM12.5098 21.6797C10.8984 20.4102 5.47851 15.7422 5.47851 10.1562C5.47851 8.29145 6.2193 6.50302 7.53792 5.18441C8.85653 3.86579 10.645 3.125 12.5098 3.125C14.3746 3.125 16.163 3.86579 17.4816 5.18441C18.8002 6.50302 19.541 8.29145 19.541 10.1562C19.541 15.7422 14.1211 20.4102 12.5098 21.6797Z"
+														fill="white" />
+												</svg>
+											</span>
+											<span class="main-screen-home-filter-bottom-map__text">Смотреть на
+												карте</span>
+										</button>
+										<button class="main-screen-home-filter-bottom__show">Показать 2546</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="direction">
+			<div class="container">
+				<div class="direction-block">
+					<div class="direction-block-top">
+						<a href="" class="direction-block-top-card box">
+							<picture><source srcset="img/direction/office.webp" type="image/webp"><img src="img/direction/office.png" alt="Офис" class="direction-block-top-card__img"></picture>
+							<span class="direction-block-top-card__text">Офисы</span>
+						</a>
+						<a href="" class="direction-block-top-card box">
+							<picture><source srcset="img/direction/stock.webp" type="image/webp"><img src="img/direction/stock.png" alt="Склад" class="direction-block-top-card__img"></picture>
+							<span class="direction-block-top-card__text">Склады</span>
+						</a>
+					</div>
+					<div class="direction-block-bottom">
+						<a href="" href="" class="direction-block-bottom-card box">
+							<picture><source srcset="img/direction/pcn.webp" type="image/webp"><img src="img/direction/pcn.png" alt="ПСН" class="direction-block-bottom-card__img"></picture>
+							<span class="direction-block-bottom-card__text">ПСН</span>
+						</a>
+						<a href="" class="direction-block-bottom-card box">
+							<picture><source srcset="img/direction/gap.webp" type="image/webp"><img src="img/direction/gap.png" alt="ГАБ" class="direction-block-bottom-card__img"></picture>
+							<span class="direction-block-bottom-card__text">ГАБ</span>
+						</a>
+						<a href="" class="direction-block-bottom-card box">
+							<img src="img/direction/trading.png" alt="Торговля"
+								class="direction-block-bottom-card__img">
+							<span class="direction-block-bottom-card__text">Торговая</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="popular">
+			<div class="container">
+				<h2 class="popular-title section-title">Популярные объекты</h2>
+				<div class="popular-block swiper">
+					<div class="swiper-wrapper">
+						<a href="" class="popular-block-card swiper-slide">
+							<div class="popular-block-card-top">
+								<span class="popular-block-card-top__name">Бизнес-центр «Ринг Парк»</span>
+								<div class="popular-block-card-top-address">
+									<div class="popular-block-card-top-address__icon">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M13.6344 6.66699C13.6344 11.3337 8.08979 15.3337 8.08979 15.3337C8.08979 15.3337 2.54523 11.3337 2.54523 6.66699C2.54523 5.07569 3.12939 3.54957 4.16919 2.42435C5.209 1.29913 6.61928 0.666992 8.08979 0.666992C9.5603 0.666992 10.9706 1.29913 12.0104 2.42435C13.0502 3.54957 13.6344 5.07569 13.6344 6.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path
+												d="M8.08977 8.66699C9.11049 8.66699 9.93796 7.77156 9.93796 6.66699C9.93796 5.56242 9.11049 4.66699 8.08977 4.66699C7.06904 4.66699 6.24158 5.56242 6.24158 6.66699C6.24158 7.77156 7.06904 8.66699 8.08977 8.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</div>
+									<span class="popular-block-card-top-address__text">Москва, ЦАО, Пресненский,
+										Спи...</span>
+								</div>
+							</div>
+							<div class="popular-block-card-center box">
+								<img src="img/popular/card-a.png" alt="Изображение"
+									class="popular-block-card-center__img">
+							</div>
+							<div class="popular-block-card-bottom">
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Metro.webp" type="image/webp"><img src="img/popular/Metro.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Баррикадная</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Ruler.webp" type="image/webp"><img src="img/popular/Ruler.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">350 кв. м.</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Star.webp" type="image/webp"><img src="img/popular/Star.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Класс А</span>
+								</div>
+							</div>
+							<div class="popular-block-card-numbers">
+								<span class="popular-block-card-numbers__text">25 000 руб./м2 в год</span>
+							</div>
+						</a>
+						<a href="" class="popular-block-card swiper-slide">
+							<div class="popular-block-card-top">
+								<span class="popular-block-card-top__name">Бизнес-центр «Ринг Парк»</span>
+								<div class="popular-block-card-top-address">
+									<div class="popular-block-card-top-address__icon">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M13.6344 6.66699C13.6344 11.3337 8.08979 15.3337 8.08979 15.3337C8.08979 15.3337 2.54523 11.3337 2.54523 6.66699C2.54523 5.07569 3.12939 3.54957 4.16919 2.42435C5.209 1.29913 6.61928 0.666992 8.08979 0.666992C9.5603 0.666992 10.9706 1.29913 12.0104 2.42435C13.0502 3.54957 13.6344 5.07569 13.6344 6.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path
+												d="M8.08977 8.66699C9.11049 8.66699 9.93796 7.77156 9.93796 6.66699C9.93796 5.56242 9.11049 4.66699 8.08977 4.66699C7.06904 4.66699 6.24158 5.56242 6.24158 6.66699C6.24158 7.77156 7.06904 8.66699 8.08977 8.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</div>
+									<span class="popular-block-card-top-address__text">Москва, ЦАО, Пресненский,
+										Спи...</span>
+								</div>
+							</div>
+							<div class="popular-block-card-center box">
+								<img src="img/popular/card-a.png" alt="Изображение"
+									class="popular-block-card-center__img">
+							</div>
+							<div class="popular-block-card-bottom">
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Metro.webp" type="image/webp"><img src="img/popular/Metro.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Баррикадная</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Ruler.webp" type="image/webp"><img src="img/popular/Ruler.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">350 кв. м.</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Star.webp" type="image/webp"><img src="img/popular/Star.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Класс А</span>
+								</div>
+							</div>
+							<div class="popular-block-card-numbers">
+								<span class="popular-block-card-numbers__text">25 000 руб./м2 в год</span>
+							</div>
+						</a>
+						<a href="" class="popular-block-card swiper-slide">
+							<div class="popular-block-card-top">
+								<span class="popular-block-card-top__name">Бизнес-центр «Ринг Парк»</span>
+								<div class="popular-block-card-top-address">
+									<div class="popular-block-card-top-address__icon">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M13.6344 6.66699C13.6344 11.3337 8.08979 15.3337 8.08979 15.3337C8.08979 15.3337 2.54523 11.3337 2.54523 6.66699C2.54523 5.07569 3.12939 3.54957 4.16919 2.42435C5.209 1.29913 6.61928 0.666992 8.08979 0.666992C9.5603 0.666992 10.9706 1.29913 12.0104 2.42435C13.0502 3.54957 13.6344 5.07569 13.6344 6.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path
+												d="M8.08977 8.66699C9.11049 8.66699 9.93796 7.77156 9.93796 6.66699C9.93796 5.56242 9.11049 4.66699 8.08977 4.66699C7.06904 4.66699 6.24158 5.56242 6.24158 6.66699C6.24158 7.77156 7.06904 8.66699 8.08977 8.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</div>
+									<span class="popular-block-card-top-address__text">Москва, ЦАО, Пресненский,
+										Спи...</span>
+								</div>
+							</div>
+							<div class="popular-block-card-center box">
+								<img src="img/popular/card-a.png" alt="Изображение"
+									class="popular-block-card-center__img">
+							</div>
+							<div class="popular-block-card-bottom">
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Metro.webp" type="image/webp"><img src="img/popular/Metro.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Баррикадная</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Ruler.webp" type="image/webp"><img src="img/popular/Ruler.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">350 кв. м.</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Star.webp" type="image/webp"><img src="img/popular/Star.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Класс А</span>
+								</div>
+							</div>
+							<div class="popular-block-card-numbers">
+								<span class="popular-block-card-numbers__text">25 000 руб./м2 в год</span>
+							</div>
+						</a>
+						<a href="" class="popular-block-card swiper-slide">
+							<div class="popular-block-card-top">
+								<span class="popular-block-card-top__name">Бизнес-центр «Ринг Парк»</span>
+								<div class="popular-block-card-top-address">
+									<div class="popular-block-card-top-address__icon">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M13.6344 6.66699C13.6344 11.3337 8.08979 15.3337 8.08979 15.3337C8.08979 15.3337 2.54523 11.3337 2.54523 6.66699C2.54523 5.07569 3.12939 3.54957 4.16919 2.42435C5.209 1.29913 6.61928 0.666992 8.08979 0.666992C9.5603 0.666992 10.9706 1.29913 12.0104 2.42435C13.0502 3.54957 13.6344 5.07569 13.6344 6.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path
+												d="M8.08977 8.66699C9.11049 8.66699 9.93796 7.77156 9.93796 6.66699C9.93796 5.56242 9.11049 4.66699 8.08977 4.66699C7.06904 4.66699 6.24158 5.56242 6.24158 6.66699C6.24158 7.77156 7.06904 8.66699 8.08977 8.66699Z"
+												stroke="#333333" stroke-width="0.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</div>
+									<span class="popular-block-card-top-address__text">Москва, ЦАО, Пресненский,
+										Спи...</span>
+								</div>
+							</div>
+							<div class="popular-block-card-center box">
+								<img src="img/popular/card-a.png" alt="Изображение"
+									class="popular-block-card-center__img">
+							</div>
+							<div class="popular-block-card-bottom">
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Metro.webp" type="image/webp"><img src="img/popular/Metro.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Баррикадная</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Ruler.webp" type="image/webp"><img src="img/popular/Ruler.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">350 кв. м.</span>
+								</div>
+								<div class="popular-block-card-bottom-item">
+									<div class="popular-block-card-bottom-item__icon">
+										<picture><source srcset="img/popular/Star.webp" type="image/webp"><img src="img/popular/Star.png" alt="Метро"></picture>
+									</div>
+									<span class="popular-block-card-bottom-item__text">Класс А</span>
+								</div>
+							</div>
+							<div class="popular-block-card-numbers">
+								<span class="popular-block-card-numbers__text">25 000 руб./м2 в год</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="popular-navigation">
+					<div class="popular-navigation-prev">
+						<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M1 7L0.4 7.8C0.148194 7.61115 0 7.31476 0 7C0 6.68524 0.148194 6.38885 0.4 6.2L1 7ZM9.6 1.8L1.6 7.8L0.4 6.2L8.4 0.2L9.6 1.8ZM1.6 6.2L9.6 12.2L8.4 13.8L0.4 7.8L1.6 6.2Z"
+								fill="#333333" />
+						</svg>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="popular-navigation-next">
+						<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M9 7L9.6 7.8C9.85181 7.61115 10 7.31476 10 7C10 6.68524 9.85181 6.38885 9.6 6.2L9 7ZM0.4 1.8L8.4 7.8L9.6 6.2L1.6 0.2L0.4 1.8ZM8.4 6.2L0.4 12.2L1.6 13.8L9.6 7.8L8.4 6.2Z"
+								fill="#333333" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="offer">
+			<div class="container">
+				<h2 class="offer-title section-title">Получите лучшие предложения прямо сейчас</h2>
+			</div>
+			<div class="offer-content">
+				<div class="container">
+					<h3 class="offer-content__title">Выберите что вас интересует:</h3>
+					<div class="offer-content-block">
+						<a href="#" class="offer-content-block-card">
+							<span class="offer-content-block-card__text">Аренда</span>
+						</a>
+						<a href="#" class="offer-content-block-card">
+							<span class="offer-content-block-card__text">Покупка</span>
+						</a>
+						<a href="#" class="offer-content-block-card">
+							<span class="offer-content-block-card__text">Инвестиции</span>
+						</a>
+						<a href="#" class="offer-content-block-card">
+							<span class="offer-content-block-card__text">Услуги</span>
+						</a>
+						<span class="offer-content-block-numbers">01</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="service">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="service__title section-title">Наши услуги</h2>
+					</div>
+				</div>
+				<div class="row service__content">
+					<div class="col-12">
+						<div class="service__stroke">
+							<h3 class="service__name subtitle">Арендаторам/Покупателям</h3>
+							<div class="service__line"></div>
+						</div>
+						<div class="service__stroke">
+							<h3 class="service__name subtitle">Собственникам</h3>
+							<div class="service__line"></div>
+						</div>
+						<div class="service__stroke">
+							<h3 class="service__name subtitle">Инвесторам</h3>
+							<div class="service__line"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="form">
+			<div class="container">
+				<div class="form-block">
+					<div class="form-block-left">
+						<div class="form-block-left-content">
+							<span class="form-block-left-content__title">Быстрый подбор недвижимости</span>
+							<span class="form-block-left-content__subtitle">Пришлем в течение 30 минут</span>
+							<input type="text" placeholder="Имя" class="form-block-left-content__input">
+							<input type="text" placeholder="Телефон" class="form-block-left-content__input">
+							<input type="text" placeholder="Эл. почта" class="form-block-left-content__input">
+							<div class="form-block-left-content-agreement">
+								<div class="form-block-left-content-agreement-check">
+									<input type="checkbox" id="add-to-collection-1" name="add-to-collection-1"
+										value="yes" class="form-block-left-content-agreement-check__checkbox">
+									<label for="add-to-collection-1"
+										class="form-block-left-content-agreement-check-label">
+										<span class="form-block-left-content-agreement-check-label__text">Я согласен<br>
+											<a href="">
+												с политикой обработки персональных данных</a></span>
+									</label>
+								</div>
+								<button class="form-block-left-content-agreement__btn btn-1">Отправить</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-block-right box">
+						<picture><source srcset="img/form/request.webp" type="image/webp"><img src="img/form/request.png" alt="Изображение" class="form-block-right__img"></picture>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+	<div class="container">
+		<div
+			class="row d-flex justify-space-xl-between align-items-xl-start justify-space-lg-between align-items-lg-start justify-space-md-between align-items-md-start justify-space-center align-items-center">
+			<div
+				class="col-xl-3 col-lg-4 col-md-4 col-12 text-center d-flex flex-column align-items-xl-start align-items-lg-start align-items-md-start align-items-center text-xl-start text-lg-start text-md-start">
+				<h3 class="footer__title">Меню</h3>
+				<ul class="footer-menu">
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link footer-menu__link_u">Главная</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Поиск недвижимости</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Подбор недвижимости</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Консалтинг</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Аналитика</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-xl-3 d-xl-block d-none">
+				<h3 class="footer__title">Недвижимость</h3>
+				<ul class="footer-menu">
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Офисы</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Торговая</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">Склады</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">ПСН</a>
+					</li>
+					<li class="footer-menu__item">
+						<a href="#" class="footer-menu__link">ГАБ</a>
+					</li>
+				</ul>
+			</div>
+			<div
+				class="footer__column col-xl-3 col-lg-4 col-md-4 col-12 text-center d-flex flex-column align-items-xl-start align-items-lg-start align-items-md-start align-items-center text-xl-start text-lg-start text-md-start">
+				<h3 class="footer__title">Контакты</h3>
+				<div class="footer__block">
+					<span class="footer__contact d-block">127106 Москва</span>
+					<span class="footer__contact d-block">Лужнецкая набережная, 2/4 с16</span>
+				</div>
+				<div class="footer__line"></div>
+				<div class="footer__block">
+					<span class="footer__contact d-block">Телефон: <a href="tel:+74951111111">+7 (495) 111-11-11</a></span>
+					<span class="footer__contact d-block">Email: <a href="mailto:info@info.ru">info@info.ru</a></span>
+				</div>
+				<div class="footer__social">
+					<a href="#" class="footer__icon">
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M9.00225 0H8.99775C4.03538 0 0 4.0365 0 9C0 10.9688 0.6345 12.7935 1.71337 14.2751L0.59175 17.6186L4.05113 16.5128C5.47425 17.4555 7.17188 18 9.00225 18C13.9646 18 18 13.9624 18 9C18 4.03763 13.9646 0 9.00225 0ZM14.2391 12.7091C14.022 13.3223 13.1602 13.8307 12.4729 13.9792C12.0026 14.0794 11.3884 14.1593 9.32063 13.302C6.67575 12.2063 4.9725 9.51862 4.83975 9.34425C4.71263 9.16988 3.771 7.92112 3.771 6.62963C3.771 5.33813 4.42688 4.70925 4.69125 4.43925C4.90838 4.21763 5.26725 4.11637 5.6115 4.11637C5.72288 4.11637 5.823 4.122 5.913 4.1265C6.17737 4.13775 6.31012 4.1535 6.4845 4.57088C6.70162 5.094 7.23037 6.3855 7.29338 6.51825C7.3575 6.651 7.42163 6.831 7.33162 7.00538C7.24725 7.18538 7.173 7.26525 7.04025 7.41825C6.9075 7.57125 6.7815 7.68825 6.64875 7.8525C6.52725 7.99538 6.39 8.14838 6.543 8.41275C6.696 8.6715 7.22475 9.53437 8.00325 10.2274C9.00787 11.1217 9.82237 11.4075 10.1137 11.529C10.3309 11.619 10.5896 11.5976 10.7483 11.4289C10.9496 11.2118 11.1982 10.8518 11.4514 10.4974C11.6314 10.2431 11.8586 10.2116 12.0971 10.3016C12.3401 10.386 13.626 11.0216 13.8904 11.1532C14.1547 11.286 14.3291 11.349 14.3932 11.4604C14.4562 11.5718 14.4562 12.0949 14.2391 12.7091Z"
+								fill="white" />
+						</svg>
+					</a>
+					<a href="#" class="footer__icon">
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_1630_2360)">
+								<path
+									d="M7.06276 11.3861L6.76501 15.5741C7.19101 15.5741 7.37551 15.3911 7.59676 15.1713L9.59401 13.2626L13.7325 16.2933C14.4915 16.7163 15.0263 16.4936 15.231 15.5951L17.9475 2.86605L17.9483 2.8653C18.189 1.7433 17.5425 1.30455 16.803 1.5798L0.835511 7.69305C-0.254239 8.11605 -0.237739 8.72355 0.650261 8.9988L4.73251 10.2686L14.2148 4.3353C14.661 4.0398 15.0668 4.2033 14.733 4.4988L7.06276 11.3861Z"
+									fill="white" />
+							</g>
+							<defs>
+								<clipPath id="clip0_1630_2360">
+									<rect width="18" height="18" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+					<a href="#" class="footer__icon">
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_1630_2358)">
+								<path
+									d="M11.4978 2.98875H13.0726V0.12675C12.8009 0.08775 11.8666 0 10.7784 0C8.50784 0 6.95246 1.49025 6.95246 4.22925V6.75H4.4469V9.9495H6.95246V18H10.0244V9.95025H12.4286L12.8103 6.75075H10.0237V4.5465C10.0244 3.62175 10.263 2.98875 11.4978 2.98875Z"
+									fill="white" />
+							</g>
+							<defs>
+								<clipPath id="clip0_1630_2358">
+									<rect width="17.25" height="18" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+					<a href="#" class="footer__icon">
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M13.1275 0H4.87243C2.18573 0 0 2.18573 0 4.87243V13.1277C0 15.8142 2.18573 18 4.87243 18H13.1277C15.8142 18 18 15.8142 18 13.1277V4.87243C18 2.18573 15.8142 0 13.1275 0V0ZM8.99998 13.9217C6.28609 13.9217 4.07825 11.7139 4.07825 8.99998C4.07825 6.28609 6.28609 4.07825 8.99998 4.07825C11.7139 4.07825 13.9217 6.28609 13.9217 8.99998C13.9217 11.7139 11.7139 13.9217 8.99998 13.9217ZM14.0394 5.23896C13.2374 5.23896 12.5851 4.58665 12.5851 3.78465C12.5851 2.98265 13.2374 2.3302 14.0394 2.3302C14.8414 2.3302 15.4939 2.98265 15.4939 3.78465C15.4939 4.58665 14.8414 5.23896 14.0394 5.23896Z"
+								fill="white" />
+							<path
+								d="M9.00004 5.13379C6.86815 5.13379 5.13354 6.86825 5.13354 9.00028C5.13354 11.1322 6.86815 12.8668 9.00004 12.8668C11.1321 12.8668 12.8665 11.1322 12.8665 9.00028C12.8665 6.86825 11.1321 5.13379 9.00004 5.13379Z"
+								fill="white" />
+							<path
+								d="M14.0395 3.38574C13.8195 3.38574 13.6404 3.56482 13.6404 3.78482C13.6404 4.00482 13.8195 4.1839 14.0395 4.1839C14.2596 4.1839 14.4387 4.00496 14.4387 3.78482C14.4387 3.56468 14.2596 3.38574 14.0395 3.38574Z"
+								fill="white" />
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div
+				class="footer__column col-xl-3 p-xl-0 p-lg-0 col-lg-4 col-md-4 col-12 text-center d-flex flex-column align-items-xl-start align-items-lg-start align-items-md-start align-items-center text-xl-start text-lg-start text-md-start">
+				<h3 class="footer__title">Правовая информация</h3>
+				<span class="footer__contact d-block">Информация, размещенная на сайте,
+					не является публичной офертой.</span>
+				<span class="footer__contact d-block">© 2021, Все права защищены.</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="footer__lines"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="footer__logo d-flex align-items-center justify-content-center flex-column text-center">
+					<span class="footer__logotyp d-block">ACRE</span>
+					<span class="footer__sub">All Commercial real estate</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+	<script src="/uploads/assets/js/app.min.js?_v=20220623111940"></script>
+</body>
+
+</html>

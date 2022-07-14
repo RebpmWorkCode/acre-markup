@@ -1,0 +1,734 @@
+<div class="modal-card">
+    <div class="modal-card-block">
+        <div class="tabs-card" id="tabs-card">
+            <div class="tabs-card__nav">
+                <button class="tabs-card__btn tabs-card__btn_active">Метро</button>
+                <button class="tabs-card__btn">Округа и районы</button>
+                <button class="tabs-card__btn">По карте</button>
+            </div>
+            <!-- Схема метро -->
+            <div class="tabs-card__pane tabs-card__pane_show">
+                <div class="modal-card-block-content">
+                    <div class="modal-card-block-content-top">
+                        <div class="modal-card-block-content-item">
+                            <select data-placeholder="Выбрать линию целиком" class="select" name="language">
+                                <option></option>
+                                <option value="a">A</option>
+                                <option value="b">Б</option>
+                                <option value="c">В</option>
+                            </select>
+                        </div>
+                        <div class="modal-card-block-content-item">
+                            <select data-placeholder="Станции списком" class="select" name="language">
+                                <option></option>
+                                <option value="a">A</option>
+                                <option value="b">Б</option>
+                                <option value="c">В</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-card-block-content-center">
+                        <img src="img/modal-card/map.png" alt="Схема метро"
+                             class="modal-card-block-content-center__map">
+                    </div>
+                    <div class="modal-card-block-content-bottom">
+                        <button class="modal-card-block-content-bottom-btn btn-3">Сбросить</button>
+                        <div class="modal-card-block-content-bottom-active">
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                        </div>
+                        <button class="modal-card-block-content-bottom-btn btn-2">Найти</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs-card__pane">
+                <div class="modal-card-block-content-two">
+                    <div class="modal-card-block-content-two-county">
+                        <span class="modal-card-block-content-two-county__title">Административные округа</span>
+                        <div class="modal-card-block-content-two-county-block">
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="1" name="1" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="1" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ЦАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="2" name="2" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="2" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ЗАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="3" name="3" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="3" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">СЗАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="4" name="4" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="4" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">САО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="5" name="5" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="5" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">СВАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="6" name="6" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="6" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ВАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="7" name="7" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="7" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ЮВАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="8" name="8" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="8" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ЮАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="9" name="9" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="9" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ЮЗАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="10" name="10" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="10" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">НАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="11" name="11" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="11" class="modal-card-block-content-two-county-block-item-label">
+											<span
+                                                class="modal-card-block-content-two-county-block-item__text">ТАО</span>
+                                </label>
+                            </div>
+                            <div class="modal-card-block-content-two-county-block-item">
+                                <input type="checkbox" id="12" name="12" value="yes"
+                                       class="modal-card-block-content-two-county-block-item__checkbox">
+                                <label for="12" class="modal-card-block-content-two-county-block-item-label">
+											<span class="modal-card-block-content-two-county-block-item__text">г.
+												Зеленоград</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-card-block-content-two-district">
+                        <span class="modal-card-block-content-two-district__title">Районы</span>
+                        <div class="modal-card-block-content-two-district-block">
+                            <div class="modal-card-block-content-two-district-block-column">
+										<span
+                                            class="modal-card-block-content-two-district-block-column__title">ЦАО</span>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-1" name="CAO-1" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-1"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Арбат</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-2" name="CAO-2" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-2"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Басманный</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-3" name="CAO-3" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-3"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Замоскворечье</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-4" name="CAO-4" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-4"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Красносельский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-5" name="CAO-5" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-5"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Мещанский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-6" name="CAO-6" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-6"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Пресненский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-7" name="CAO-7" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-7"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Таганский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-8" name="CAO-8" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-8"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Тверской</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-9" name="CAO-9" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-9"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Хамовники</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="CAO-10" name="CAO-10" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-10"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Якиманка</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-card-block-content-two-district-block-column">
+										<span
+                                            class="modal-card-block-content-two-district-block-column__title">CАО</span>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-1" name="AO-1" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-1"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Арбат</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-2" name="AO-2" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-2"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Басманный</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-3" name="AO-3" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-3"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Замоскворечье</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-4" name="AO-4" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-4"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Красносельский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-5" name="AO-5" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="CAO-5"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Мещанский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-6" name="AO-6" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-6"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Пресненский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-7" name="AO-7" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-7"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Таганский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-8" name="AO-8" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-8"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Тверской</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-9" name="AO-9" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-9"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Хамовники</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="AO-10" name="AO-10" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="AO-10"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Якиманка</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-card-block-content-two-district-block-column">
+										<span
+                                            class="modal-card-block-content-two-district-block-column__title">ЗАО</span>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-1" name="O-1" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-1"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Арбат</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-2" name="O-2" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-2"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Басманный</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-3" name="O-3" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-3"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Замоскворечье</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-4" name="O-4" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-4"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Красносельский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-5" name="O-5" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-5"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Мещанский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-6" name="O-6" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-6"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Пресненский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-7" name="O-7" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-7"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Таганский</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-8" name="O-8" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-8"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Тверской</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-9" name="O-9" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-9"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Хамовники</span>
+                                    </label>
+                                </div>
+                                <div class="modal-card-block-content-two-county-block-item">
+                                    <input type="checkbox" id="O-10" name="O-10" value="yes"
+                                           class="modal-card-block-content-two-county-block-item__checkbox">
+                                    <label for="O-10"
+                                           class="modal-card-block-content-two-county-block-item-label">
+												<span
+                                                    class="modal-card-block-content-two-county-block-item__text">Якиманка</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-card-block-content-bottom">
+                        <button class="modal-card-block-content-bottom-btn btn-3">Сбросить</button>
+                        <div class="modal-card-block-content-bottom-active">
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                            <div class="modal-card-block-content-bottom-active-item">
+                                <button class="modal-card-block-content-bottom-active-item__close">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(0.693469 0.720487 -0.693469 0.720487 0 0.727539)"
+                                              stroke="#777777" />
+                                        <line y1="-0.5" x2="10.0942" y2="-0.5"
+                                              transform="matrix(-0.693469 0.720487 -0.693469 -0.720487 7 0)"
+                                              stroke="#777777" />
+                                    </svg>
+                                </button>
+                                <span class="modal-card-block-content-bottom-active-item__text">Выбранная
+											станция</span>
+                            </div>
+                        </div>
+                        <button class="modal-card-block-content-bottom-btn btn-2">Найти</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs-card__pane">
+                <div class="modal-card-block-content-three">
+                    <div class="modal-card-block-content-three-top">
+								<span class="modal-card-block-content-three-top__text">Выберите точку на карте и введите
+									радиус поиска</span>
+                        <input type="text" placeholder="Например: 7"
+                               class="modal-card-block-content-three-top-input">
+                        <span class="modal-card-block-content-three-top-unit">км</span>
+                    </div>
+                    <div class="modal-card-block-content-three-center">
+                        <script type="text/javascript" charset="utf-8" async
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A697de6f0d16ad53be0f9c0c329f2d7aeccb7ce71095769f52d864730f5bbc825&amp;width=100%25&amp;height=435&amp;lang=ru_RU&amp;scroll=true&_v=20220623111940"></script>
+                    </div>
+                    <div class="modal-card-block-content-bottom">
+                        <button class="modal-card-block-content-bottom-btn btn-3">Сбросить</button>
+                        <div class="modal-card-block-content-bottom-active">
+
+                        </div>
+                        <button class="modal-card-block-content-bottom-btn btn-2">Найти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
