@@ -1,3 +1,18 @@
 .grecaptcha-badge {
     display: none;
 }
+a.btn-1:hover, a.btn-2:hover {
+    color: var(--light);
+}
+
+.form-block-left-content-agreement-check__checkbox:checked+label::before {
+    background-image: url(../img/form/v.svg);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    background-position-y: 4px;
+}
+.form-block-left-content-agreement-check__checkbox:not(:checked)+label::before {
+    background: 0 0;
+}
+
