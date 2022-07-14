@@ -2,23 +2,33 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex align-items-center flex-wrap">
-                <a href="#" class="crumbs__link">Главная</a>
+                <a href="/" class="crumbs__link">Главная</a>
                 <span class="crumbs__arrow d-block">&gt;</span>
-                <a href="#" class="crumbs__link">Результаты поиска</a>
+                <a href="/agency/realty" class="crumbs__link">Результаты поиска</a>
+                {% if advertisement.Parent.id %}
+                    <span class="crumbs__arrow d-block">&gt;</span>
+                    <a href="/object_templates/advertisement_templates/view/{{ advertisement.Parent.id }}" class="crumbs__link">{{ advertisement.Parent.title }}</a>
+                {% endif %}
                 <span class="crumbs__arrow d-block">&gt;</span>
-                <a href="#" class="crumbs__link active">Бизнес-центр “Ринг Парк”</a>
+                <a href="{{ _view.request.here }}" class="crumbs__link active">ID {{ advertisement.Advertisement.id }}</a>
             </div>
         </div>
     </div>
 </section>
-
-<section class="description">
+<section class="description description-rent">
     <div class="container">
         <div class="row">
             <div class="col-10">
-                <h1 class="description__title">Бизнес-центр «Ринг Парк»</h1>
+                <h1 class="description__title">{{ advertisement.Advertisement.rent ? 'Аренда' : 'Продажа' }} {{ advertisement.Category.title|lower }}</h1>
             </div>
         </div>
+        {% if advertisement.Parent.id %}
+            <div class="row">
+                <div class="col-10">
+                    <h2 class="description__subtitle subtitle">{{ advertisement.Parent.title }}</h2>
+                </div>
+            </div>
+        {% endif %}
         <div class="row description__information">
             <div class="col-10 d-flex align-items-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,8 +39,7 @@
                         d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
                         stroke="#283655" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="description__placemark d-block">Пресненская наб., 6, стр. 2, ЦАО, Пресненский
-							район</span>
+                <span class="description__placemark d-block">{{ adView.getLocationTitle(advertisement) }}</span>
             </div>
         </div>
         <div class="row">
