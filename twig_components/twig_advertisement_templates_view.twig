@@ -1,0 +1,354 @@
+{% set flash = _view.loadHelper('Flash') %}
+{% set advertisement = advertisement_template %}
+{{ adView.setOgparh(advertisement) }}
+{{ adSeo.imageSrcLink(advertisement) }}
+{{ adView.setDefaults({default_picture: config.Site.no_photo_image}) }}
+{% set title = adSeo.pattern_title_template(advertisement) %}
+{{ _view.assign('title', title) }}
+{% set paramsValues = advertisement.CategoryParamValues ?? [] %}
+<section class="crumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center flex-wrap">
+                <a href="/" class="crumbs__link">Главная</a>
+                <span class="crumbs__arrow d-block">&gt;</span>
+                <a href="/object_templates/advertisement_templates" class="crumbs__link">Результаты поиска</a>
+                <span class="crumbs__arrow d-block">&gt;</span>
+                <a href="{{ _view.request.here }}" class="crumbs__link active">{{ title }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="description">
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <h1 class="description__title">{{ advertisement.Category.title }}  {{ title }}</h1>
+            </div>
+        </div>
+        <div class="row description__information">
+            <div class="col-10 d-flex align-items-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#283655" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#283655" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="description__placemark d-block">{{ adView.getLocationTitle(advertisement, 'street, house_number, county, district') }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8 col-lg-6 col-md-12">
+                <div class="swiper description-swiper">
+                    <div class="swiper-wrapper description-wrapper">
+                        {% set gallery = adView.getGallery(advertisement) %}
+                        {% set galleryList = gallery.items ?: [gallery.first] %}
+                        {% set galleryList = galleryList|filter(item => item.plan != '1') %}
+                        {% set galleryResizeList = imageResized.resizePicture(galleryList, {'width': '840', 'height': '515', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_advertisement_templates_view', 'cache_path_size': true}) %}
+                        {% for i, galleryItem in galleryResizeList %}
+                            <div class="swiper-slide description-slide" data-full="{{ galleryItem.full }}">
+                                <div class="box description__box">
+                                    <picture>
+                                        <img data-src="{{ galleryItem.src }}" {% if i == 0 %} src="{{ galleryItem.src }}" {% endif%} alt="{{ galleryItem.description }}" class="description__image">
+                                    </picture>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-prev description-button description-button-prev">
+                        <svg width="17" height="30" viewBox="0 0 17 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 28L15 15L2 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </div>
+                    <div class="swiper-button-next description-button description-button-next">
+                        <svg width="17" height="30" viewBox="0 0 17 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 28L15 15L2 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <div class="description__card">
+                    <div class="description__header d-flex align-items-center justify-content-between">
+                        <span class="description__id">ID объекта: <span>{{ advertisement.Advertisement.id }}</span></span>
+                        <button class="description__save">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
+                        </button>
+                    </div>
+                    <div class="description__info">
+                        <div class="description__item d-flex align-items-center">
+                            <picture>
+                                <source srcset="/uploads/assets/img/description/metro.webp" type="image/webp">
+                                <img src="/uploads/assets/img/description/metro.png" alt="станция метро" class="description__icon">
+                            </picture>
+                            <div class="description__names d-flex">
+
+
+                                <span class="description__name d-block">Выставочная</span>
+                                <span class="description__name d-block">Деловой центр</span>
+                            </div>
+                        </div>
+                        <div class="description__item d-flex align-items-center">
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.125 11.375V14.375H8.375V6.625H9.125V9.625V10.125H9.625H11.375H11.875V9.625V6.625H12.625V14.375H11.875V11.375V10.875H11.375H9.625H9.125V11.375ZM17.5089 3.49112L17.8624 3.13756L17.5089 3.49112C17.7433 3.72554 17.875 4.04348 17.875 4.375V16.625C17.875 16.9565 17.7433 17.2745 17.5089 17.5089C17.2745 17.7433 16.9565 17.875 16.625 17.875H4.375C4.04348 17.875 3.72554 17.7433 3.49112 17.5089L3.13756 17.8624L3.49112 17.5089C3.2567 17.2745 3.125 16.9565 3.125 16.625V4.375C3.125 4.04348 3.2567 3.72554 3.49112 3.49112C3.72554 3.2567 4.04348 3.125 4.375 3.125H16.625C16.9565 3.125 17.2745 3.2567 17.5089 3.49112ZM4.375 3.875H3.875V4.375V16.625V17.125H4.375H16.625H17.125V16.625V4.375V3.875H16.625H4.375Z" stroke="#333333" /></svg>
+                            <span class="description__name d-block">ИФНС №3</span>
+                        </div>
+                        <div class="description__item d-flex align-items-center">
+                            <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0L12.8574 7.25532H20.4861L14.3143 11.7394L16.6717 18.9947L10.5 14.5106L4.32825 18.9947L6.68565 11.7394L0.513906 7.25532H8.1426L10.5 0Z" fill="#333333" /></svg>
+                            <span class="description__name d-block">Класс БЦ - A</span>
+                        </div>
+                        <div class="description__item d-flex align-items-center">
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.6761 0.867425L0.867334 19.6765C0.499834 20.0437 0.62485 20.3439 1.14394 20.3439H1.38577V19.524H1.69519V20.3439H2.30091V19.524H2.61001V20.3439H3.21605V19.524H3.52515V20.3439H4.13087V18.8024H4.44029V20.3439H5.09687V19.524H5.40661V20.3439H6.01233V19.524H6.32143V20.3439H6.92747V19.524H7.2369V20.3439H7.84261V18.8024H8.15138V20.3439H8.80861V19.524H9.11771V20.3439H9.72375V19.524H10.0332V20.3439H10.6386V19.524H10.9483V20.3439H11.5544V18.8024H11.8631V20.3439H12.5204V19.524H12.8295V20.3439H13.4352V19.524H13.7449V20.3439H14.3506V19.524H14.6597V20.3439H15.2658V18.8024H15.5749V20.3439H16.2318V19.524H16.5412V20.3439H17.1469V19.524H17.4563V20.3439H18.0621V19.524H18.3708V20.3439H18.9772V18.8024H19.2866V20.3439H19.3982C19.6486 20.3435 19.8887 20.2439 20.0659 20.0669C20.2431 19.89 20.3431 19.65 20.3438 19.3996V1.14403C20.3438 0.624612 20.043 0.499925 19.6761 0.867425ZM15.9854 15.0408C15.9846 15.291 15.8848 15.5307 15.7079 15.7077C15.531 15.8846 15.2912 15.9843 15.041 15.9851H11.6695C11.1501 15.9851 11.0261 15.6846 11.3926 15.3177L15.317 11.3937C15.6841 11.0268 15.985 11.1512 15.985 11.6706V15.0408H15.9854Z" fill="#333333" /></svg>
+                            <span class="description__name d-block">Площади от 351 кв. м.</span>
+                        </div>
+                    </div>
+                    <span class="description__call text-center d-flex align-items-center justify-content-center">
+                        Звоните:
+                        <a class="description__phone" href="tel:+74957777777">8 (495) 777-77-77</a>
+                    </span>
+                    <div class="description__buttons d-flex flex-xl-column flex-lg-row flex-md-row align-items-xl-center justify-content-xl-center justify-content-lg-between justify-content-md-center flex-sm-row justify-content-sm-center flex-column align-items-center">
+                        <button class="description__btn btn-2">Скачать презентацию</button>
+                        <button class="description__btn btn-1">Назначить просмотр</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="tabs" id="tabs">
+                    <div class="tabs__nav d-flex flex-xl-nowrap flex-lg-nowrap flex-wrap">
+                        <button class="tabs__nav-link tabs__nav-link--active">Архитектура</button>
+                        <button class="tabs__nav-link">Инженерные системы</button>
+                        <button class="tabs__nav-link">Охрана и сервис</button>
+                        <button class="tabs__nav-link">Парковка</button>
+                        <button class="tabs__nav-link">Телекоммуникации</button>
+                    </div>
+                    <div class="tabs__content tabs__content--active">
+                        <div class="description__column d-flex flex-column">
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character d-block">Общая площадь, кв. м.</span>
+                                <span class="description__value d-block">3000</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character d-block">Этажей в здании</span>
+                                <span class="description__value">3000</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character d-block">Материал стен</span>
+                                <span class="description__value">Кирпично-монолитный</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character d-block">Год постройки/сдачи</span>
+                                <span class="description__value">2005</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character d-block">Высота потолков, м</span>
+                                <span class="description__value">3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="tabs__main d-flex flex-xl-row flex-lg-row flex-column">
+                            <div class="description__column d-flex flex-column">
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Лифты в здании</span>
+                                    <span class="description__value">3</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Центральное кондиционирование</span>
+                                    <span class="description__value">Да</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Система водоснабжения</span>
+                                    <span class="description__value">Параметр</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Система отопления</span>
+                                    <span class="description__value">Параметр</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Аварийное электоснабжение</span>
+                                    <span class="description__value">Да</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Приточно-вытяжная вентиляция</span>
+                                    <span class="description__value">Нет</span>
+                                </div>
+                            </div>
+                            <div class="description__column d-flex flex-column">
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Пожарная сигнализация</span>
+                                    <span class="description__value">Да</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Система пожаротушения</span>
+                                    <span class="description__value">Да</span>
+                                </div>
+                                <div class="description__group d-flex align-items-start">
+                                    <span class="description__character_2 d-block">Система оповещения о пожаре</span>
+                                    <span class="description__value">Нет</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="description__column d-flex flex-column">
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Охрана здания</span>
+                                <span class="description__value">3</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Центральный ресепшн</span>
+                                <span class="description__value">Да</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Видеонаблюдение</span>
+                                <span class="description__value">Да</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Система контроля доступа</span>
+                                <span class="description__value">Да</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Управляющая компания</span>
+                                <span class="description__value">Название</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="description__column d-flex flex-column">
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Охрана здания</span>
+                                <span class="description__value">3</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Центральный ресепшн</span>
+                                <span class="description__value">Да</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Видеонаблюдение</span>
+                                <span class="description__value">Да</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Система контроля доступа</span>
+                                <span class="description__value">Да</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_3 d-block">Управляющая компания</span>
+                                <span class="description__value">Название</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="description__column d-flex flex-column">
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_4 d-block">Интернет</span>
+                                <span class="description__value">Есть</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_4 d-block">Скорость передачи данных, Гбит/с</span>
+                                <span class="description__value">15</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_4 d-block">Городской телефон</span>
+                                <span class="description__value">Есть</span>
+                            </div>
+                            <div class="description__group d-flex align-items-start">
+                                <span class="description__character_4 d-block">Цифровое ТВ</span>
+                                <span class="description__value">Есть</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <span class="description__sub d-block">Описание:</span>
+                <p class="description__text">Процесс заключения договора аренды помещения офисного здания должен
+                    осуществляться в соответствии с положением гражданского законодательства по правилу аналогии и
+                    норм, которые регулируют правила аренды зданий и объектов.
+                    Перед тем, как заключать договор на аренду или приобретения помещения, компания ACRE обращает
+                    внимание на такие важные показатели как ценовой диапазон, временной промежуток сдачи/передачи,
+                    местоположение и состояние объекта, транспортная доступность. Перед тем, как заключить сделку,
+                    юристы компании тщательно проверяют документацию.</p>
+                <p class="description__text">Процесс заключения договора аренды помещения офисного здания должен
+                    осуществляться в соответствии с положением гражданского законодательства по правилу аналогии и
+                    норм, которые регулируют правила аренды зданий и объектов.
+                    Перед тем, как заключать договор на аренду или приобретения помещения, компания ACRE обращает
+                    внимание на такие важные показатели как ценовой диапазон, временной промежуток сдачи/передачи,
+                    местоположение и состояние объекта, транспортная доступность. Перед тем, как заключить сделку,
+                    юристы компании тщательно проверяют документацию.</p>
+                <p class="description__text">Процесс заключения договора аренды помещения офисного здания должен
+                    осуществляться в соответствии с положением гражданского законодательства по правилу аналогии и
+                    норм, которые регулируют правила аренды зданий и объектов.
+                    Перед тем, как заключать договор на аренду или приобретения помещения, компания ACRE обращает
+                    внимание на такие важные показатели как ценовой диапазон, временной промежуток сдачи/передачи,
+                    местоположение и состояние объекта, транспортная доступность. Перед тем, как заключить сделку,
+                    юристы компании тщательно проверяют документацию.</p>
+                <p class="description__text">Процесс заключения договора аренды помещения офисного здания должен
+                    осуществляться в соответствии с положением гражданского законодательства по правилу аналогии и
+                    норм, которые регулируют правила аренды зданий и объектов.
+                    Перед тем, как заключать договор на аренду или приобретения помещения, компания ACRE обращает
+                    внимание на такие важные показатели как ценовой диапазон, временной промежуток сдачи/передачи,
+                    местоположение и состояние объекта, транспортная доступность. Перед тем, как заключить сделку,
+                    юристы компании тщательно проверяют документацию.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{ croogo_region alias = "twig_advertisement_templates_view_objects" }}
+<section class="form" id="form">
+    <div class="container">
+        {{ flash.render('contact_with_agent') }}
+        {{ form.create('AdvertisementMessage', {'class': 'form-block'}) }}
+        {{ form.hidden('advertisement_id', {'value': advertisement.Advertisement.id}) }}
+        <div class="form-block-left">
+            <div class="form-block-left-content">
+                <span class="form-block-left-content__title">Быстрый подбор недвижимости</span>
+                <span class="form-block-left-content__subtitle">Пришлем в течение 30 минут</span>
+                <label class="d-block w-100">
+                    {{ form.input('AdvertisementMessage.fio', {
+                        'type': 'text',
+                        'placeholder': 'Имя',
+                        'class': 'form-block-left-content__input',
+                        'div': false,
+                        'label': false,
+                    }) }}
+                </label>
+                <label class="d-block w-100">
+                    {{ form.input('AdvertisementMessage.phone', {
+                        'type': 'tel',
+                        'placeholder': 'Телефон',
+                        'class': 'form-block-left-content__input phone-mask',
+                        'div': false,
+                        'label': false,
+                    }) }}
+                </label>
+                <label class="d-block w-100">
+                    {{ form.input('AdvertisementMessage.email', {
+                        'type': 'email',
+                        'placeholder': 'Эл. почта',
+                        'class': 'form-block-left-content__input',
+                        'div': false,
+                        'label': false,
+                    }) }}
+                </label>
+                {% if recaptcha.hasKey() %}
+                    {{ recaptcha.display_form({'id': 'contact_with_agent_recaptcha', 'div': 'recaptcha-block'}) }}
+                {% endif %}
+                <div class="form-block-left-content-agreement">
+                    <div class="form-block-left-content-agreement-check">
+                        {{ form.checkbox('confirmation', {'class': 'form-block-left-content-agreement-check__checkbox', 'value': 1, 'checked': true, 'hiddenField': false}) }}
+                        <label for="{{ form.domId('confirmation') }}" class="form-block-left-content-agreement-check-label">
+                                    <span class="form-block-left-content-agreement-check-label__text">
+                                        Я согласен<br> <a href="">с политикой обработки персональных данных</a>
+                                    </span>
+                        </label>
+                    </div>
+                    <button type="submit" class="form-block-left-content-agreement__btn btn-1">Отправить</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-block-right box">
+            <picture>
+                <source srcset="/uploads/assets/img/form/request.webp" type="image/webp">
+                <img src="/uploads/assets/img/form/request.png" alt="Изображение" class="form-block-right__img">
+            </picture>
+        </div>
+        {{ form.end() }}
+    </div>
+</section>
