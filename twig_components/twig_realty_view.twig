@@ -329,4 +329,64 @@
 </section>
 {{ croogo_region alias = "twig_realty_view_objects" }}
 {{ croogo_region alias = "twig_realty_popular" }}
-{{ croogo_region alias = "twig_realty_form_create_bid" }}
+<section class="form" id="form">
+    <div class="container">
+        {{ flash.render('contact_with_agent') }}
+        {{ form.create('AdvertisementMessage', {'class': 'form-block'}) }}
+        {{ form.hidden('advertisement_id', {'value': advertisement.Advertisement.id}) }}
+        <div class="form-block-left">
+            <div class="form-block-left-content">
+                <span class="form-block-left-content__title">Быстрый подбор недвижимости</span>
+                <span class="form-block-left-content__subtitle">Пришлем в течение 30 минут</span>
+                <label class="d-block w-100">
+                    {{ form.input('AdvertisementMessage.fio', {
+                        'type': 'text',
+                        'placeholder': 'Имя',
+                        'class': 'form-block-left-content__input',
+                        'div': false,
+                        'label': false,
+                    }) }}
+                </label>
+                <label class="d-block w-100">
+                    {{ form.input('AdvertisementMessage.phone', {
+                        'type': 'tel',
+                        'placeholder': 'Телефон',
+                        'class': 'form-block-left-content__input phone-mask',
+                        'div': false,
+                        'label': false,
+                    }) }}
+                </label>
+                <label class="d-block w-100">
+                    {{ form.input('AdvertisementMessage.email', {
+                        'type': 'email',
+                        'placeholder': 'Эл. почта',
+                        'class': 'form-block-left-content__input',
+                        'div': false,
+                        'label': false,
+                    }) }}
+                </label>
+                {% if recaptcha.hasKey() %}
+                    {{ recaptcha.display_form({'id': 'contact_with_agent_recaptcha', 'div': 'recaptcha-block'}) }}
+                {% endif %}
+                <div class="form-block-left-content-agreement">
+                    <div class="form-block-left-content-agreement-check">
+                        {{ form.checkbox('confirmation', {'class': 'form-block-left-content-agreement-check__checkbox', 'value': 1, 'checked': true, 'hiddenField': false}) }}
+                        <label for="{{ form.domId('confirmation') }}" class="form-block-left-content-agreement-check-label">
+                                    <span class="form-block-left-content-agreement-check-label__text">
+                                        Я согласен<br> <a href="">с политикой обработки персональных данных</a>
+                                    </span>
+                        </label>
+                    </div>
+                    <button type="submit" class="form-block-left-content-agreement__btn btn-1">Отправить</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-block-right box">
+            <picture>
+                <source srcset="/uploads/assets/img/form/request.webp" type="image/webp">
+                <img src="/uploads/assets/img/form/request.png" alt="Изображение" class="form-block-right__img">
+            </picture>
+        </div>
+        {{ form.end() }}
+    </div>
+</section>

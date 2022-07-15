@@ -1,0 +1,91 @@
+<section class="main-screen-home" style="background: url('/uploads/assets/img/main-screen-home/background.png'); background-size: cover; background-position: center center;">
+    <div class="container">
+        <div class="main-screen-home-block">
+            <h1 class="main-screen-home__title title">Коммерческая недвижимость в Москве</h1>
+            <span class="main-screen-home__subtitle">Поиск по 7000+ объектам Москвы и Московской области</span>
+            {{ croogo_region alias = "twig_realty_filter" }}
+        </div>
+    </div>
+</section>
+<section class="direction">
+    <div class="container">
+        <div class="direction-block">
+            <div class="direction-block-top">
+                <a href="/agency/realty?category_id=44" class="direction-block-top-card box">
+                    <picture>
+                        <source srcset="/uploads/assets/img/direction/office.webp" type="image/webp">
+                        <img src="/uploads/assets/img/direction/office.png" alt="Офис" class="direction-block-top-card__img">
+                    </picture>
+                    <span class="direction-block-top-card__text">Офисы</span>
+                </a>
+                <a href="/agency/realty?category_id=46" class="direction-block-top-card box">
+                    <picture>
+                        <source srcset="/uploads/assets/img/direction/stock.webp" type="image/webp">
+                        <img src="/uploads/assets/img/direction/stock.png" alt="Склад" class="direction-block-top-card__img">
+                    </picture>
+                    <span class="direction-block-top-card__text">Склады</span>
+                </a>
+            </div>
+            <div class="direction-block-bottom">
+                <a href="/agency/realty?category_id=50" class="direction-block-bottom-card box">
+                    <picture>
+                        <source srcset="/uploads/assets/img/direction/pcn.webp" type="image/webp">
+                        <img src="/uploads/assets/img/direction/pcn.png" alt="ПСН" class="direction-block-bottom-card__img">
+                    </picture>
+                    <span class="direction-block-bottom-card__text">ПСН</span>
+                </a>
+                <a href="/agency/realty?category_id=43" class="direction-block-bottom-card box">
+                    <picture>
+                        <source srcset="/uploads/assets/img/direction/gap.webp" type="image/webp">
+                        <img src="/uploads/assets/img/direction/gap.png" alt="ГАБ" class="direction-block-bottom-card__img">
+                    </picture>
+                    <span class="direction-block-bottom-card__text">ГАБ</span>
+                </a>
+                <a href="/agency/realty?category_id=48" class="direction-block-bottom-card box">
+                    <img src="/uploads/assets/img/direction/trading.png" alt="Торговля" class="direction-block-bottom-card__img">
+                    <span class="direction-block-bottom-card__text">Торговая</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{{ croogo_region alias = "twig_realty_popular" }}
+<section class="offer">
+    <div class="container">
+        <h2 class="offer-title section-title">Получите лучшие предложения прямо сейчас</h2>
+    </div>
+    <div class="offer-content">
+        <div class="container">
+            <h3 class="offer-content__title">Выберите что вас интересует:</h3>
+            <div class="offer-content-block">
+                <a href="#" class="offer-content-block-card"><span class="offer-content-block-card__text">Аренда</span></a>
+                <a href="#" class="offer-content-block-card"><span class="offer-content-block-card__text">Покупка</span></a>
+                <a href="#" class="offer-content-block-card"><span class="offer-content-block-card__text">Инвестиции</span></a>
+                <a href="#" class="offer-content-block-card"><span class="offer-content-block-card__text">Услуги</span></a>
+                <span class="offer-content-block-numbers">01</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="service">
+    {% if services %}
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="service__title section-title">Наши услуги</h2>
+                </div>
+            </div>
+            <div class="row service__content">
+                <div class="col-12">
+                    {% for service in services %}
+                        <div class="service__stroke">
+                            <h3 class="service__name subtitle">{{ service.title }}</h3>
+                            <div class="service__line"></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>
+{{ croogo_region alias = "twig_realty_form_create_bid" }}
