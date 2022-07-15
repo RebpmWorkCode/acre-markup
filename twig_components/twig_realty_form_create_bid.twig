@@ -1,14 +1,22 @@
+{% set flash = _view.loadHelper('Flash') %}
 <section class="form">
     <div class="container">
-        {{ flash.render('contact_with_agent') }}
-        {{ form.create('AdvertisementMessage', {'class': 'form-block'}) }}
-            {{ form.hidden('advertisement_id', {'value': advertisement.Advertisement.id}) }}
+        {{ flash.render() }}
+        {{ form.create('Bid', {'class': 'form-block', 'url': {'plugin': 'agency', 'controller': 'bids', 'action': 'add'}}) }}
+            {{ form.hidden('Bid.category_id', {'value': 2}) }}
+            {{ form.hidden('Bid.rent', {'value': 1}) }}
+            {{ form.hidden('Bid.for_site', {'value': 1}) }}
+            {{ form.hidden('Bid.price_from', {'value': 0}) }}
+            {{ form.hidden('Bid.price_to', {'value': 1000}) }}
+            {{ form.hidden('Bid.comment', {'value': 'Заявка добавлена через форму Быстрый подбор недвижимости на сайте'}) }}
+            {{ form.hidden('Bid.source_id', {'value': 12}) }}
+            {{ form.hidden('ReferrerData.url', {'value': _view.request.here()}) }}
             <div class="form-block-left">
                 <div class="form-block-left-content">
                     <span class="form-block-left-content__title">Быстрый подбор недвижимости</span>
                     <span class="form-block-left-content__subtitle">Пришлем в течение 30 минут</span>
                     <label class="d-block w-100">
-                        {{ form.input('AdvertisementMessage.fio', {
+                        {{ form.input('Contractor.0.fio', {
                             'type': 'text',
                             'placeholder': 'Имя',
                             'class': 'form-block-left-content__input',
@@ -17,7 +25,8 @@
                         }) }}
                     </label>
                     <label class="d-block w-100">
-                        {{ form.input('AdvertisementMessage.phone', {
+                        {{ form.hidden('Contractor.0.code', {'value': '7'}) }}
+                        {{ form.input('Contractor.0.phone', {
                             'type': 'tel',
                             'placeholder': 'Телефон',
                             'class': 'form-block-left-content__input phone-mask',
@@ -26,7 +35,7 @@
                         }) }}
                     </label>
                     <label class="d-block w-100">
-                        {{ form.input('AdvertisementMessage.email', {
+                        {{ form.input('Contractor.0.email', {
                             'type': 'email',
                             'placeholder': 'Эл. почта',
                             'class': 'form-block-left-content__input',
@@ -35,7 +44,7 @@
                         }) }}
                     </label>
                     {% if recaptcha.hasKey() %}
-                        {{ recaptcha.display_form({'id': 'contact_with_agent_recaptcha', 'div': 'recaptcha-block'}) }}
+                        {{ recaptcha.display_form({'id': 'create_bid_recaptcha', 'div': 'recaptcha-block'}) }}
                     {% endif %}
                     <div class="form-block-left-content-agreement">
                         <div class="form-block-left-content-agreement-check">

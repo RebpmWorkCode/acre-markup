@@ -1,7 +1,7 @@
 const lazyLoadInstance = new LazyLoad({});
 const TwigGallery = {
     run: () => {
-        document.querySelector('.description-swiper').swiper.on('slideChange', function () {
+        document.querySelector('.description-swiper')?.swiper.on('slideChange', function () {
             lazyLoadInstance.update();
         });
     },
@@ -27,18 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     TwigGallery.runLightbox('.description-slide');
     TwigGallery.runLightbox('.description-rent-slide');
 
-    document.querySelector('.description-info__more').addEventListener('click', (e) => {
+    document.querySelector('.description-info__more')?.addEventListener('click', (e) => {
         e.preventDefault();
         let tabButton = document.querySelector(`button${e.target.getAttribute('href')}`);
         tabButton.scrollIntoView();
         tabButton.dispatchEvent(new MouseEvent('click'));
     })
 
-    document.querySelector('.description__button-form').addEventListener('click', (e) => {
+    document.querySelector('.description__button-form')?.addEventListener('click', (e) => {
         e.preventDefault();
         let container = document.querySelector(e.target.getAttribute('href'));
         container.scrollIntoView();
     })
 
     $('.phone-mask').mask('+7 (000) 000-00-00');
+
+    let formFlash = document.querySelector('.form #flashMessage')
+    if (formFlash) {
+        formFlash.scrollIntoView();
+    }
 })
