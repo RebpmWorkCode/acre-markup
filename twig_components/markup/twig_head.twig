@@ -8,8 +8,8 @@
     {{ siteInfo.favicon() }}
     {{ meta.meta() }}
     {{ _view.fetch('meta') }}
-    <link rel="stylesheet" href="/uploads/assets/css/style.min.css?_v=20220623111940">
-    <link rel="stylesheet" href="/uploads/assets/css/style-fix.css?v=2">
+    {{ html.css('/uploads/assets/css/style.min.css?_v=20220623111940') }}
+    {{ html.css('/uploads/assets/css/style-fix.css?v=2') }}
     {{ _view.fetch('css') }}
 </head>
 <body>

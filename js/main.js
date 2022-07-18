@@ -4,6 +4,7 @@ const TwigGallery = {
         document.querySelector('.description-swiper')?.swiper.on('slideChange', function () {
             lazyLoadInstance.update();
         });
+
     },
     runLightbox: (selector) => {
         let galleryList = [];
@@ -23,6 +24,8 @@ const TwigGallery = {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    lazyLoadInstance.update();
+
     TwigGallery.run();
     TwigGallery.runLightbox('.description-slide');
     TwigGallery.runLightbox('.description-rent-slide');
