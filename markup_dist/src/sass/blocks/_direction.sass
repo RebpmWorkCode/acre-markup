@@ -1,0 +1,146 @@
+.direction
+    padding-top: 157px
+    &-block
+        &-top
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding-bottom: 30px
+            &-card
+                max-width: 615px
+                display: block
+                width: 100%
+                border-radius: 5px
+                height: 200px
+                color: var(--text)
+                filter: drop-shadow(0px 0px 26px rgba(0, 0, 0, 0.4))
+                &:hover
+                    color: var(--text)
+                &__text
+                    position: absolute
+                    font-size: 34px
+                    display: block
+                    width: 157px
+                    text-align: center
+                    height: 29px
+                    margin: auto
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    +Pbold
+        &-bottom
+            display: flex
+            justify-content: space-between
+            align-items: center
+            &-card
+                display: block
+                max-width: 400px
+                border-radius: 5px
+                width: 100%
+                height: 200px
+                color: var(--text)
+                filter: drop-shadow(0px 0px 26px rgba(0, 0, 0, 0.4))
+                &:hover
+                    color: var(--text)
+                &__text
+                    position: absolute
+                    font-size: 34px
+                    display: block
+                    width: 157px
+                    text-align: center
+                    height: 29px
+                    margin: auto
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    +Pbold
+
+
+@media screen and ( max-width: 1399.98px )
+    .direction
+        &-block
+            &-top
+                &-card
+                    max-width: 542px
+                    width: 100%
+                    &__img
+                        height: 100%
+                        width: auto
+            &-bottom
+                &-card
+                    max-width: 350px
+                    width: 100%
+                    &__img
+                        height: 100%
+                        width: auto
+
+@media screen and ( max-width: 1199.98px )
+    .direction
+        &-block
+            &-top
+                &-card
+                    max-width: 454px
+                    width: 100%
+                    height: 170px
+                    &__text
+                        font-size: 28px
+                        line-height: 28px
+            &-bottom
+                &-card
+                    max-width: 294px
+                    width: 100%
+                    height: 170px
+                    &__text
+                        font-size: 28px
+                        line-height: 28px
+                    
+@media screen and ( max-width: 991.98px )
+    .direction
+        padding-top: 290px
+        &-block
+            &-top
+                &-card
+                    max-width: 335px
+                    width: 100%
+                    height: 160px
+                    &__text
+                        font-size: 24px
+                        line-height: 24px
+            &-bottom
+                &-card
+                    max-width: 215px
+                    width: 100%
+                    height: 160px
+                    &__text
+                        font-size: 24px
+                        line-height: 24px
+
+@media screen and ( max-width: 767.98px )
+    .direction
+        padding-top: 550px
+        &-block
+            &-top
+                flex-direction: column
+                padding-bottom: 0
+                &-card
+                    max-width: 100%
+                    width: 100%
+                    height: 160px
+                    margin-bottom: 30px
+                    &__text
+                        font-size: 24px
+                        line-height: 24px
+            &-bottom
+                flex-direction: column
+                &-card
+                    max-width: 100%
+                    width: 100%
+                    height: 160px
+                    margin-bottom: 30px
+                    &:last-child
+                        margin-bottom: 0
+                    &__text
+                        font-size: 24px
+                        line-height: 24px

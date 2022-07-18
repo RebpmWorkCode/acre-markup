@@ -1,0 +1,107 @@
+.offer
+	&-title
+		padding-bottom: 17px
+	&-content
+		padding: 72px 0 68px 0
+		background: #283655
+		&__title
+			padding-bottom: 70px
+			color: #ffffff
+			font-size: 24px
+			+Gmed
+		&-block
+			display: flex
+			justify-content: space-between
+			position: relative
+			&-card
+				display: flex
+				max-width: 292px
+				width: 100%
+				height: 160px
+				border-radius: 5px
+				justify-content: center
+				align-items: center
+				flex-direction: column
+				color: #A28854
+				font-size: 16px
+				background: #ffffff
+				+Gbold
+				&:hover
+					color: #A28854
+			&-numbers
+				position: absolute
+				color: #A28854
+				top: -300px
+				right: 0
+				font-size: 250px
+				line-height: 200px
+				height: 200px
+				+Preg
+
+@media screen and ( max-width: 1399.98px )
+	.offer
+		&-content
+			&-block
+				&-card
+					max-width: 260px
+
+@media screen and ( max-width: 1199.98px )
+	.offer
+		&-content
+			&-block
+				&-card
+					max-width: 220px
+					height: 130px
+				&-numbers
+					top: -290px
+					font-size: 200px
+					line-height: 200px
+					height: 200px
+					+Preg
+
+@media screen and ( max-width: 991.98px )
+	.offer
+		&-title
+			max-width: 70%
+			line-height: 35px
+		&-content
+			padding: 60px 0 60px 0
+			&__title
+				font-size: 18px
+				padding-bottom: 50px
+			&-block
+				flex-wrap: wrap
+				&-card
+					max-width: 340px
+					height: 160px
+					margin-bottom: 20px
+				&-numbers
+					top: -230px
+					font-size: 170px
+					line-height: 170px
+					height: 170px
+
+@media screen and ( max-width: 767.98px )
+	.offer
+		&-content
+			&-block
+				flex-wrap: wrap
+				&-card
+					max-width: 100%
+					height: 160px
+					margin-bottom: 20px
+
+@media screen and ( max-width: 575.98px )
+	.offer
+		&-content
+			&-block
+				flex-wrap: wrap
+				&-card
+					max-width: 100%
+					height: 160px
+					margin-bottom: 20px
+				&-numbers
+					top: -197px
+					font-size: 100px
+					line-height: 100px
+					height: 100px

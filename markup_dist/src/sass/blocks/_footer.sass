@@ -1,0 +1,81 @@
+.footer
+	padding: 95px 0 110px 0
+	background-color: #283655
+	color: var(--light)
+	&__title
+		font-size: 24px
+		letter-spacing: 1px
+		margin-bottom: 20px
+		+Gbold
+	&-menu
+		&__item
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		&__link
+			color: var(--light)
+			+Gmed
+			&_u
+				text-decoration: underline
+	&__line
+		height: 1px
+		max-width: 223px
+		width: 100%
+		background-color: #fff
+		margin: 15px 0
+	&__contact
+		margin-bottom: 10px
+		max-width: 272px
+		+Gmed
+		&:last-child
+			margin-bottom: 0
+		a
+			color: var(--light)
+	&__social
+		margin-top: 25px
+	&__icon
+		margin-right: 35px
+		&:last-child
+			margin-right: 0
+	&__lines
+		width: 100%
+		height: 1px
+		background-color: #777
+		margin: 95px 0 60px 0
+	&__logo
+		color: #A28854
+		text-transform: uppercase
+	&__logotyp
+		font-size: 50px
+		letter-spacing: 59.3px
+		margin-bottom: 35px
+		+Pbold
+	&__sub
+		letter-spacing: 13px
+		font-size: 18px
+		+Glight
+
+@media (max-width: 991.98px)
+	.footer
+		&__line
+			max-width: 200px
+		&__contact
+			max-width: 210px
+
+@media (max-width: 767.98px)
+	.footer
+		padding: 40px 0 65px 0
+		&__column
+			margin-top: 40px
+		&__contact
+			max-width: 272px
+		&__logotyp
+			font-size: 36px
+			letter-spacing: 24.3px
+			margin-bottom: 23px
+		&__sub
+			letter-spacing: 4px
+			font-size: 12px
+		&__lines
+			margin: 55px auto 35px
+			max-width: 260px

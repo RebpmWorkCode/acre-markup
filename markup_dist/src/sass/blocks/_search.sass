@@ -1,0 +1,258 @@
+.search
+	padding-bottom: 70px
+	&__block
+		padding-top: 15px
+		padding-bottom: 15px
+	&__found
+		font-size: 16px
+		margin-right: 40px
+		+Gbold
+	&__object
+		text-decoration: underline
+		margin-left: 5px
+		color: var(--text)
+	&__layout
+		margin-right: 40px
+		&:last-child
+			margin-right: 0
+	&__wrapper
+		margin-right: 70px
+		.active
+			path
+				fill: #333
+	&__item
+		margin-right: 49px
+		color: var(--text)
+		text-decoration: underline
+		&:last-child
+			margin-right: 0
+	&__sorting
+		.active
+			text-decoration: none
+	&__card
+		border: 1px solid #DFE0EB
+		border-radius: 5px
+		background-color: #fff
+		transition: 0.3s
+		margin-bottom: 30px
+		&:hover
+			box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.25)
+			.search__btn
+				color: var(--btn-2)
+				background-color: #fff
+				border: 1px solid var(--btn-2)
+		&:last-child
+			margin-bottom: 0
+	&-swiper
+		width: 375px
+		margin: 0
+		.swiper-pagination-bullet
+			width: 40px
+			height: 3px
+			border-radius: 3px
+			background-color: #fff
+			opacity: 1
+			margin-right: 5px
+		.swiper-pagination-bullet-active
+			background-color: #283655
+	&__box
+		width: 375px
+		height: 340px
+		border-radius: 4px 0px 0px 4px
+	&__info
+		position: relative
+		padding: 30px 30px 30px 40px
+		max-width: 885px
+		width: 100%
+	&__mark
+		position: absolute
+		top: 30px
+		right: 0
+		background: #A28854
+		border-radius: 5px 0px 0px 5px
+		padding: 8px 35px 10px
+	&__desc
+		color: #fff
+		+Gmed
+	&__category
+		margin-left: 17px
+	&__header
+		margin-bottom: 5px
+	&__class
+		color: #777
+		margin-left: 5px
+	&__adress
+		margin-left: 10px
+		text-decoration: underline
+		color: #777
+		font-size: 16px
+	&__location
+		margin-bottom: 5px
+	&__metro
+		margin-right: 17px
+		&:last-child
+			margin-right: 0
+	&__name
+		margin-left: 7px
+		color: #777
+	&__information
+		margin-bottom: 12px
+	&__table
+		margin-bottom: 19px
+	&__title
+		padding: 0
+		font-size: 16px
+		+Gbold
+	&__stroke
+		border-bottom: 1px solid #DFE0EB
+		&:last-child
+			border: none
+	&__text
+		padding: 9px 0 5px 0
+		color: #283655
+		&:first-child
+			text-decoration: underline
+	&__buttons
+		position: relative
+	&__btn
+		border: 1px solid var(--btn-2)
+		padding: 10px 36px 9px 24px
+		transition: 0.3s
+	&__price
+		position: absolute
+		top: 14px
+		left: 420px
+		max-width: 270px
+		width: 100%
+		border: 1px solid #A28854
+		border-radius: 5px
+		font-size: 12px
+		color: #A28854
+		background-color: #fff
+		+Gmed
+	&__save
+		background-color: transparent
+		padding: 0
+	&__pagin
+		margin-top: 70px
+	&__see
+		margin-bottom: 10px
+		font-size: 18px
+		color: #111
+
+@media (max-width: 1399.98px)
+	.search
+		&__info
+			max-width: 740px
+		&__price
+			top: 0
+			left: 320px
+			max-width: 198px
+			height: 36px
+			line-height: 1.2
+			span
+				max-width: 105px
+				margin: auto
+				padding: 2px 0
+
+@media (max-width: 1199.98px)
+	.search
+		&__wrapper
+			margin-right: 45px
+		&__item
+			margin-right: 25px
+		&__info
+			padding: 20px 10px 25px 30px
+			max-width: 559px
+		&__price
+			left: 278px
+
+@media (max-width: 991.98px)
+	.search
+		&__found
+			margin-bottom: 5px
+			margin-right: 0
+		&__layout
+			margin-right: 20px
+		&__item
+			margin-right: 20px
+		&__category
+			margin: 5px 0 0 0
+		&__sub
+			font-size: 18px
+		&__table
+			max-width: 398px
+			margin-bottom: 15px
+		&__adress
+			font-size: 14px
+		&__title
+			font-size: 14px
+		&__info
+			padding: 20px 10px 25px 20px
+			max-width: 350px
+		&__price
+			max-width: 280px
+			left: 0
+			top: 40px
+			height: 18px
+			span
+				max-width: 100%
+				padding: 0
+		&__pagin
+			margin-top: 50px
+
+@media (max-width: 767.98px)
+	.search
+		padding-bottom: 40px
+		&-swiper
+			width: 100%
+		&__box
+			width: 100%
+			border-radius: 4px 4px 0 0
+		&__info
+			max-width: 100%
+			padding: 30px 20px 40px 20px
+		&__table
+			max-width: 100%
+		&__save
+			position: absolute
+			top: -253px
+			right: 0
+		&__btn
+			max-width: 343px
+			margin: auto
+			width: 100%
+		&__price
+			max-width: 343px
+			margin: auto
+			left: 0
+			right: 0
+			top: 45px
+		&__found
+			font-size: 14px
+		&__item
+			margin-right: 10px
+		&__pagin
+			margin-top: 40px
+
+@media (max-width: 575.98px)
+	.search
+		&__map
+			margin-bottom: 10px
+		&__box
+			height: 300px
+		&-swiper
+			.swiper-pagination-bullet
+				width: 35px
+		&__info
+			padding: 20px 20px 30px 20px
+		&__price
+			top: 40px
+		&__adress
+			font-size: 12px
+		&__name
+			font-size: 12px
+		&__sub
+			max-width: 210px
+		&__save
+			top: -265px

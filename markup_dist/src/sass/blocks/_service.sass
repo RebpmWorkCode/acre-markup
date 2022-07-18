@@ -1,0 +1,45 @@
+.service
+	padding: 98px 0 70px 0
+	&__title
+		padding-left: 70px
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			height: 5px
+			width: 50px
+			background-color: #A28854
+			top: 13px
+			bottom: 0
+			left: 0
+	&__content
+		margin-top: 70px
+	&__stroke
+		margin-bottom: 45px
+		&:last-child
+			margin-bottom: 0
+	&__line
+		width: 100%
+		max-width: 100%
+		background-color: #777
+		height: 1px
+		margin-top: 230px
+
+@media screen and ( max-width: 767.98px )
+	.service
+		padding: 35px 0 40px 0
+		&__content
+			margin-top: 45px
+		&__line
+			margin-top: 95px
+		&__stroke
+			margin-bottom: 30px
+		&__name
+			font-size: 16px
+		&__title
+			padding-left: 60px
+			font-size: 20px
+			&::after
+				height: 2px
+				width: 40px
+				top: 10px
