@@ -73,10 +73,12 @@
             </div>
             <div class="col-xl-4 col-lg-6 col-md-12">
                 <div class="description__card">
-                    <div class="description__header d-flex align-items-center justify-content-between">
+                    <div class="description-rent__header d-flex align-items-center justify-content-between">
                         <span class="description__id">ID объекта: <span>{{ advertisement.Advertisement.id }}</span></span>
-                        <button class="description__save">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
+                        {% set isFavorite = favorite.has('Advertisement', advertisement.Advertisement.id) %}
+                        <button class="description__save" type="button" data-favorite="{{ isFavorite ? 'remove' : 'add'}}" data-favorite-invert="{{ isFavorite ? 'add' : 'remove'}}" data-favorite-id="{{ advertisement.Advertisement.id }}">
+                            <svg data-icon="add" class="{{ isFavorite ? 'd-none' : ''}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
+                            <svg data-icon="remove" class="{{ isFavorite ? '' : 'd-none'}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path style="fill: red" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
                         </button>
                     </div>
                     <div class="description-info">
