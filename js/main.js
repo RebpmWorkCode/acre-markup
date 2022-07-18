@@ -4,7 +4,16 @@ const TwigGallery = {
         document.querySelector('.description-swiper')?.swiper.on('slideChange', function () {
             lazyLoadInstance.update();
         });
-
+        document.querySelectorAll('.search-swiper').forEach((swiperBlock) => {
+            swiperBlock.swiper.on('slideChange', function () {
+                lazyLoadInstance.update();
+            });
+            swiperBlock.querySelectorAll('.swiper-pagination-bullet').forEach((swiperPaginationBullet) => {
+                swiperPaginationBullet.addEventListener('mouseover', (e) => {
+                    swiperPaginationBullet.dispatchEvent(new MouseEvent('click', {bubbles: true}))
+                })
+            })
+        })
     },
     runLightbox: (selector) => {
         let galleryList = [];

@@ -35,3 +35,31 @@ a.btn-1:hover, a.btn-2:hover {
     background-color: #f8d7da;
     border-color: #f5c2c7;
 }
+
+.search__card .swiper-pagination.search-pagination {
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.search__card .swiper-pagination.search-pagination .swiper-pagination-bullet {
+    position: relative;
+    height: 100%;
+    background-color: transparent;
+}
+
+.search__card .swiper-pagination.search-pagination .swiper-pagination-bullet:after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    border-radius: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.search__card .swiper-pagination.search-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+    background-color: #283655;
+}

@@ -59,7 +59,7 @@
                     {% set paramsValues = advertisement.CategoryParamValues ?? [] %}
                     {% set gallery = adView.getGallery(advertisement) %}
                     {% set isFavorite = favorite.has('Advertisement', advertisement.Advertisement.id) %}
-                    {% if not advertisement.Advertisement.parent_id %}
+                    {% if advertisement.Category.is_template %}
                         <div class="search__card d-flex justify-content-xl-between justify-content-lg-between justify-content-md-between flex-xl-row flex-lg-row flex-md-row flex-column">
                             <div class="swiper search-swiper">
                                 <div class="swiper-wrapper search-wrapper">
@@ -79,44 +79,67 @@
                             </div>
                             <div class="search__info d-flex flex-column">
                                 <div class="search__mark d-xl-block d-none">
-                                    <span class="search__desc">Аренда</span>
+                                    <span class="search__desc">{{ advertisement.Advertisement.rent ? 'Аренда' : 'Продажа' }}</span>
                                 </div>
-                                <div
-                                    class="search__header d-flex flex-xl-row flex-lg-row flex-column align-items-xl-center align-items-lg-center align-items-start">
-                                    <h3 class="search__sub subtitle">Бизнес-центр «Башня Империя»</h3>
-                                    <div class="search__category d-flex align-items-center">
-                                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 0L8.5716 4.83688H13.6574L9.5429 7.82624L11.1145 12.6631L7 9.67376L2.8855 12.6631L4.4571 7.82624L0.342604 4.83688H5.4284L7 0Z" fill="#777777" />
-                                        </svg>
-                                        <span class="search__class d-block">Класс А</span>
-                                    </div>
+                                <div class="search__header d-flex flex-xl-row flex-lg-row flex-column align-items-xl-center align-items-lg-center align-items-start">
+                                    <h3 class="search__sub subtitle">{{ advertisement.Category.title }}  {{ title }}</h3>
+                                    {% set buildingclass = complexCategory.getViewAliasesOptions('buildingclass', paramsValues) %}
+                                    {% if buildingclass %}
+                                        <div class="search__category d-flex align-items-center">
+                                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 0L8.5716 4.83688H13.6574L9.5429 7.82624L11.1145 12.6631L7 9.67376L2.8855 12.6631L4.4571 7.82624L0.342604 4.83688H5.4284L7 0Z" fill="#777777" />
+                                            </svg>
+                                            <span class="search__class d-block">Класс А</span>
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="search__location d-flex align-items-center">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 6.72727C14 11.1818 8 15 8 15C8 15 2 11.1818 2 6.72727C2 5.20831 2.63214 3.75155 3.75736 2.67748C4.88258 1.60341 6.4087 1 8 1C9.5913 1 11.1174 1.60341 12.2426 2.67748C13.3679 3.75155 14 5.20831 14 6.72727Z" stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M8 9C9.10457 9 10 8.10457 10 7C10 5.89543 9.10457 5 8 5C6.89543 5 6 5.89543 6 7C6 8.10457 6.89543 9 8 9Z" stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span class="search__adress d-block">г. Москва, Пресненская наб. 6</span>
+                                    <span class="search__adress d-block">{{ adView.getLocationTitle(advertisement, 'locality, street, house_number') }}</span>
                                 </div>
                                 <div class="search__information d-flex align-items-center">
-                                    <div class="search__metro d-flex align-items-center">
-                                        <picture><source srcset="img/search/metro.webp" type="image/webp"><img src="img/search/metro.png" alt="станция метро"></picture>
-                                        <span class="search__name d-block">Баррикадная</span>
-                                    </div>
-                                    <div class="search__metro d-flex align-items-center">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4.44322 5.082L6.31281 3.724C6.52268 3.57041 6.77796 3.49155 7.03789 3.5C7.35493 3.50791 7.66164 3.6144 7.91537 3.80467C8.1691 3.99494 8.35724 4.25953 8.45364 4.56167C8.56214 4.90175 8.66131 5.13158 8.75114 5.25117C9.02257 5.6133 9.37467 5.90719 9.7795 6.1095C10.1843 6.31181 10.6307 6.41698 11.0833 6.41667V7.58333C10.4809 7.58399 9.88583 7.45108 9.34095 7.19417C8.79607 6.93726 8.31492 6.56275 7.93214 6.09758L7.52556 8.40467L8.72781 9.41383L10.0246 12.9768L8.92789 13.3758L7.73789 10.1068L5.76039 8.44725C5.59811 8.31621 5.47392 8.14405 5.40077 7.94871C5.32762 7.75337 5.30818 7.54199 5.34447 7.33658L5.64139 5.65367L5.24647 5.94067L4.00572 7.64867L3.06189 6.96267L4.43331 5.075L4.44322 5.082ZM7.87497 3.20833C7.56555 3.20833 7.26881 3.08542 7.05002 2.86662C6.83122 2.64783 6.70831 2.35109 6.70831 2.04167C6.70831 1.73225 6.83122 1.4355 7.05002 1.21671C7.26881 0.997916 7.56555 0.875 7.87497 0.875C8.18439 0.875 8.48114 0.997916 8.69993 1.21671C8.91872 1.4355 9.04164 1.73225 9.04164 2.04167C9.04164 2.35109 8.91872 2.64783 8.69993 2.86662C8.48114 3.08542 8.18439 3.20833 7.87497 3.20833ZM6.14131 10.8973L4.26647 13.1314L3.37281 12.3818L5.10881 10.3133L5.54397 9.04167L6.58872 9.91667L6.14131 10.8973Z" fill="#ADADAD" />
-                                        </svg>
-                                        <span class="search__name d-block">5 мин</span>
-                                    </div>
-                                    <div class="search__metro d-flex align-items-center">
-                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.48222 5.8335V9.91683H4.34393V5.8335H2.48222ZM6.20563 5.8335V9.91683H8.06733V5.8335H6.20563ZM1.24109 12.8335H13.0319V11.0835H1.24109V12.8335ZM9.92903 5.8335V9.91683H11.7907V5.8335H9.92903ZM7.13648 0.583496L1.24109 3.50016V4.66683H13.0319V3.50016L7.13648 0.583496Z" fill="#ADADAD" />
-                                        </svg>
-                                        <span class="search__name d-block">ИФНС № 3</span>
-                                    </div>
+                                    {% set metro = [] %}
+                                    {% set metroTimeToMetro = [] %}
+                                    {% if config.Locations.MetroAdvertisementMultiple %}
+                                        {% for metroItem in advertisement.MetroObjects %}
+                                            {% if metroItem.Metro.title %}
+                                                {% set metro = metro|merge([metroItem.Metro.title]) %}
+                                                {% set metroTimeToMetro = metroTimeToMetro|merge([metroItem.time_to_metro]) %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        {% set metro = [advertisement.Location.Metro.title] %}
+                                        {% set metroTimeToMetro = [advertisement.Location.time_to_metro] %}
+                                    {% endif %}
+                                    {% if metro %}
+                                        <div class="search__metro d-flex align-items-center">
+                                            <picture>
+                                                <source srcset="/uploads/assets/img/search/metro.webp" type="image/webp">
+                                                <img src="/uploads/assets/img/search/metro.png" alt="станция метро">
+                                            </picture>
+                                            <span class="search__name d-block">{{ metro|first }}</span>
+                                        </div>
+                                        <div class="search__metro d-flex align-items-center">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.44322 5.082L6.31281 3.724C6.52268 3.57041 6.77796 3.49155 7.03789 3.5C7.35493 3.50791 7.66164 3.6144 7.91537 3.80467C8.1691 3.99494 8.35724 4.25953 8.45364 4.56167C8.56214 4.90175 8.66131 5.13158 8.75114 5.25117C9.02257 5.6133 9.37467 5.90719 9.7795 6.1095C10.1843 6.31181 10.6307 6.41698 11.0833 6.41667V7.58333C10.4809 7.58399 9.88583 7.45108 9.34095 7.19417C8.79607 6.93726 8.31492 6.56275 7.93214 6.09758L7.52556 8.40467L8.72781 9.41383L10.0246 12.9768L8.92789 13.3758L7.73789 10.1068L5.76039 8.44725C5.59811 8.31621 5.47392 8.14405 5.40077 7.94871C5.32762 7.75337 5.30818 7.54199 5.34447 7.33658L5.64139 5.65367L5.24647 5.94067L4.00572 7.64867L3.06189 6.96267L4.43331 5.075L4.44322 5.082ZM7.87497 3.20833C7.56555 3.20833 7.26881 3.08542 7.05002 2.86662C6.83122 2.64783 6.70831 2.35109 6.70831 2.04167C6.70831 1.73225 6.83122 1.4355 7.05002 1.21671C7.26881 0.997916 7.56555 0.875 7.87497 0.875C8.18439 0.875 8.48114 0.997916 8.69993 1.21671C8.91872 1.4355 9.04164 1.73225 9.04164 2.04167C9.04164 2.35109 8.91872 2.64783 8.69993 2.86662C8.48114 3.08542 8.18439 3.20833 7.87497 3.20833ZM6.14131 10.8973L4.26647 13.1314L3.37281 12.3818L5.10881 10.3133L5.54397 9.04167L6.58872 9.91667L6.14131 10.8973Z" fill="#ADADAD" />
+                                            </svg>
+                                            <span class="search__name d-block">{{ metroTimeToMetro|first|replace({'.00': ''}) }} мин</span>
+                                        </div>
+                                    {% endif %}
+                                    {% set inspection = complexCategory.getViewAliasesOptions('inspection', paramsValues) %}
+                                    {% if inspection %}
+                                        <div class="search__metro d-flex align-items-center">
+                                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2.48222 5.8335V9.91683H4.34393V5.8335H2.48222ZM6.20563 5.8335V9.91683H8.06733V5.8335H6.20563ZM1.24109 12.8335H13.0319V11.0835H1.24109V12.8335ZM9.92903 5.8335V9.91683H11.7907V5.8335H9.92903ZM7.13648 0.583496L1.24109 3.50016V4.66683H13.0319V3.50016L7.13648 0.583496Z" fill="#ADADAD" />
+                                            </svg>
+                                            <span class="search__name d-block">ИФНС № {{ inspection }}</span>
+                                        </div>
+                                    {% endif %}
                                 </div>
-                                <table class="search__table">
+                                {#<table class="search__table">
                                     <tr>
                                         <th class="search__title">Площадь</th>
                                         <th class="search__title">руб. в месяц</th>
@@ -145,17 +168,15 @@
                                         <td class="search__text d-xl-table-cell d-lg-table-cell  d-none">Под отделку</td>
                                         <td class="search__text d-xl-table-cell d-lg-table-cell d-none">3 800 000</td>
                                     </tr>
-                                </table>
-                                <div
-                                    class="search__buttons d-flex align-items-center justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-center">
-                                    <a href="#" class="search__btn text-center btn-2">Посмотреть 12 предложений</a>
+                                </table>#}
+                                <div class="search__buttons d-flex align-items-center justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-center">
+                                    <a href="{{ adView.getUrl(advertisement) ~ '#objects' }}" class="search__btn text-center btn-2">Посмотреть 12 предложений</a>
                                     <div class="search__price text-center">
-                                        <span class="d-block text-center">Продается за 137 999 937 руб.</span>
+                                        <span class="d-block text-center">Продается за {{ price.format(advertisement.Advertisement.price) }} руб.</span>
                                     </div>
-                                    <button class="search__save">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22Z" fill="#333333" />
-                                        </svg>
+                                    <button class="search__save" data-favorite="{{ isFavorite ? 'remove' : 'add'}}" data-favorite-invert="{{ isFavorite ? 'add' : 'remove'}}" data-favorite-id="{{ advertisement.Advertisement.id }}" data-favorite-reload="yes">
+                                        <svg data-icon="add" class="{{ isFavorite ? 'd-none' : ''}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
+                                        <svg data-icon="remove" class="{{ isFavorite ? '' : 'd-none'}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22Z" fill="#333333" /></svg>
                                     </button>
                                 </div>
                             </div>
