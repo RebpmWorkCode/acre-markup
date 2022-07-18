@@ -1,14 +1,14 @@
 {% set flash = _view.loadHelper('Flash') %}
-<section class="form">
+<section class="form" id="form">
     <div class="container">
         {{ flash.render() }}
         {{ form.create('Bid', {'class': 'form-block', 'url': {'plugin': 'agency', 'controller': 'bids', 'action': 'add'}}) }}
-            {{ form.hidden('Bid.category_id', {'value': 2}) }}
+            {{ form.hidden('Bid.category_id', {'value': bidCreateCategoryId ?? 2}) }}
             {{ form.hidden('Bid.rent', {'value': 1}) }}
             {{ form.hidden('Bid.for_site', {'value': 1}) }}
             {{ form.hidden('Bid.price_from', {'value': 0}) }}
             {{ form.hidden('Bid.price_to', {'value': 1000}) }}
-            {{ form.hidden('Bid.comment', {'value': 'Заявка добавлена через форму Быстрый подбор недвижимости на сайте'}) }}
+            {{ form.hidden('Bid.comment', {'value': bidCreateComment ?? 'Заявка добавлена через форму Быстрый подбор недвижимости на сайте'}) }}
             {{ form.hidden('Bid.source_id', {'value': 12}) }}
             {{ form.hidden('ReferrerData.url', {'value': _view.request.here()}) }}
             <div class="form-block-left">

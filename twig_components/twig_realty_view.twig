@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <span class="description__call description-rent__call text-center d-flex align-items-center justify-content-center">
-                        Звоните: <a class="description__phone" href="tel:{{ config.Site.phone }}">{{ config.Site.phone }}</a>
+                        Звоните: {{ siteInfo.renderTel(config.Site.phone, {'class': 'description__phone'}) }}
                     </span>
                     <div class="description__buttons d-flex flex-xl-column flex-lg-row flex-md-row align-items-xl-center justify-content-xl-center justify-content-lg-between justify-content-md-center flex-sm-row justify-content-sm-center flex-column align-items-center">
                         <a class="description__btn btn-2" href="/agency/realty/print_view/{{ advertisement.Advertisement.id }}.pdf?template=with_logo&layout=default&orientation=portrait" target="_blank">Скачать презентацию</a>
