@@ -1,0 +1,863 @@
+.main-screen-home
+	&__title
+		padding: 177px 0 50px 0
+		+Pbold
+	&__subtitle
+		font-size: 28px
+		+Gmed
+	&-block
+		position: relative
+		height: 532px
+	&-filter
+		&-top
+			display: flex
+			justify-content: space-between
+			padding: 26px 0 28px
+			&-square
+				background: #ffffff
+				border-radius: 5px
+				border: 1px solid #DFE0EB
+				display: flex
+				align-items: center
+				padding: 9px 10px
+				&__name
+					display: block
+					font-size: 14px
+					color: var(--text)
+					padding-right: 8px
+				&__label
+					display: block
+					margin-right: 10px
+					font-size: 14px
+					color: #777777
+				&__min
+					padding: 0
+					border: none
+					background: none
+					height: 21px
+					font-size: 14px
+					width: 44px
+					color: #252733
+				&__max
+					padding: 0
+					border: none
+					background: none
+					height: 21px
+					font-size: 14px
+					width: 52px
+					color: #252733
+			&-price
+				background: #ffffff
+				border-radius: 5px
+				display: flex
+				align-items: center
+				padding: 10px 10px
+				&__name
+					display: block
+					font-size: 14px
+					color: var(--text)
+					padding-right: 8px
+				&__label
+					display: block
+					margin-right: 10px
+					font-size: 14px
+					color: #777777
+				&__min
+					padding: 0
+					border: none
+					background: none
+					height: 21px
+					font-size: 14px
+					width: 84px
+					color: #252733
+				&__max
+					padding: 0
+					border: none
+					background: none
+					height: 21px
+					font-size: 14px
+					width: 92px
+					color: #252733
+				&__line
+					display: block
+					width: 0.3px
+					height: 16px
+					background-color: #252733
+			&-location
+				max-width: 174px
+				width: 100%
+				border: none
+				background: #ffffff
+				border: 1px solid #ffffff
+				padding: 0
+				padding: 10px 0 10px 24px
+				font-size: 14px
+				border-radius: 5px
+		&-bottom
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding-bottom: 40px
+			&__address
+				max-width: 601px
+				width: 100%
+				border-radius: 5px
+				background: none
+				border: 1px solid #DFE0EB
+				font-size: 14px
+				padding: 10px 0 10px 34px
+				color: #ffffff
+			&-more
+				display: flex
+				padding: 0
+				align-items: center
+				background: none
+				border: none
+				&__text
+					display: block
+					margin-left: 5px
+					color: #ffffff
+					text-decoration: underline
+					font-size: 14px
+					+Gmed
+			&-map
+				display: flex
+				padding: 0
+				align-items: center
+				background: none
+				border: none
+				&__text
+					display: block
+					margin-left: 5px
+					color: #ffffff
+					text-decoration: underline
+					font-size: 14px
+					+Gmed
+			&__show
+				padding: 10px 40px
+				font-size: 14px
+				border: 1px solid var(--btn-1)
+				background: var(--btn-1)
+				color: #ffffff
+				outline: none
+				border-radius: 5px
+				+Gmed
+		&-additional
+			display: none
+			padding-top: 35px
+			border-top: 1px solid #DFE0EB
+			padding-bottom: 31px
+			&__button
+				padding: 10px 29px
+				text-align: center
+				border-radius: 5px
+				background-color: #ffffff
+				font-size: 14px
+			&__top
+				display: flex
+				justify-content: space-between
+				align-items: center
+				padding-bottom: 30px
+			&__bottom
+				display: flex
+				justify-content: space-between
+				align-items: center
+			&__left
+				display: flex
+				justify-content: flex-start
+				max-width: 841px
+				width: 100%
+			&__item
+				padding-right: 30px
+				width: auto
+				&:last-child
+					padding-right: 0
+			&__right
+				display: flex
+				justify-content: flex-end
+			&-clear
+				display: flex
+				align-items: center
+				background: none
+				border: none
+				cursor: pointer
+				padding: 0
+				margin: 0
+				margin-right: 58px
+				&__text
+					display: block
+					font-size: 14px
+					color: #ffffff
+					margin-left: 10px
+					text-decoration: underline
+					+Gmed
+			&-hide
+				display: flex
+				align-items: center
+				background: none
+				border: none
+				cursor: pointer
+				padding: 0
+				margin: 0
+				&__text
+					display: block
+					font-size: 14px
+					color: #ffffff
+					margin-right: 10px
+					text-decoration: underline
+					+Gmed
+
+.main-screen-home-filter-additional.active
+	display: block
+.main-screen-home-filter-bottom-more.active
+	opacity: 0
+
+.main-screen-home input::-webkit-input-placeholder
+	color: #252733
+	font-size: 14px
+.main-screen-home input::-moz-placeholder
+	color: #252733
+	font-size: 14px
+
+.main-screen-home-filter-top-location input::-webkit-input-placeholder
+	color: var(--text)
+	font-size: 14px
+.main-screen-home-filter-top-location input::-moz-placeholder
+	color: var(--text)
+	font-size: 14px
+
+.main-screen-home-filter-bottom__address input::-webkit-input-placeholder
+	color: #777777
+	font-size: 14px
+.main-screen-home-filter-bottom__address input::-moz-placeholder
+	color: #777777
+	font-size: 14px
+
+.main-screen-home .tabs
+	background: rgba(40, 54, 85, 0.8)
+	backdrop-filter: blur(20px)
+	box-shadow: 0px 20px 30px rgba(17, 17, 17, 0.25)
+	border-radius: 5px
+	position: absolute
+	margin: auto
+	top: 346px
+	right: 0
+	left: 0
+	z-index: 90
+
+.main-screen-home .tabs__nav
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	list-style-type: none
+	margin: 0
+	border-bottom: 1px solid #ffffff
+
+.main-screen-home .tabs__btn
+	padding: 23px 0 17px
+	text-decoration: none
+	max-width: 240px
+	color: var(--light)
+	text-align: center
+	flex-shrink: 0
+	flex-grow: 1
+	border: 3px solid transparent
+	cursor: pointer
+	background: none
+	margin-bottom: -2px
+	+Gmed
+
+.main-screen-home .tabs__btn_active
+	border-bottom: 3px solid #A28854
+
+.main-screen-home .tabs__content
+	padding: 0 30px
+
+.main-screen-home .tabs__pane
+	display: none
+
+.main-screen-home .tabs__pane_show
+	display: block
+
+.main-screen-home-filter-top-select-one
+	width: 138px
+.main-screen-home-filter-top-select-one .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-top-select-one .new-select
+	position: relative
+	background-color: #ffffff
+	border: 1px solid #DFE0EB
+	border-radius: 5px
+	padding: 10px 0 10px 17px
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-top-select-one .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 44px
+	left: 0
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 100%
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-top-select-one .new-select__list.on
+	display: block
+.main-screen-home-filter-top-select-one .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-top-select-one .new-select__item span:hover
+	background-color: #ced4da
+
+/* Настройки на select с валютой */
+.main-screen-home-filter-top-price-two
+	width: 26px
+	margin-right: 13px
+.main-screen-home-filter-top-price-two .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-top-price-two .new-select
+	position: relative
+	background-color: #ffffff
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-top-price-two .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 33px
+	left: -5px
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 41px
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-top-price-two .new-select__list.on
+	display: block
+.main-screen-home-filter-top-price-two .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-top-price-two .new-select__item span:hover
+	background-color: #ced4da
+
+/* Настройки на select с величиной */
+.main-screen-home-filter-top-price-three
+	width: 54px
+	margin-right: 13px
+.main-screen-home-filter-top-price-three .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-top-price-three .new-select
+	position: relative
+	background-color: #ffffff
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-top-price-three .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 33px
+	left: -5px
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 70px
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-top-price-three .new-select__list.on
+	display: block
+.main-screen-home-filter-top-price-three .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-top-price-three .new-select__item span:hover
+	background-color: #ced4da
+
+/* Настройки на select тип здания */
+.main-screen-home-filter-top-select-type
+	width: 151px
+.main-screen-home-filter-top-select-type .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-top-select-type .new-select
+	position: relative
+	background-color: #ffffff
+	border: 1px solid #DFE0EB
+	border-radius: 5px
+	padding: 10px 0 10px 24px
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-top-select-type .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 44px
+	left: 0
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 100%
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-top-select-type .new-select__list.on
+	display: block
+.main-screen-home-filter-top-select-type .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-top-select-type .new-select__item span:hover
+	background-color: #ced4da
+
+.main-screen-home-filter-additional-class
+	width: 119px
+.main-screen-home-filter-additional-class .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-additional-class .new-select
+	position: relative
+	background-color: #ffffff
+	border: 1px solid #DFE0EB
+	border-radius: 5px
+	padding: 10px 0 10px 24px
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-additional-class .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 44px
+	left: 0
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 100%
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-additional-class .new-select__list.on
+	display: block
+.main-screen-home-filter-additional-class .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-additional-class .new-select__item span:hover
+	background-color: #ced4da
+
+.main-screen-home-filter-additional-condition
+	width: 151px
+.main-screen-home-filter-additional-condition .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-additional-condition .new-select
+	position: relative
+	background-color: #ffffff
+	border: 1px solid #DFE0EB
+	border-radius: 5px
+	padding: 10px 0 10px 24px
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-additional-condition .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 44px
+	left: 0
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 100%
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-additional-condition .new-select__list.on
+	display: block
+.main-screen-home-filter-additional-condition .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-additional-condition .new-select__item span:hover
+	background-color: #ced4da
+
+.main-screen-home-filter-additional-furnishing
+	width: 171px
+.main-screen-home-filter-additional-furnishing .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-additional-furnishing .new-select
+	position: relative
+	background-color: #ffffff
+	border: 1px solid #DFE0EB
+	border-radius: 5px
+	padding: 10px 0 10px 24px
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-additional-furnishing .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 44px
+	left: 0
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 100%
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-additional-furnishing .new-select__list.on
+	display: block
+.main-screen-home-filter-additional-furnishing .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-additional-furnishing .new-select__item span:hover
+	background-color: #ced4da
+
+.main-screen-home-filter-additional-ifts
+	width: 119px
+.main-screen-home-filter-additional-ifts .select
+	display: block
+	width: 100%
+	position: relative
+.main-screen-home-filter-additional-ifts .new-select
+	position: relative
+	background-color: #ffffff
+	border: 1px solid #DFE0EB
+	border-radius: 5px
+	padding: 10px 0 10px 24px
+	font-size: 14px
+	color: var(--text)
+	cursor: pointer
+	user-select: none
+.main-screen-home-filter-additional-ifts .new-select__list
+	position: absolute
+	border-radius: 5px
+	top: 44px
+	left: 0
+	border: 1px solid #ced4da
+	cursor: pointer
+	width: 100%
+	z-index: 2
+	background: #fff
+	user-select: none
+.main-screen-home-filter-additional-ifts .new-select__list.on
+	display: block
+.main-screen-home-filter-additional-ifts .new-select__item span
+	display: block
+	padding: 10px 15px
+.main-screen-home-filter-additional-ifts .new-select__item span:hover
+	background-color: #ced4da
+
+@media screen and ( max-width: 1399.98px )
+	.main-screen-home
+		&__subtitle
+			font-size: 24px
+		&-filter
+			&-top
+				flex-wrap: wrap
+				padding-bottom: 0
+				&-item
+					margin-bottom: 23px
+			&-bottom__address
+				max-width: 429px
+			&-additional
+				display: none
+				justify-content: space-between
+				&__top
+					flex-wrap: wrap
+					padding-bottom: 0
+					width: 100%
+				&__bottom
+					width: 100%
+					align-items: baseline
+					justify-content: space-between
+					flex-direction: column
+					position: relative
+				&__bottom .main-screen-home-filter-additional__item
+					padding-right: 0
+				&__bottom .main-screen-home-filter-additional-condition
+					width: 100%
+				&__bottom .main-screen-home-filter-top-square__min
+					width: 100px
+				&__bottom .main-screen-home-filter-top-square__max
+					width: 100px
+				&__bottom .main-screen-home-filter-additional__button
+					width: 200px
+				&__bottom .main-screen-home-filter-top-square
+					justify-content: space-between
+				&__top .main-screen-home-filter-additional__top-item
+					width: 49%
+				&__top .main-screen-home-filter-top-square
+					justify-content: space-between
+				&__top .main-screen-home-filter-additional-class
+					width: 100%
+				&__top .main-screen-home-filter-top-square__min
+					width: 100px
+				&__top .main-screen-home-filter-top-square__max
+					width: 100px
+				&__top .main-screen-home-filter-additional-condition
+					width: 100%
+				&__top .main-screen-home-filter-additional-furnishing
+					width: 100%
+				&__top .main-screen-home-filter-additional-ifts
+					width: 100%
+				&__top-item
+					padding-bottom: 23px
+				&__item
+					width: 49%
+					padding-bottom: 23px
+				&__left
+					flex-wrap: wrap
+					max-width: 100%
+					justify-content: space-between
+				&__right
+					position: absolute
+					bottom: -15px
+					width: 100%
+	.main-screen-home .tabs
+		top: 320px
+
+@media screen and ( max-width: 1199.98px )
+	.main-screen-home
+		&__subtitle
+			font-size: 20px
+		&-filter
+			&-bottom
+				&__address
+					max-width: 300px
+			&-additional
+				&__bottom .main-screen-home-filter-top-square__min
+					width: 70px
+				&__bottom .main-screen-home-filter-top-square__max
+					width: 70px
+				&__top .main-screen-home-filter-top-square__min
+					width: 70px
+				&__top .main-screen-home-filter-top-square__max
+					width: 70px
+@media screen and ( max-width: 991.98px )
+	.main-screen-home
+		&__title
+			padding: 140px 0 50px 0
+			+Pbold
+		&__subtitle
+			font-size: 18px
+		&-block
+			height: 370px
+		&-filter
+			&-additional
+				&__bottom .main-screen-home-filter-top-square__min
+					width: 40px
+				&__bottom .main-screen-home-filter-top-square__max
+					width: 40px
+				&__top .main-screen-home-filter-top-square__min
+					width: 40px
+				&__top .main-screen-home-filter-top-square__max
+					width: 40px
+				&__top .main-screen-home-filter-top-square__name
+					font-size: 13px
+					padding: 0
+				&__top .main-screen-home-filter-top-square__label
+					margin-right: 3px
+					font-size: 13px
+				&__bottom .main-screen-home-filter-top-square__label
+					margin-right: 3px
+					font-size: 13px
+				&__bottom .main-screen-home-filter-top-square__name
+					font-size: 13px
+					padding: 0
+				&__bottom .main-screen-home-filter-additional__right
+					justify-content: space-between
+				&__bottom .main-screen-home-filter-additional-clear
+					margin-right: 0
+				&__bottom .main-screen-home-filter-additional-clear__text
+					margin-left: 5px
+					font-size: 13px
+				&__bottom .main-screen-home-filter-additional-hide__text
+					margin-right: 5px
+					font-size: 13px
+			&-top
+				&-price
+					&__min
+						width: 100px
+					&__max
+						width: 100px
+			&-bottom
+				flex-wrap: wrap
+				align-items: center
+				&__address
+					max-width: 100%
+					padding-left: 16px
+					margin-bottom: 20px
+	.order-one
+		order: 1
+	.order-two
+		order: 3
+	.order-three
+		order: 2
+	.order-four
+		order: 4
+	.order-five
+		order: 5
+	.main-screen-home .tabs
+		top: 260px
+
+@media screen and ( max-width: 767.98px )
+	.main-screen-home
+		&__title
+			max-width: 70%
+			padding: 88px 0 33px
+		&-filter
+			&-additional
+				flex-direction: column
+				&__top
+					width: 100%
+				&__bottom
+					width: 100%
+					padding-bottom: 30px
+				&__top .main-screen-home-filter-additional__top-item
+					width: 100%
+				&__item
+					width: 100%
+
+			&-top
+				&-location
+					max-width: 100%
+				&-item
+					margin-bottom: 18px
+				&-square
+					&__min
+						width: 130px
+					&__max
+						width: 160px
+				&-price
+					&__min
+						width: 100px
+					&__max
+						width: 124px
+					&-two
+						width: 35px
+					&-three
+						width: 62px
+				&-item
+					width: 100%
+			&-bottom
+				flex-direction: column
+				align-items: center
+				&__address
+					margin-bottom: 24px
+				&-more
+					margin-bottom: 18px
+				&-map
+					margin-bottom: 32px
+	.main-screen-home .tabs__content
+		padding: 0 20px
+	.main-screen-home-filter-top-select-one
+		width: 100%
+	.main-screen-home-filter-top-select-type
+		width: 100%
+	.main-screen-home .tabs
+		top: 250px
+
+@media screen and ( max-width: 575.98px )
+	.main-screen-home
+		&__title
+			max-width: 70%
+			padding: 88px 0 33px
+		&__subtitle
+			display: block
+			font-size: 16px
+			max-width: 293px
+			line-height: 112%
+		&-filter
+			&-top
+				padding-top: 19px
+				&-square
+					justify-content: space-between
+					&__min
+						width: auto
+						max-width: 65px
+					&__max
+						width: auto
+						max-width: 65px
+				&-price
+					justify-content: space-between
+					&__line
+						display: none
+					&__min
+						width: auto
+						max-width: 75px
+					&__max
+						width: auto
+						max-width: 75px
+				&-item
+					margin-bottom: 19px
+		.main-screen-home-filter-top-price-three
+			display: none
+
+	.main-screen-home .tabs
+		top: 268px
+	.tabs-open
+		margin-top: 25px
+		width: 100%
+		height: 43px
+		position: relative
+	.main-screen-home .tabs__nav
+		display: flex
+		flex-direction: column
+		margin: 0
+		padding: 0
+		height: 43px
+		border-bottom: none
+		background-color: #ffffff
+		border-radius: 5px
+		overflow: hidden
+		position: absolute
+		top: 0
+		right: 20px
+		left: 20px
+		z-index: 50
+		&::after
+			content: ''
+			position: absolute
+			top: 20px
+			right: 17px
+			width: 9px
+			height: 5px
+			background-image: url(../img/main-screen-home/arrow.svg)
+			background-repeat: no-repeat
+			background-position: center center
+			background-size: 9px
+			z-index: 60
+
+	.main-screen-home .tabs__btn
+		height: 43px
+		text-decoration: none
+		max-width: 100%
+		width: 100%
+		color: var(--text)
+		text-align: left
+		padding: 0
+		font-size: 14px
+		border: none
+		display: flex
+		justify-content: center
+		flex-direction: column
+		padding-left: 17px
+		order: 2
+		+Greg
+
+	.main-screen-home .tabs__btn_active
+		border-bottom: none
+		order: 1
+	.tabs-open.active .tabs__nav
+		height: 213px

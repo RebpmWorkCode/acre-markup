@@ -23,6 +23,9 @@ let TwigFavorite = {
                     favoriteClickable.querySelector(`[data-icon=${prev}]`).classList.toggle('d-none')
                     favoriteClickable.querySelector(`[data-icon=${favoriteClickable.dataset.favorite}]`).classList.toggle('d-none')
                 }
+                if (favoriteClickable.dataset?.favoriteReload === 'yes' && prev === 'remove') {
+                    window.location.reload();
+                }
             }
             if (res.count !== undefined) {
                 if (document.querySelector('.favorite-counter')) {
@@ -42,5 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
         TwigFavorite.runElement(e.currentTarget);
     });
 });
-
 

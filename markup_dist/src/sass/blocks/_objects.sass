@@ -1,0 +1,229 @@
+.objects
+	padding-bottom: 70px
+	.tabs-object
+		margin-top: 20px
+		&__nav-link
+			font-size: 21px
+			color: #ADADAD
+			background-color: transparent
+			border-bottom: 1px solid #ADADAD
+			padding: 0 20px 5px 20px
+			+Gmed
+			&--active
+				color: #252733
+				border-bottom: 2px solid #A28854
+		&__content
+			display: none
+			&--active
+				display: block
+	&__name
+		color: #4f4f4f
+		font-size: 16px
+		&_one
+			max-width: 117px
+			width: 100%
+		&_two
+			max-width: 211px
+			width: 100%
+	&__icon
+		display: block
+		margin-right: 5px
+	&__wrapper
+		padding: 0
+		background-color: transparent
+		&_one
+			max-width: 143px
+			width: 100%
+		&_two
+			max-width: 226px
+			width: 100%
+		&_three
+			max-width: 122px
+			width: 100%
+		&_four
+			max-width: 160px
+			width: 100%
+	&__navigation
+		padding: 30px 0 23px 0
+		max-width: 989px
+		width: 100%
+	&__box
+		border-radius: 5px 0px 0px 5px
+		width: 117px
+		height: 86px
+	&__card
+		width: 100%
+		height: 86px
+		background: #FFFFFF
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+		border-radius: 5px
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	&__number
+		color: #252733
+		+Gmed
+		span
+			display: contents
+			color: #777
+			font-size: 12px
+			margin-left: 2px
+			+Greg
+		&_one
+			max-width: 143px
+			width: 100%
+		&_two
+			max-width: 226px
+			width: 100%
+		&_three
+			max-width: 122px
+			width: 100%
+		&_four
+			max-width: 160px
+			width: 100%
+		&_five
+			max-width: 211px
+			width: 100%
+	&__save
+		background-color: transparent
+		padding: 0
+	&__btn
+		padding: 10px 31px
+	&__left
+		width: 117px
+	&__center
+		width: 100%
+	&__right
+		width: 100%
+		max-width: 281px
+	&__button
+		&_one
+			max-width: 197px
+			width: 100%
+		&_two
+			max-width: 84px
+			width: 100%
+
+@media (max-width: 1399.98px)
+	.objects
+		&__number
+			&_two
+				max-width: 172px
+			&_five
+				max-width: 172px
+		&__wrapper
+			&_two
+				max-width: 172px
+		&__name
+			&_two
+				max-width: 172px
+		&__right
+			max-width: 230px
+
+@media (max-width: 1199.98px)
+	.objects
+		&__number
+			&_one
+				max-width: 115px
+			&_two
+				max-width: 117px
+			&_three
+				max-width: 100px
+			&_four
+				max-width: 128px
+			&_five
+				max-width: 129px
+		&__wrapper
+			&_one
+				max-width: 115px
+			&_two
+				max-width: 117px
+			&_three
+				max-width: 100px
+			&_four
+				max-width: 128px
+		&__name
+			&_two
+				max-width: 129px
+		&__button
+			&_two
+				max-width: 60px
+
+@media (max-width: 991.98px)
+	.objects
+		&__right
+			max-width: 210px
+		&__button
+			&_two
+				max-width: 40px
+		&__number
+			&_two
+				max-width: 154px
+		&__wrapper
+			&_two
+				max-width: 154px
+
+@media (max-width: 767.98px)
+	.objects
+		&__title
+			font-size: 30px
+		&__more
+			background-color: #283655
+			border-radius: 5px
+			width: 36px
+			height: 36px
+		&__wrapper
+			&_one
+				max-width: 140px
+			&_two
+				max-width: 190px
+			&_three
+				max-width: 120px
+		&__number
+			&_one
+				max-width: 140px
+			&_two
+				max-width: 190px
+			&_three
+				max-width: 120px
+		&__right
+			max-width: 60px
+
+@media (max-width: 575.98px)
+	.objects
+		padding-bottom: 30px
+		&__title
+			font-size: 24px
+			line-height: 1.1
+		&__icon
+			display: none
+		.tabs-object
+			&__nav
+				width: 100%
+				&-link
+					width: 50%
+					&--active
+						border-bottom: 2px solid #283655
+		&__wrapper
+			&_one
+				max-width: 22%
+			&_two
+				max-width: 48%
+			&_three
+				max-width: 13%
+		&__number
+			&_one
+				max-width: 25%
+			&_two
+				max-width: 54.5%
+			&_three
+				max-width: 14.5%
+		&__name
+			font-size: 14px
+			+Gmed
+		&__right
+			max-width: 12%
+		&__navigation
+			padding: 20px 0 10px 0
+		&__card
+			padding: 0 10px

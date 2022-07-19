@@ -1,0 +1,29 @@
+.filter-settings-content-selection-block::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+.filter-settings-content-selection-block::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    box-shadow: none;
+  }
+  
+.filter-settings-content-selection-block::-webkit-scrollbar-thumb {
+    background: var(--color-2);
+    box-shadow: none;
+  }
+
+
+
+.add-to-collection-block-content::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+.add-to-collection-block-content::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    box-shadow: none;
+  }
+  
+.add-to-collection-block-content::-webkit-scrollbar-thumb {
+    background: var(--color-2);
+    box-shadow: none;
+  }

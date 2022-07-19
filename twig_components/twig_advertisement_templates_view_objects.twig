@@ -1,5 +1,5 @@
 {% if advertisements %}
-<section class="objects">
+<section class="objects" id="objects">
     <div class="container">
         <div class="row"><div class="col-10"><h2 class="objects__title section-title">Объекты в {{ advertisement.Category.title }}  {{ title }}</h2></div></div>
         <div class="row">
@@ -57,18 +57,18 @@
                                 <div class="objects__left d-xl-block d-lg-block d-md-block d-none">
                                     <div class="objects__box box">
                                         {% set gallery = adView.getGallery(advertisement) %}
-                                        {% set galleryFirst = imageResized.resizeItemPicture(gallery.first, {'width': '117', 'height': '86', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_children_view_advertisements', 'cache_path_size': true}) %}
+                                        {% set galleryFirst = imageResized.resizeItemPicture(gallery.first, {'width': '117', 'height': '86', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_children_view_objects', 'cache_path_size': true}) %}
                                         <img data-src="{{ galleryFirst.src }}" alt="{{ galleryItem.description }}" class="objects__preview">
                                     </div>
                                 </div>
                                 <div class="objects__center d-flex">
                                     <span class="objects__number objects__number_one d-flex align-items-center justify-content-center">{{ complexCategory.getViewAliasesOptions('area', paramsValues) }} <span>кв.м.</span></span>
                                     <span class="objects__number objects__number_two d-flex align-items-center justify-content-center">
-                                         {% if advertisement.Advertisement.rent %}
-                                             {{ price.format(advertisement.Advertisement.price_area_year) }} <span>руб./кв.м. в год</span>
-                                         {% else %}
-                                             {{ price.format(advertisement.Advertisement.price) }} <span>руб.</span>
-                                         {% endif %}
+                                        {% if advertisement.Advertisement.rent %}
+                                            {{ price.format(advertisement.Advertisement.price_area_year) }} <span>руб./кв.м. в год</span>
+                                        {% else %}
+                                            {{ price.format(advertisement.Advertisement.price) }} <span>руб.</span>
+                                        {% endif %}
                                     </span>
                                     <span class="objects__number objects__number_three d-flex align-items-center justify-content-center">{{ complexCategory.getViewAliasesOptions('floor', paramsValues) }}</span>
                                     <span class="objects__number objects__number_four d-xl-flex d-lg-flex align-items-center justify-content-center d-none">{{ complexCategory.getViewAliasesOptions('quality', paramsValues) }}</span>
@@ -82,13 +82,11 @@
                                         {% set isFavorite = favorite.has('Advertisement', advertisement.Advertisement.id) %}
                                         <button class="objects__save" type="button" data-favorite="{{ isFavorite ? 'remove' : 'add'}}" data-favorite-invert="{{ isFavorite ? 'add' : 'remove'}}" data-favorite-id="{{ advertisement.Advertisement.id }}">
                                             <svg data-icon="add" class="{{ isFavorite ? 'd-none' : ''}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
-                                            <svg data-icon="remove" class="{{ isFavorite ? '' : 'd-none'}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path style="fill: red" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
+                                            <svg data-icon="remove" class="{{ isFavorite ? '' : 'd-none'}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22Z" fill="#333333" /></svg>
                                         </button>
                                     </div>
-                                    <a href="#" class="objects__more d-xl-none d-lg-none d-md-none d-flex flex-column align-items-center justify-content-center">
-                                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 12L8 6.5L1 1" stroke="white" stroke-linecap="round" />
-                                        </svg>
+                                    <a href="{{ adView.getUrl(advertisement) }}" class="objects__more d-xl-none d-lg-none d-md-none d-flex flex-column align-items-center justify-content-center">
+                                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 12L8 6.5L1 1" stroke="white" stroke-linecap="round" /></svg>
                                     </a>
                                 </div>
                             </div>
@@ -101,7 +99,7 @@
                                 <div class="objects__left d-xl-block d-lg-block d-md-block d-none">
                                     <div class="objects__box box">
                                         {% set gallery = adView.getGallery(advertisement) %}
-                                        {% set galleryFirst = imageResized.resizeItemPicture(gallery.first, {'width': '117', 'height': '86', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_children_view_advertisements', 'cache_path_size': true}) %}
+                                        {% set galleryFirst = imageResized.resizeItemPicture(gallery.first, {'width': '117', 'height': '86', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_children_view_objects', 'cache_path_size': true}) %}
                                         <img data-src="{{ galleryFirst.src }}" alt="{{ galleryItem.description }}" class="objects__preview">
                                     </div>
                                 </div>
@@ -126,13 +124,11 @@
                                         {% set isFavorite = favorite.has('Advertisement', advertisement.Advertisement.id) %}
                                         <button class="objects__save" type="button" data-favorite="{{ isFavorite ? 'remove' : 'add'}}" data-favorite-invert="{{ isFavorite ? 'add' : 'remove'}}" data-favorite-id="{{ advertisement.Advertisement.id }}">
                                             <svg data-icon="add" class="{{ isFavorite ? 'd-none' : ''}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
-                                            <svg data-icon="remove" class="{{ isFavorite ? '' : 'd-none'}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path style="fill: red" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z" fill="#333333" /></svg>
+                                            <svg data-icon="remove" class="{{ isFavorite ? '' : 'd-none'}}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22Z" fill="#333333" /></svg>
                                         </button>
                                     </div>
-                                    <a href="#" class="objects__more d-xl-none d-lg-none d-md-none d-flex flex-column align-items-center justify-content-center">
-                                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 12L8 6.5L1 1" stroke="white" stroke-linecap="round" />
-                                        </svg>
+                                    <a href="{{ adView.getUrl(advertisement) }}" class="objects__more d-xl-none d-lg-none d-md-none d-flex flex-column align-items-center justify-content-center">
+                                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 12L8 6.5L1 1" stroke="white" stroke-linecap="round" /></svg>
                                     </a>
                                 </div>
                             </div>

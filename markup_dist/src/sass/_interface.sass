@@ -1,0 +1,275 @@
+*
+	box-sizing: border-box
+
+// Стилизация скролла
+	/* Работает в Firefox */
+	scrollbar-width: thin
+	scrollbar-color: #fff #A28854
+
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar
+	width: 6px
+
+*::-webkit-scrollbar-track
+	box-shadow: inset 0 0 14px 14px #fff
+	border-radius: rem(24px)
+
+*::-webkit-scrollbar-thumb
+	box-shadow: inset 0 0 14px 14px #A28854
+	border-radius: rem(24px)
+
+*::-webkit-scrollbar-button
+	display: none
+
+body
+	padding: 0
+	margin: 0
+	color: var(--text)
+	font-size: 14px
+	line-height: 1.5
+	+Greg
+
+h1, h2, h3, h4
+	padding: 0
+	margin: 0
+
+ul
+	list-style: none
+	padding: 0
+	margin: 0
+
+p
+	margin: 0
+
+img
+	max-width: 100%
+
+a
+	text-decoration: none
+	&:hover
+		color: inherit
+
+input
+	-webkit-appearance: none
+	outline: none
+
+button
+	outline: none
+	cursor: pointer
+	border: none
+
+input::-webkit-input-placeholder
+	color: var(--form-text)
+	font-size: 16px
+	+Greg
+
+input::-moz-placeholder
+	color: var(--form-text)
+	font-size: 16px
+	+Greg
+
+.box
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	overflow: hidden
+	img
+		width: 100%
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		object-fit: cover
+
+.title
+	font-size: 55px
+	line-height: 1.12
+	+Pbold
+
+.section-title
+	font-size: 34px
+	line-height: 0.85
+	+Pbold
+
+.subtitle
+	font-size: 24px
+	line-height: 1.12
+	+Gmed
+
+.number
+	font-size: 250px
+	color: #A28854
+	+Preg
+
+.btn-1
+	font-size: 14px
+	color: var(--light)
+	background-color: var(--btn-1)
+	border-radius: 5px
+	line-height: 1.12
+	+Gmed
+
+.btn-2
+	font-size: 14px
+	color: var(--light)
+	background-color: var(--btn-2)
+	border-radius: 5px
+	line-height: 1.12
+	+Gmed
+
+.btn-3
+	background-color: transparent
+	border: 1px solid var(--btn-2)
+	border-radius: 5px
+	color: var(--btn-2)
+	font-size: 14px
+	line-height: 1.12
+	+Gmed
+
+.main
+	padding-top: 124px
+
+.filter
+	padding-top: 40px
+	.main-screen-home-block
+		height: 100%
+		.tabs
+			position: inherit
+			top: 0
+			background: #283655
+
+.main-screen-home
+	.select2-container .select2-search--inline .select2-search__field
+		margin: 0
+		padding-left: 15px
+		vertical-align: -webkit-baseline-middle
+		+Greg
+	.select2-container--default .select2-selection--multiple
+		border: 1px solid #DFE0EB
+		border-radius: 5px
+		padding: 4px 9px 11px 0
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		width: 9px
+		height: 4px
+		top: 47%
+		right: 10%
+	.select2-container--default .select2-selection--single .select2-selection__arrow b
+		background-image: url(../img/main-screen-home/arrow.svg)
+		background-repeat: no-repeat
+		background-size: 100%
+		width: 9px
+		height: 4px
+		margin-top: 0
+		left: auto
+		top: auto
+		border: none
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b
+		transform: rotate(180deg)
+	.select2-container--default .select2-selection--single
+		border: 1px solid #DFE0EB
+		border-radius: 5px
+	.select2-container .select2-selection--single
+		height: 41px
+		display: flex
+		align-items: center
+	.select2-container .select2-selection--single .select2-selection__rendered
+		padding-left: 15px
+		padding-right: 0
+	.select2
+		width: 100% !important
+
+.main-screen-home-filter-top-price-two, .main-screen-home-filter-top-price-three
+	.select2-container--default .select2-selection--single
+		border: none
+	.select2-container .select2-selection--single
+		height: 19px
+		display: flex
+		align-items: center
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		right: -15px
+
+.modal-card
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		width: 9px
+		height: 4px
+		top: 47%
+		right: 20px
+	.select2-container--default .select2-selection--single .select2-selection__arrow b
+		background-image: url(../img/modal-card/arrow.svg)
+		background-repeat: no-repeat
+		background-size: 100%
+		width: 9px
+		height: 4px
+		margin-top: 0
+		left: auto
+		top: auto
+		border: none
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b
+		transform: rotate(180deg)
+	.select2-container--default .select2-selection--single
+		border: 1px solid #283655
+		border-radius: 5px
+	.select2-container .select2-selection--single
+		height: 44px
+		display: flex
+		align-items: center
+	.select2-container .select2-selection--single .select2-selection__rendered
+		padding-left: 20px
+		padding-right: 0
+	.select2-container--default .select2-selection--single .select2-selection__placeholder
+		color: #283655
+		+Gmed
+	.select2
+		width: 100% !important
+
+@media screen and ( min-width: 1400px )
+	.container
+		max-width: 1290px
+		padding: 0 15px
+
+@media screen and ( max-width: 1399.98px )
+	.title
+		font-size: 45px
+	.main-screen-home
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			right: -15px
+
+@media screen and ( max-width: 1199.98px )
+	.title
+		font-size: 40px
+	.section-title
+		font-size: 28px
+	.filter
+		padding-top: 20px
+
+@media screen and ( max-width: 991.98px )
+	.title
+		font-size: 32px
+	.main
+		padding-top: 100px
+
+@media screen and ( max-width: 767.98px )
+	.title
+		font-size: 29px
+	.main
+		padding-top: 83px
+	.main-screen-home
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			right: -27%
+		.select2-container .select2-selection--single .select2-selection__rendered
+			padding-left: 20px
+
+@media screen and ( max-width: 575.98px )
+	.title
+		font-size: 32px
+	.main
+		padding-top: 75px
+	.main-screen-home
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			right: 13px
+	.main-screen-home-filter-top-price-two, .main-screen-home-filter-top-price-three
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			right: -11px
+		.select2-container .select2-selection--single .select2-selection__rendered
+			padding-left: 12px

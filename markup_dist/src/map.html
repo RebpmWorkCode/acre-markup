@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title": "Главная"
+})
+
+<body>
+	@@include('html/header.html', {})
+	<main class="main">
+		<section class="crumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 d-flex align-items-center">
+						<a href="#" class="crumbs__link">Главная</a>
+						<span class="crumbs__arrow d-block">&gt;</span>
+						<a href="#" class="crumbs__link active">Результаты поиска</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="search-map">
+			<div class="search-map__main d-flex justify-content-between align-items-start">
+				<div class="search-map__block d-flex flex-column">
+					<div class="search-map__navig d-flex align-items-center">
+						<div class="search-map__object">
+							<span class="search-map__found d-block">Найдено объектов: <span>3</span></span>
+						</div>
+						<div class="search-map__wrapper">
+							<a href="#" class="search__layout">
+								<svg class="search__layout-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M4 8C4.55228 8 5 7.55228 5 7C5 6.44772 4.55228 6 4 6C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8Z"
+										fill="#777777" />
+									<path
+										d="M4 13C4.55228 13 5 12.5523 5 12C5 11.4477 4.55228 11 4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13Z"
+										fill="#777777" />
+									<path
+										d="M4 18C4.55228 18 5 17.5523 5 17C5 16.4477 4.55228 16 4 16C3.44772 16 3 16.4477 3 17C3 17.5523 3.44772 18 4 18Z"
+										fill="#777777" />
+									<path
+										d="M20.06 11H7.94C7.42085 11 7 11.4209 7 11.94V12.06C7 12.5791 7.42085 13 7.94 13H20.06C20.5791 13 21 12.5791 21 12.06V11.94C21 11.4209 20.5791 11 20.06 11Z"
+										fill="#777777" />
+									<path
+										d="M20.06 16H7.94C7.42085 16 7 16.4209 7 16.94V17.06C7 17.5791 7.42085 18 7.94 18H20.06C20.5791 18 21 17.5791 21 17.06V16.94C21 16.4209 20.5791 16 20.06 16Z"
+										fill="#777777" />
+									<path
+										d="M20.06 6H7.94C7.42085 6 7 6.42085 7 6.94V7.06C7 7.57915 7.42085 8 7.94 8H20.06C20.5791 8 21 7.57915 21 7.06V6.94C21 6.42085 20.5791 6 20.06 6Z"
+										fill="#777777" />
+								</svg>
+							</a>
+							<a href="search-grid.html" class="search__layout">
+								<svg class="search__layout-icon" width="15" height="15" viewBox="0 0 15 15" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_1318_12794)">
+										<path
+											d="M1.5 0C1.10218 0 0.720644 0.158035 0.43934 0.43934C0.158035 0.720644 0 1.10218 0 1.5L0 5.5C0 5.89782 0.158035 6.27936 0.43934 6.56066C0.720644 6.84196 1.10218 7 1.5 7H5.5C5.89782 7 6.27936 6.84196 6.56066 6.56066C6.84196 6.27936 7 5.89782 7 5.5V1.5C7 1.10218 6.84196 0.720644 6.56066 0.43934C6.27936 0.158035 5.89782 0 5.5 0L1.5 0ZM9.5 0C9.10218 0 8.72064 0.158035 8.43934 0.43934C8.15804 0.720644 8 1.10218 8 1.5V5.5C8 5.89782 8.15804 6.27936 8.43934 6.56066C8.72064 6.84196 9.10218 7 9.5 7H13.5C13.8978 7 14.2794 6.84196 14.5607 6.56066C14.842 6.27936 15 5.89782 15 5.5V1.5C15 1.10218 14.842 0.720644 14.5607 0.43934C14.2794 0.158035 13.8978 0 13.5 0L9.5 0ZM1.5 8C1.10218 8 0.720644 8.15804 0.43934 8.43934C0.158035 8.72064 0 9.10218 0 9.5L0 13.5C0 13.8978 0.158035 14.2794 0.43934 14.5607C0.720644 14.842 1.10218 15 1.5 15H5.5C5.89782 15 6.27936 14.842 6.56066 14.5607C6.84196 14.2794 7 13.8978 7 13.5V9.5C7 9.10218 6.84196 8.72064 6.56066 8.43934C6.27936 8.15804 5.89782 8 5.5 8H1.5ZM9.5 8C9.10218 8 8.72064 8.15804 8.43934 8.43934C8.15804 8.72064 8 9.10218 8 9.5V13.5C8 13.8978 8.15804 14.2794 8.43934 14.5607C8.72064 14.842 9.10218 15 9.5 15H13.5C13.8978 15 14.2794 14.842 14.5607 14.5607C14.842 14.2794 15 13.8978 15 13.5V9.5C15 9.10218 14.842 8.72064 14.5607 8.43934C14.2794 8.15804 13.8978 8 13.5 8H9.5Z"
+											fill="#777777" />
+									</g>
+									<defs>
+										<clipPath id="clip0_1318_12794">
+											<rect width="15" height="15" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="search-map__cards d-flex flex-column">
+						<div class="search__card d-flex justify-content-xl-between flex-xxl-row flex-column">
+							<div class="swiper search-swiper">
+								<div class="swiper-wrapper search-wrapper">
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination search-pagination"></div>
+							</div>
+							<div class="search-map__info d-flex flex-column">
+								<div class="search__header d-flex align-items-center">
+									<h3 class="search__sub subtitle">Бизнес-центр «Башня Империя»</h3>
+								</div>
+								<div class="search__location d-flex align-items-center">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M14 6.72727C14 11.1818 8 15 8 15C8 15 2 11.1818 2 6.72727C2 5.20831 2.63214 3.75155 3.75736 2.67748C4.88258 1.60341 6.4087 1 8 1C9.5913 1 11.1174 1.60341 12.2426 2.67748C13.3679 3.75155 14 5.20831 14 6.72727Z"
+											stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M8 9C9.10457 9 10 8.10457 10 7C10 5.89543 9.10457 5 8 5C6.89543 5 6 5.89543 6 7C6 8.10457 6.89543 9 8 9Z"
+											stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									<span class="search__adress d-block">г. Москва, Пресненская наб. 6</span>
+								</div>
+								<div class="search__information d-flex align-items-center">
+									<div class="search__metro d-flex align-items-center">
+										<img src="@img/search/metro.png" alt="станция метро">
+										<span class="search__name d-block">Баррикадная</span>
+									</div>
+									<div class="search__metro d-flex align-items-center">
+										<svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44322 5.082L6.31281 3.724C6.52268 3.57041 6.77796 3.49155 7.03789 3.5C7.35493 3.50791 7.66164 3.6144 7.91537 3.80467C8.1691 3.99494 8.35724 4.25953 8.45364 4.56167C8.56214 4.90175 8.66131 5.13158 8.75114 5.25117C9.02257 5.6133 9.37467 5.90719 9.7795 6.1095C10.1843 6.31181 10.6307 6.41698 11.0833 6.41667V7.58333C10.4809 7.58399 9.88583 7.45108 9.34095 7.19417C8.79607 6.93726 8.31492 6.56275 7.93214 6.09758L7.52556 8.40467L8.72781 9.41383L10.0246 12.9768L8.92789 13.3758L7.73789 10.1068L5.76039 8.44725C5.59811 8.31621 5.47392 8.14405 5.40077 7.94871C5.32762 7.75337 5.30818 7.54199 5.34447 7.33658L5.64139 5.65367L5.24647 5.94067L4.00572 7.64867L3.06189 6.96267L4.43331 5.075L4.44322 5.082ZM7.87497 3.20833C7.56555 3.20833 7.26881 3.08542 7.05002 2.86662C6.83122 2.64783 6.70831 2.35109 6.70831 2.04167C6.70831 1.73225 6.83122 1.4355 7.05002 1.21671C7.26881 0.997916 7.56555 0.875 7.87497 0.875C8.18439 0.875 8.48114 0.997916 8.69993 1.21671C8.91872 1.4355 9.04164 1.73225 9.04164 2.04167C9.04164 2.35109 8.91872 2.64783 8.69993 2.86662C8.48114 3.08542 8.18439 3.20833 7.87497 3.20833ZM6.14131 10.8973L4.26647 13.1314L3.37281 12.3818L5.10881 10.3133L5.54397 9.04167L6.58872 9.91667L6.14131 10.8973Z"
+												fill="#ADADAD" />
+										</svg>
+										<span class="search__name d-block">5 мин</span>
+									</div>
+									<div class="search__metro d-flex align-items-center">
+										<svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2.48222 5.8335V9.91683H4.34393V5.8335H2.48222ZM6.20563 5.8335V9.91683H8.06733V5.8335H6.20563ZM1.24109 12.8335H13.0319V11.0835H1.24109V12.8335ZM9.92903 5.8335V9.91683H11.7907V5.8335H9.92903ZM7.13648 0.583496L1.24109 3.50016V4.66683H13.0319V3.50016L7.13648 0.583496Z"
+												fill="#ADADAD" />
+										</svg>
+										<span class="search__name d-block">ИФНС № 3</span>
+									</div>
+								</div>
+								<table class="search__table">
+									<tr>
+										<th class="search__title">Площадь</th>
+										<th class="search__title">руб. в месяц</th>
+										<th class="search__title">Этаж</th>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">1568 кв.м</td>
+										<td class="search__text">4 800 000</td>
+										<td class="search__text">51</td>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">185 кв.м</td>
+										<td class="search__text">57 000</td>
+										<td class="search__text">51</td>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">135 кв.м</td>
+										<td class="search__text">305 000</td>
+										<td class="search__text">2</td>
+									</tr>
+								</table>
+								<div class="search__buttons d-flex align-items-center justify-content-between">
+									<a href="#" class="search__btn btn-2">Посмотреть 12 предложений</a>
+									<button class="search__save">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z"
+												fill="#333333" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="search__card d-flex justify-content-xl-between flex-xxl-row flex-column">
+							<div class="swiper search-swiper">
+								<div class="swiper-wrapper search-wrapper">
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination search-pagination"></div>
+							</div>
+							<div class="search-map__info d-flex flex-column">
+								<div class="search__header d-flex align-items-center">
+									<h3 class="search__sub subtitle">Бизнес-центр «Башня Империя»</h3>
+								</div>
+								<div class="search__location d-flex align-items-center">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M14 6.72727C14 11.1818 8 15 8 15C8 15 2 11.1818 2 6.72727C2 5.20831 2.63214 3.75155 3.75736 2.67748C4.88258 1.60341 6.4087 1 8 1C9.5913 1 11.1174 1.60341 12.2426 2.67748C13.3679 3.75155 14 5.20831 14 6.72727Z"
+											stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M8 9C9.10457 9 10 8.10457 10 7C10 5.89543 9.10457 5 8 5C6.89543 5 6 5.89543 6 7C6 8.10457 6.89543 9 8 9Z"
+											stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									<span class="search__adress d-block">г. Москва, Пресненская наб. 6</span>
+								</div>
+								<div class="search__information d-flex align-items-center">
+									<div class="search__metro d-flex align-items-center">
+										<img src="@img/search/metro.png" alt="станция метро">
+										<span class="search__name d-block">Баррикадная</span>
+									</div>
+									<div class="search__metro d-flex align-items-center">
+										<svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44322 5.082L6.31281 3.724C6.52268 3.57041 6.77796 3.49155 7.03789 3.5C7.35493 3.50791 7.66164 3.6144 7.91537 3.80467C8.1691 3.99494 8.35724 4.25953 8.45364 4.56167C8.56214 4.90175 8.66131 5.13158 8.75114 5.25117C9.02257 5.6133 9.37467 5.90719 9.7795 6.1095C10.1843 6.31181 10.6307 6.41698 11.0833 6.41667V7.58333C10.4809 7.58399 9.88583 7.45108 9.34095 7.19417C8.79607 6.93726 8.31492 6.56275 7.93214 6.09758L7.52556 8.40467L8.72781 9.41383L10.0246 12.9768L8.92789 13.3758L7.73789 10.1068L5.76039 8.44725C5.59811 8.31621 5.47392 8.14405 5.40077 7.94871C5.32762 7.75337 5.30818 7.54199 5.34447 7.33658L5.64139 5.65367L5.24647 5.94067L4.00572 7.64867L3.06189 6.96267L4.43331 5.075L4.44322 5.082ZM7.87497 3.20833C7.56555 3.20833 7.26881 3.08542 7.05002 2.86662C6.83122 2.64783 6.70831 2.35109 6.70831 2.04167C6.70831 1.73225 6.83122 1.4355 7.05002 1.21671C7.26881 0.997916 7.56555 0.875 7.87497 0.875C8.18439 0.875 8.48114 0.997916 8.69993 1.21671C8.91872 1.4355 9.04164 1.73225 9.04164 2.04167C9.04164 2.35109 8.91872 2.64783 8.69993 2.86662C8.48114 3.08542 8.18439 3.20833 7.87497 3.20833ZM6.14131 10.8973L4.26647 13.1314L3.37281 12.3818L5.10881 10.3133L5.54397 9.04167L6.58872 9.91667L6.14131 10.8973Z"
+												fill="#ADADAD" />
+										</svg>
+										<span class="search__name d-block">5 мин</span>
+									</div>
+									<div class="search__metro d-flex align-items-center">
+										<svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2.48222 5.8335V9.91683H4.34393V5.8335H2.48222ZM6.20563 5.8335V9.91683H8.06733V5.8335H6.20563ZM1.24109 12.8335H13.0319V11.0835H1.24109V12.8335ZM9.92903 5.8335V9.91683H11.7907V5.8335H9.92903ZM7.13648 0.583496L1.24109 3.50016V4.66683H13.0319V3.50016L7.13648 0.583496Z"
+												fill="#ADADAD" />
+										</svg>
+										<span class="search__name d-block">ИФНС № 3</span>
+									</div>
+								</div>
+								<table class="search__table">
+									<tr>
+										<th class="search__title">Площадь</th>
+										<th class="search__title">руб. в месяц</th>
+										<th class="search__title">Этаж</th>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">1568 кв.м</td>
+										<td class="search__text">4 800 000</td>
+										<td class="search__text">51</td>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">185 кв.м</td>
+										<td class="search__text">57 000</td>
+										<td class="search__text">51</td>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">135 кв.м</td>
+										<td class="search__text">305 000</td>
+										<td class="search__text">2</td>
+									</tr>
+								</table>
+								<div class="search__buttons d-flex align-items-center justify-content-between">
+									<a href="#" class="search__btn btn-2">Посмотреть 12 предложений</a>
+									<button class="search__save">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z"
+												fill="#333333" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="search__card d-flex justify-content-xl-between flex-xxl-row flex-column">
+							<div class="swiper search-swiper">
+								<div class="swiper-wrapper search-wrapper">
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+									<div class="search-slide swiper-slide">
+										<div class="box search__box">
+											<img src="@img/search/photo-1.jpg" alt="фото объекта" class="search__image">
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination search-pagination"></div>
+							</div>
+							<div class="search-map__info d-flex flex-column">
+								<div class="search__header d-flex align-items-center">
+									<h3 class="search__sub subtitle">Бизнес-центр «Башня Империя»</h3>
+								</div>
+								<div class="search__location d-flex align-items-center">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M14 6.72727C14 11.1818 8 15 8 15C8 15 2 11.1818 2 6.72727C2 5.20831 2.63214 3.75155 3.75736 2.67748C4.88258 1.60341 6.4087 1 8 1C9.5913 1 11.1174 1.60341 12.2426 2.67748C13.3679 3.75155 14 5.20831 14 6.72727Z"
+											stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M8 9C9.10457 9 10 8.10457 10 7C10 5.89543 9.10457 5 8 5C6.89543 5 6 5.89543 6 7C6 8.10457 6.89543 9 8 9Z"
+											stroke="#777777" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									<span class="search__adress d-block">г. Москва, Пресненская наб. 6</span>
+								</div>
+								<div class="search__information d-flex align-items-center">
+									<div class="search__metro d-flex align-items-center">
+										<img src="@img/search/metro.png" alt="станция метро">
+										<span class="search__name d-block">Баррикадная</span>
+									</div>
+									<div class="search__metro d-flex align-items-center">
+										<svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44322 5.082L6.31281 3.724C6.52268 3.57041 6.77796 3.49155 7.03789 3.5C7.35493 3.50791 7.66164 3.6144 7.91537 3.80467C8.1691 3.99494 8.35724 4.25953 8.45364 4.56167C8.56214 4.90175 8.66131 5.13158 8.75114 5.25117C9.02257 5.6133 9.37467 5.90719 9.7795 6.1095C10.1843 6.31181 10.6307 6.41698 11.0833 6.41667V7.58333C10.4809 7.58399 9.88583 7.45108 9.34095 7.19417C8.79607 6.93726 8.31492 6.56275 7.93214 6.09758L7.52556 8.40467L8.72781 9.41383L10.0246 12.9768L8.92789 13.3758L7.73789 10.1068L5.76039 8.44725C5.59811 8.31621 5.47392 8.14405 5.40077 7.94871C5.32762 7.75337 5.30818 7.54199 5.34447 7.33658L5.64139 5.65367L5.24647 5.94067L4.00572 7.64867L3.06189 6.96267L4.43331 5.075L4.44322 5.082ZM7.87497 3.20833C7.56555 3.20833 7.26881 3.08542 7.05002 2.86662C6.83122 2.64783 6.70831 2.35109 6.70831 2.04167C6.70831 1.73225 6.83122 1.4355 7.05002 1.21671C7.26881 0.997916 7.56555 0.875 7.87497 0.875C8.18439 0.875 8.48114 0.997916 8.69993 1.21671C8.91872 1.4355 9.04164 1.73225 9.04164 2.04167C9.04164 2.35109 8.91872 2.64783 8.69993 2.86662C8.48114 3.08542 8.18439 3.20833 7.87497 3.20833ZM6.14131 10.8973L4.26647 13.1314L3.37281 12.3818L5.10881 10.3133L5.54397 9.04167L6.58872 9.91667L6.14131 10.8973Z"
+												fill="#ADADAD" />
+										</svg>
+										<span class="search__name d-block">5 мин</span>
+									</div>
+									<div class="search__metro d-flex align-items-center">
+										<svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2.48222 5.8335V9.91683H4.34393V5.8335H2.48222ZM6.20563 5.8335V9.91683H8.06733V5.8335H6.20563ZM1.24109 12.8335H13.0319V11.0835H1.24109V12.8335ZM9.92903 5.8335V9.91683H11.7907V5.8335H9.92903ZM7.13648 0.583496L1.24109 3.50016V4.66683H13.0319V3.50016L7.13648 0.583496Z"
+												fill="#ADADAD" />
+										</svg>
+										<span class="search__name d-block">ИФНС № 3</span>
+									</div>
+								</div>
+								<table class="search__table">
+									<tr>
+										<th class="search__title">Площадь</th>
+										<th class="search__title">руб. в месяц</th>
+										<th class="search__title">Этаж</th>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">1568 кв.м</td>
+										<td class="search__text">4 800 000</td>
+										<td class="search__text">51</td>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">185 кв.м</td>
+										<td class="search__text">57 000</td>
+										<td class="search__text">51</td>
+									</tr>
+									<tr class="search__stroke">
+										<td class="search__text">135 кв.м</td>
+										<td class="search__text">305 000</td>
+										<td class="search__text">2</td>
+									</tr>
+								</table>
+								<div class="search__buttons d-flex align-items-center justify-content-between">
+									<a href="#" class="search__btn btn-2">Посмотреть 12 предложений</a>
+									<button class="search__save">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M20 22V4C20 2.897 19.103 2 18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22ZM6 10V4H18V18.553L12 15.125L6 18.553V10Z"
+												fill="#333333" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="search-map__map" id="map">
+				</div>
+				<script src="https://api-maps.yandex.ru/2.1/?apikey=fd46afb5-4037-456b-a39d-fa1de0a70d9d&lang=ru_RU"
+					type="text/javascript"></script>
+			</div>
+		</section>
+	</main>
+	@@include('html/footer.html', {})
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+.description
+	padding: 25px 0 70px 0
+	&__title
+		font-size: 40px
+		margin-bottom: 15px
+		+Pbold
+	&__placemark
+		margin-left: 10px
+		font-size: 16px
+		color: #4F4F4F
+		text-decoration: underline
+	&__information
+		margin-bottom: 35px
+	&__box
+		width: 840px
+		height: 515px
+	&-swiper
+		.swiper-button-prev, .swiper-button-next
+			&::after
+				display: none
+	&-button
+		width: 70px
+		height: 70px
+		border-radius: 50%
+		background-color: #111
+		&-prev
+			transform: rotate(180deg)
+			left: 20px
+		&-next
+			right: 20px
+	&__card
+		background: #FFFFFF
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+		border-radius: 5px
+		padding: 18px 15px 20px 25px
+	&__save
+		background-color: transparent
+		padding: 0
+	&__id
+		color: #4F4F4F
+	&__header
+		margin-bottom: 65px
+	&__info
+		margin-bottom: 64px
+	&__name
+		margin-left: 15px
+		font-size: 16px
+	&__item
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	&__call
+		font-size: 18px
+		color: #000
+		margin-bottom: 43px
+	&__phone
+		margin-left: 10px
+		color: var(--text)
+		+Gmed
+	&__btn
+		padding: 12px 40px
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	&__character
+		max-width: 170px
+		width: 100%
+		+Gmed
+		&_2
+			max-width: 242px
+			width: 100%
+			+Gmed
+		&_3
+			max-width: 200px
+			width: 100%
+			+Gmed
+		&_4
+			max-width: 260px
+			width: 100%
+			+Gmed
+		&-rent
+			&_1
+				max-width: 210px
+				width: 100%
+				+Gmed
+			&_2
+				max-width: 200px
+				width: 100%
+				+Gmed
+	&__value
+		max-width: 170px
+		width: 100%
+		margin-left: 45px
+		&-rent
+			margin-left: 30px
+			max-width: 255px
+	&__group
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	&__column
+		width: 100%
+	.tabs
+		margin: 33px 0 40px 0
+		&__content
+			position: relative
+			padding: 68px
+			background: #FFFFFF
+			box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.22)
+			border-radius: 0px 0px 5px 5px
+			display: none
+			&--active
+				display: block
+			.swiper-button-prev, .swiper-button-next
+				&::after
+					display: none
+		&__nav-link
+			padding: 8px 0
+			max-width: 252px
+			width: 100%
+			background-color: #FFFFFF
+			border: 1px solid #283655
+			border-radius: 5px 5px 0px 0px
+			+Gmed
+			&--active
+				background-color: #283655
+				color: var(--light)
+	&__sub
+		font-size: 16px
+		+Gmed
+	&__text
+		color: #4F4F4F
+		margin-bottom: 15px
+	&-info
+		&__price
+			font-size: 18px
+			margin-bottom: 13px
+			span
+				+Gmed
+			&:last-child
+				margin-bottom: 0
+		&__number
+			margin-bottom: 6px
+		&__month
+			color: #777
+			margin-bottom: 20px
+		&__desc
+			max-width: 298px
+			margin-bottom: 8px
+			&:last-child
+				margin-bottom: 0
+		&__value
+			margin-bottom: 15px
+		&__more
+			color: #283655
+			text-decoration: underline
+			margin-bottom: 38px
+	&-rent
+		.tabs
+			&__nav
+				&-link
+					max-width: 315px
+			&__content
+				&:nth-child(4)
+					padding: 43px 70px
+		&__header
+			margin-bottom: 28px
+		&__box
+			width: 237px
+			height: 160px
+		&__column
+			margin-right: 73px
+			&:last-child
+				margin-right: 0
+		&-swiper
+			width: 800px
+		&-button
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			background-color: #111
+			svg
+				width: 13px
+			&-prev
+				transform: rotate(180deg)
+				left: 70px
+			&-next
+				right: 70px
+	&__subtitle
+		margin: 13px 0 9px 0
+
+@media (max-width: 1199.98px)
+	.description
+		&__header
+			margin-bottom: 60px
+		&__info
+			margin-bottom: 45px
+		&__card
+			padding: 20px
+		&__btn
+			padding: 12px 20px
+			margin-bottom: 0
+		&__call
+			margin-bottom: 38px
+		&__box
+			width: 702px
+			height: 430px
+		&-button
+			width: 56px
+			height: 56px
+			svg
+				width: 15px
+				height: 28px
+		&-rent
+			&-swiper
+				width: 625px
+			&__box
+				width: 177px
+				height: 115px
+			&__call
+				margin-bottom: 23px
+			&__header
+				margin-bottom: 25px
+		&-info
+			&__more
+				margin-bottom: 31px
+
+@media (max-width: 991.98px)
+	.description
+		padding: 30px 0
+		&__information
+			margin-bottom: 30px
+		&__column
+			&:last-child
+				margin-top: 10px
+		&-swiper
+			border-radius: 5px 5px 0 0
+		.tabs
+			margin: 30px 0
+			&__nav
+				&-link
+					max-width: 232px
+					&:first-child
+						width: 50%
+						max-width: 100%
+					&:nth-child(2)
+						width: 50%
+						max-width: 100%
+			&-rent
+				&__nav
+					&-link
+						width: 50%
+						max-width: 100%
+			&__content
+				padding: 30px 30px 40px 30px
+		&-rent
+			&-swiper
+				width: 415px
+		&__btn
+			margin-right: 20px
+			&:last-child
+				margin-right: 0
+		&__card
+			border-radius: 0 0 5px 5px
+			padding: 30px 40px
+		&__header
+			margin-bottom: 40px
+		&__call
+			margin-bottom: 25px
+
+@media (max-width: 767.98px)
+	.description
+		&__title
+			font-size: 30px
+		&__placemark
+			font-size: 14px
+		&__subtitle
+			margin: 0 0 10px 0
+		.tabs
+			&__nav
+				border: 1px solid #EEEEEE
+				filter: drop-shadow(0px 15px 20px rgba(40, 54, 85, 0.05))
+				border-radius: 5px
+				&-link
+					width: 100% !important
+					max-width: 100%
+					border: none
+					padding: 12px 0
+					color: #283655
+					&--active
+						box-shadow: 0px 15px 20px rgba(40, 54, 85, 0.05)
+						color: #fff
+		&-rent
+			&-button
+				&-next
+					right: 20px
+				&-prev
+					left: 20px
+			.tabs
+				&__content
+					&:nth-child(4)
+						padding: 40px 20px
+
+@media (max-width: 575.98px)
+	.description
+		padding: 15px 0 25px 0
+		&__title
+			font-size: 24px
+			margin-bottom: 8px
+		&__placemark
+			font-size: 12px
+			line-height: 1.2
+		&__box
+			width: 587px
+			height: 360px
+		&__information
+			margin-bottom: 18px
+		&__card
+			padding: 18px 16px 20px 20px
+		&__header
+			margin-bottom: 35px
+		&__info
+			margin-bottom: 30px
+		&__btn
+			margin-right: 0
+			margin-bottom: 10px
+			max-width: 199px
+		.tabs
+			margin: 17px 0 30px 0
+			&__content
+				padding: 30px 20px 45px 20px
+		&__group
+			margin-bottom: 15px
+		&__value
+			max-width: 115px
+		&-button
+			width: 43px
+			height: 43px
+			svg
+				width: 10px
+				height: 19px
+		&__subtitle
+			font-size: 18px
+		&__character
+			&-rent
+				&_1
+					max-width: 145px
+				&_2
+					max-width: 145px
+		&-rent
+			&-swiper
+				width: 205px
+			&-button
+				width: 43px
+				height: 43px
+				svg
+					width: 10px
+					height: 19px
+			&__box
+				width: 205px
+				height: 135px
