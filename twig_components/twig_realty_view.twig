@@ -388,3 +388,12 @@
         {{ form.end() }}
     </div>
 </section>
+{% if advertisement.Advertisement.parent_id %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/agency/realty/index/{{ advertisement.Advertisement.parent_id }}', {headers: {'X-Requested-With': 'XMLHttpRequest'}}).then(res => res.text()).then(res => {
+                console.log(res)
+            });
+        })
+    </script>
+{% endif %}
