@@ -34,9 +34,25 @@ const TwigGallery = {
         })
     }
 }
+const TwigSorting = {
+    run: () => {
+        $('body').on('click', '.parent-offers-sorting-link', e => {
+            e.preventDefault();
+            fetch(e.currentTarget.href).then(res => res.text()).then(res => {
+                const parser = new DOMParser();
+                const content = parser.parseFromString(res, "text/html");
+                content.documentElement.querySelectorAll(".tabs-object__content").forEach((tabContent, position) => {
+                    document.querySelector(`#tabs-object .tabs-object__content:nth-child(${position + 2})`).innerHTML = tabContent.innerHTML;
+                });
+            })
+        })
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     lazyLoadInstance.update();
+
+    TwigSorting.run();
 
     TwigGallery.run();
     TwigGallery.runLightbox('.description-slide');

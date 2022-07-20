@@ -17,38 +17,6 @@
                         <button class="tabs-object__nav-link tabs-object__nav-link--active">Аренда</button>
                         <button class="tabs-object__nav-link">Продажа</button>
                     </div>
-                    <div class="objects__navigation d-flex align-items-center">
-                        <span class="objects__name objects__name_one d-xl-flex align-items-center justify-content-center d-lg-flex d-md-flex d-none">Фото</span>
-                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_one" type="button">
-                            <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
-                                <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
-                            </svg>
-                            <span class="objects__name d-block">Площадь</span>
-                        </button>
-                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_two" type="button">
-                            <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
-                                <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
-                            </svg>
-                            <span class="objects__name d-block">Цена</span>
-                        </button>
-                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_three" type="button">
-                            <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
-                                <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
-                            </svg>
-                            <span class="objects__name d-block">Этаж</span>
-                        </button>
-                        <button class="objects__wrapper d-xl-flex d-lg-flex align-items-center justify-content-center objects__wrapper_four d-none" type="button">
-                            <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
-                                <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
-                            </svg>
-                            <span class="objects__name d-block">Состояние</span>
-                        </button>
-                        <span class="objects__name objects__name_two d-xl-flex d-lg-flex align-items-center justify-content-center d-none">Планировка</span>
-                    </div>
                     {% set rentObjects = [] %}
                     {% set sellObjects = [] %}
                     {% for advertisement in parentOffers %}
@@ -58,7 +26,92 @@
                             {% set sellObjects = sellObjects|merge([advertisement]) %}
                         {% endif %}
                     {% endfor %}
+                    {% set sortMapField = {
+                        'area': 'CategoryParamValues.area.value',
+                        'price_area_year': 'Advertisement.price_area_year',
+                        'price': 'Advertisement.price',
+                        'floor': 'CategoryParamValues.floor.value',
+                        'quality': 'CategoryParamValues.quality.value',
+                    } %}
+                    {% if _view.request.query('sortList') == 'rent' %}
+                        {% set sortField = attribute(sortMapField, _view.request.query('sortField')) %}
+                        {% if sortField %}
+                            {% set rentObjects = rentObjects|sort((first, second) => attribute(first, sortField) <=> attribute(second, sortField)) %}
+                            {% if _view.request.query('sortDirection') == 'asc' %}
+                                {% set rentObjects = rentObjects|reverse %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    {% if _view.request.query('sortList') == 'sell' %}
+                        {% set sortField = attribute(sortMapField, _view.request.query('sortField')) %}
+                        {% if sortField %}
+                            {% set sellObjects = sellObjects|sort((first, second) => attribute(first, sortField) <=> attribute(second, sortField)) %}
+                            {% if _view.request.query('sortDirection') == 'asc' %}
+                                {% set sellObjects = sellObjects|reverse %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
                     <div class="tabs-object__content tabs-object__content--active">
+                        <div class="objects__navigation d-flex align-items-center">
+                            <span class="objects__name objects__name_one d-xl-flex align-items-center justify-content-center d-lg-flex d-md-flex d-none">Фото</span>
+                            {% set sortDirectionAreaRent = _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'area' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'rent', 'sortField': 'area', 'sortDirection': sortDirectionAreaRent}|url_encode }}" class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_one parent-offers-sorting-link">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'area' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'area' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Площадь</span>
+                            </a>
+                            {% set sortDirectionPriceAreaYearRent = _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'price_area_year' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'rent', 'sortField': 'price_area_year', 'sortDirection': sortDirectionPriceAreaYearRent}|url_encode}}" class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_two parent-offers-sorting-link">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'price_area_year' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'price_area_year' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Цена</span>
+                            </a>
+                            {% set sortDirectionFloorRent = _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'floor' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'rent', 'sortField': 'floor', 'sortDirection': sortDirectionFloorRent}|url_encode}}" class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_three parent-offers-sorting-link">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'floor' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'floor' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Этаж</span>
+                            </a>
+                            {% set sortDirectionQualityRent = _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'quality' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'rent', 'sortField': 'quality', 'sortDirection': sortDirectionQualityRent}|url_encode}}" class="objects__wrapper d-xl-flex d-lg-flex align-items-center justify-content-center objects__wrapper_four d-none parent-offers-sorting-link">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'quality' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'rent' and _view.request.query('sortField') == 'quality' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Состояние</span>
+                            </a>
+                            <span class="objects__name objects__name_two d-xl-flex d-lg-flex align-items-center justify-content-center d-none">Планировка</span>
+                        </div>
                         {% for advertisement in rentObjects %}
                             {% set paramsValues = advertisement.CategoryParamValues ?? [] %}
                             <div class="objects__card d-flex align-items-center">
@@ -71,13 +124,7 @@
                                 </div>
                                 <div class="objects__center d-flex">
                                     <span class="objects__number objects__number_one d-flex align-items-center justify-content-center">{{ complexCategory.getViewAliasesOptions('area', paramsValues) }} <span>кв.м.</span></span>
-                                    <span class="objects__number objects__number_two d-flex align-items-center justify-content-center">
-                                        {% if advertisement.Advertisement.rent %}
-                                            {{ price.format(advertisement.Advertisement.price_area_year) }} <span>руб./кв.м. в год</span>
-                                        {% else %}
-                                            {{ price.format(advertisement.Advertisement.price) }} <span>руб.</span>
-                                        {% endif %}
-                                    </span>
+                                    <span class="objects__number objects__number_two d-flex align-items-center justify-content-center">{{ price.format(advertisement.Advertisement.price_area_year) }} <span>руб./кв.м. в год</span></span>
                                     <span class="objects__number objects__number_three d-flex align-items-center justify-content-center">{{ complexCategory.getViewAliasesOptions('floor', paramsValues) }}</span>
                                     <span class="objects__number objects__number_four d-xl-flex d-lg-flex align-items-center justify-content-center d-none">{{ complexCategory.getViewAliasesOptions('quality', paramsValues) }}</span>
                                     <span class="objects__number objects__number_five d-xl-flex d-lg-flex align-items-center justify-content-center d-none">{{ complexCategory.getViewAliasesOptions('planirovka', paramsValues) }}</span>
@@ -101,6 +148,66 @@
                         {% endfor %}
                     </div>
                     <div class="tabs-object__content">
+                        <div class="objects__navigation d-flex align-items-center">
+                            <span class="objects__name objects__name_one d-xl-flex align-items-center justify-content-center d-lg-flex d-md-flex d-none">Фото</span>
+                            {% set sortDirectionAreaSell = _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'area' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'sell', 'sortField': 'area', 'sortDirection': sortDirectionAreaSell}|url_encode }}" class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_one parent-offers-sorting-link" data-sorting-field="area" type="button">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'area' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'area' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Площадь</span>
+                            </a>
+                            {% set sortDirectionPriceSell = _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'price' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'sell', 'sortField': 'price', 'sortDirection': sortDirectionPriceSell}|url_encode }}" class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_two parent-offers-sorting-link" data-sorting-field="price" type="button">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'price' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'price' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Цена</span>
+                            </a>
+                            {% set sortDirectionFloorSell = _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'floor' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'sell', 'sortField': 'floor', 'sortDirection': sortDirectionFloorSell}|url_encode }}" class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_three parent-offers-sorting-link" type="button">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'floor' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'floor' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Этаж</span>
+                            </a>
+                            {% set sortDirectionQualitySell = _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'quality' ? _view.request.query('sortDirection') == 'desc' ? 'asc' : 'desc' : 'desc' %}
+                            <a href="{{ _view.request.here ~ '?' ~ {'sortList': 'sell', 'sortField': 'quality', 'sortDirection': sortDirectionQualitySell}|url_encode }}" class="objects__wrapper d-xl-flex d-lg-flex align-items-center justify-content-center objects__wrapper_four d-none parent-offers-sorting-link" type="button">
+                                <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {% if _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'quality' and _view.request.query('sortDirection') == 'asc' %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                    {% elseif _view.request.query('sortList') == 'sell' and _view.request.query('sortField') == 'quality' and _view.request.query('sortDirection') == 'desc' %}
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% else %}
+                                        <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
+                                        <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
+                                    {% endif %}
+                                </svg>
+                                <span class="objects__name d-block">Состояние</span>
+                            </a>
+                            <span class="objects__name objects__name_two d-xl-flex d-lg-flex align-items-center justify-content-center d-none">Планировка</span>
+                        </div>
                         {% for advertisement in sellObjects %}
                             {% set paramsValues = advertisement.CategoryParamValues ?? [] %}
                             <div class="objects__card d-flex align-items-center">
@@ -113,13 +220,7 @@
                                 </div>
                                 <div class="objects__center d-flex">
                                     <span class="objects__number objects__number_one d-flex align-items-center justify-content-center">{{ complexCategory.getViewAliasesOptions('area', paramsValues) }} <span>кв.м.</span></span>
-                                    <span class="objects__number objects__number_two d-flex align-items-center justify-content-center">
-                                         {% if advertisement.Advertisement.rent %}
-                                             {{ price.format(advertisement.Advertisement.price_area_year) }} <span>руб./кв.м. в год</span>
-                                         {% else %}
-                                             {{ price.format(advertisement.Advertisement.price) }} <span>руб.</span>
-                                         {% endif %}
-                                    </span>
+                                    <span class="objects__number objects__number_two d-flex align-items-center justify-content-center">{{ price.format(advertisement.Advertisement.price) }} <span>руб.</span></span>
                                     <span class="objects__number objects__number_three d-flex align-items-center justify-content-center">{{ complexCategory.getViewAliasesOptions('floor', paramsValues) }}</span>
                                     <span class="objects__number objects__number_four d-xl-flex d-lg-flex align-items-center justify-content-center d-none">{{ complexCategory.getViewAliasesOptions('quality', paramsValues) }}</span>
                                     <span class="objects__number objects__number_five d-xl-flex d-lg-flex align-items-center justify-content-center d-none">{{ complexCategory.getViewAliasesOptions('planirovka', paramsValues) }}</span>
