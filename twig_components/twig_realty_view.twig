@@ -325,8 +325,8 @@
         </div>
     </div>
 </section>
-{{ croogo_region alias = "twig_realty_view_objects" }}
-{{ croogo_region alias = "twig_realty_popular" }}
+{{ croogo_region alias = "twig_parent_offers" }}
+{{ croogo_region alias = "twig_offers_by_tag" }}
 <section class="form" id="form">
     <div class="container">
         {{ flash.render('contact_with_agent') }}
@@ -388,12 +388,3 @@
         {{ form.end() }}
     </div>
 </section>
-{% if advertisement.Advertisement.parent_id %}
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('/agency/realty/index/{{ advertisement.Advertisement.parent_id }}', {headers: {'X-Requested-With': 'XMLHttpRequest'}}).then(res => res.text()).then(res => {
-                console.log(res)
-            });
-        })
-    </script>
-{% endif %}

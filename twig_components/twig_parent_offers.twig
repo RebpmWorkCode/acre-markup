@@ -1,6 +1,15 @@
-<section class="objects">
+{#loadComponent='[{"name": "Agency.SiteOffers", "method": "setParents", "params": ["request:pass_2"], "allowPage": "/agency/realty/view_slug"},{"name": "Agency.SiteOffers", "method": "setParents", "params": [null, "request:pass_0"], "allowPage": "/object_templates/advertisement_templates/view"}]'#}
+<section class="objects" id="objects">
     <div class="container">
-        <div class="row"><div class="col-12"><h2 class="objects__title section-title">Другие площади в БЦ «Ринг Парк»</h2></div></div>
+        <div class="row">
+            <div class="col-12">
+                {% if advertisement.Category.is_template %}
+                    <h2 class="objects__title section-title">Объекты в {{ advertisement.Category.title }} {{ title }}</h2>
+                {% else %}
+                    <h2 class="objects__title section-title">Другие площади в БЦ {{ advertisement.Parent.title }}</h2>
+                {% endif %}
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="tabs-object" id="tabs-object">
@@ -10,28 +19,28 @@
                     </div>
                     <div class="objects__navigation d-flex align-items-center">
                         <span class="objects__name objects__name_one d-xl-flex align-items-center justify-content-center d-lg-flex d-md-flex d-none">Фото</span>
-                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_one">
+                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_one" type="button">
                             <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
                                 <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
                             </svg>
                             <span class="objects__name d-block">Площадь</span>
                         </button>
-                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_two">
+                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_two" type="button">
                             <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
                                 <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
                             </svg>
                             <span class="objects__name d-block">Цена</span>
                         </button>
-                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_three">
+                        <button class="objects__wrapper d-flex align-items-center justify-content-center objects__wrapper_three" type="button">
                             <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
                                 <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
                             </svg>
                             <span class="objects__name d-block">Этаж</span>
                         </button>
-                        <button class="objects__wrapper d-xl-flex d-lg-flex align-items-center justify-content-center objects__wrapper_four d-none">
+                        <button class="objects__wrapper d-xl-flex d-lg-flex align-items-center justify-content-center objects__wrapper_four d-none" type="button">
                             <svg class="objects__icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.93485 13.9999L5.02588 10.4999L5.81326 9.79492L8.93485 12.5849L12.0564 9.79492L12.8438 10.4999L8.93485 13.9999Z" fill="#283655" />
                                 <path d="M8.93485 2L12.8438 5.5L12.0564 6.205L8.93485 3.415L5.81326 6.205L5.02588 5.5L8.93485 2Z" fill="#283655" />
@@ -57,7 +66,7 @@
                                     <div class="objects__box box">
                                         {% set gallery = adView.getGallery(advertisement) %}
                                         {% set galleryFirst = imageResized.resizeItemPicture(gallery.first, {'width': '117', 'height': '86', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_children_view_objects', 'cache_path_size': true}) %}
-                                        <img data-src="{{ galleryFirst.src }}" alt="{{ galleryItem.description }}" class="objects__preview">
+                                        <img src="{{ galleryFirst.src }}" alt="{{ galleryItem.description }}" class="objects__preview">
                                     </div>
                                 </div>
                                 <div class="objects__center d-flex">
@@ -99,7 +108,7 @@
                                     <div class="objects__box box">
                                         {% set gallery = adView.getGallery(advertisement) %}
                                         {% set galleryFirst = imageResized.resizeItemPicture(gallery.first, {'width': '117', 'height': '86', 'mode': 'crop', 'paddings': false, 'folder': 'twig_crop_children_view_objects', 'cache_path_size': true}) %}
-                                        <img data-src="{{ galleryFirst.src }}" alt="{{ galleryItem.description }}" class="objects__preview">
+                                        <img src="{{ galleryFirst.src }}" alt="{{ galleryItem.description }}" class="objects__preview">
                                     </div>
                                 </div>
                                 <div class="objects__center d-flex">

@@ -63,3 +63,9 @@ a.btn-1:hover, a.btn-2:hover {
 .search__card .swiper-pagination.search-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
     background-color: #283655;
 }
+
+.popular-block-card-top__name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

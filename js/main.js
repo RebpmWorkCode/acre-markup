@@ -4,6 +4,9 @@ const TwigGallery = {
         document.querySelector('.description-swiper')?.swiper.on('slideChange', function () {
             lazyLoadInstance.update();
         });
+        document.querySelector('.popular-block')?.swiper.on('slideChange', function () {
+            lazyLoadInstance.update();
+        });
         document.querySelectorAll('.search-swiper').forEach((swiperBlock) => {
             swiperBlock.swiper.on('slideChange', function () {
                 lazyLoadInstance.update();
