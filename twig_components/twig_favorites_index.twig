@@ -1,4 +1,5 @@
 {% set adView = _view.loadHelper('Agency.AdView') %}
+{% set flash = _view.loadHelper('Flash') %}
 {% set imageResized = _view.loadHelper('ImageCompress.ImageResized') %}
 {% set price = _view.loadHelper('Agency.Price') %}
 {% set complexCategory = _view.loadHelper('ComplexCategories.ComplexCategory') %}
@@ -21,6 +22,7 @@
 </section>
 <section class="favorites">
     <div class="container">
+        {{ flash.render() }}
         <div class="row">
             <div class="col-12">
                 <div class="objects__navigation d-flex align-items-center">

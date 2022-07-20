@@ -1,7 +1,7 @@
 let TwigFavorite = {
     runElement: (favoriteClickable) => {
         let data = favoriteClickable.dataset;
-        fetch(`/favorites/favorites/${data.favorite}_favorite?favorite=${data.favoriteId}&model=Advertisement`, {
+        fetch(`/favorites/favorites/${data.favorite}_favorite?favorite=${data.favoriteId}&model=${data.model || 'Advertisement'}`, {
             method: 'GET',
             headers: {
                 Accept: 'application/json, text/javascript, */*; q=0.01',
