@@ -69,3 +69,45 @@ a.btn-1:hover, a.btn-2:hover {
     white-space: nowrap;
     overflow: hidden;
 }
+
+.filter-text-price-suffix {
+    display: none;
+}
+.filter-text-price-suffix.active {
+    display: initial;
+}
+.main-screen-home-filter-top-price-three {
+    width: 60px;
+}
+.main-screen-home-filter-top-location {
+    padding-right: 24px;
+}
+.modal-card {
+    top: 0;
+    left: 0;
+}
+
+.main-screen-home-filter-bottom__address::placeholder {
+    color: white !important;
+}
+
+.filter .main-screen-home-block form.tabs {
+    padding-top: 1px;
+}
+
+.main-screen-home-filter-additional__top {
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.main-screen-home-filter-additional__top-item {
+    flex-grow: 1;
+    flex-basis: calc(100% / 6 - 10px);
+    padding: 5px;
+}
+.main-screen-home-filter-additional__top-item-clearfix {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}

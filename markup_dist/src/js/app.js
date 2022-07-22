@@ -317,36 +317,39 @@ function tabs4(id) {
 }
 
 /* Работа с картой */
+if (typeof ymaps !== "undefined") {
+    if (document.querySelector('#map')) {
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [55.763914406274836, 37.56132288821894],
+                    zoom: 14
+                }),
 
-ymaps.ready(function () {
-	var myMap = new ymaps.Map('map', {
-		center: [55.763914406274836, 37.56132288821894],
-		zoom: 14
-	}),
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                    iconLayout: 'default#image',
+                    iconImageHref: '../img/map/icon-1.svg',
+                    iconImageSize: [57, 76],
+                }),
 
-		myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-			iconLayout: 'default#image',
-			iconImageHref: '../img/map/icon-1.svg',
-			iconImageSize: [57, 76],
-		}),
+                myPlacemark2 = new ymaps.Placemark([55.748470627344524, 37.5379173084971], {
+                    iconLayout: 'default#image',
+                    iconImageHref: '../img/map/icon-2.svg',
+                    iconImageSize: [57, 76],
+                });
 
-		myPlacemark2 = new ymaps.Placemark([55.748470627344524, 37.5379173084971], {
-			iconLayout: 'default#image',
-			iconImageHref: '../img/map/icon-2.svg',
-			iconImageSize: [57, 76],
-		});
+            myMap.geoObjects
+                .add(myPlacemark)
+                .add(myPlacemark2);
 
-	myMap.geoObjects
-		.add(myPlacemark)
-		.add(myPlacemark2);
+            myMap.controls.remove('geolocationControl'); // удаляем геолокацию
+            myMap.controls.remove('searchControl'); // удаляем поиск
+            myMap.controls.remove('trafficControl'); // удаляем контроль трафика
+            myMap.controls.remove('typeSelector'); // удаляем тип
+            myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+            myMap.controls.remove('rulerControl'); // удаляем контрол правил
 
-	myMap.controls.remove('geolocationControl'); // удаляем геолокацию
-	myMap.controls.remove('searchControl'); // удаляем поиск
-	myMap.controls.remove('trafficControl'); // удаляем контроль трафика
-	myMap.controls.remove('typeSelector'); // удаляем тип
-	myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-	myMap.controls.remove('rulerControl'); // удаляем контрол правил
-
-	myMap.behaviors.disable(['scrollZoom']);
-});
+            myMap.behaviors.disable(['scrollZoom']);
+        });
+    }
+}
 
